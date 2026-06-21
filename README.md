@@ -4,7 +4,7 @@
 
 **A machine-readable awesome list of CLI tools, risks, effects, and guardrails for AI coding agents.**
 
-![tools: 237](https://img.shields.io/badge/tools-237-0969da) ![categories: 45](https://img.shields.io/badge/categories-45-8250df) ![yaml: registry](https://img.shields.io/badge/yaml-registry-2ea44f) [![GitHub Repo stars](https://img.shields.io/github/stars/Ariestar/awesome-agent-cli?style=social)](https://github.com/Ariestar/awesome-agent-cli) [![Awesome](https://awesome.re/badge-flat.svg)](https://awesome.re) [![Update README](https://github.com/Ariestar/awesome-agent-cli/actions/workflows/update-readme.yml/badge.svg)](https://github.com/Ariestar/awesome-agent-cli/actions/workflows/update-readme.yml)
+![tools: 238](https://img.shields.io/badge/tools-238-0969da) ![categories: 45](https://img.shields.io/badge/categories-45-8250df) ![yaml: registry](https://img.shields.io/badge/yaml-registry-2ea44f) [![GitHub Repo stars](https://img.shields.io/github/stars/Ariestar/awesome-agent-cli?style=social)](https://github.com/Ariestar/awesome-agent-cli) [![Awesome](https://awesome.re/badge-flat.svg)](https://awesome.re) [![Update README](https://github.com/Ariestar/awesome-agent-cli/actions/workflows/update-readme.yml/badge.svg)](https://github.com/Ariestar/awesome-agent-cli/actions/workflows/update-readme.yml)
 
 </div>
 
@@ -35,11 +35,11 @@ AI coding agents do not just need a list of binaries. They need operational cont
 
 | Signal | Value |
 | --- | ---: |
-| Tool cards | **237** |
+| Tool cards | **238** |
 | Category tags | **45** |
 | Language/ecosystem tags | **32** |
 | GitHub-backed tools | **172** with live star badges |
-| Risk distribution | Low: **28** · Medium: **122** · High: **87** |
+| Risk distribution | Low: **28** · Medium: **122** · High: **88** |
 
 ## Quick use
 
@@ -110,7 +110,7 @@ The matrix below shows category coverage and risk posture. A tool can appear in 
 
 | Category | Total | Low | Medium | High | Posture |
 | --- | ---: | ---: | ---: | ---: | --- |
-| [`agent`](#agent) | 24 | 0 | 0 | 24 | control plane |
+| [`agent`](#agent) | 25 | 0 | 0 | 25 | control plane |
 | [`agent-context`](#agent-context) | 3 | 0 | 0 | 3 | control plane |
 | [`api`](#api) | 3 | 0 | 2 | 1 | control plane |
 | [`archive`](#archive) | 4 | 0 | 4 | 0 | operator surface |
@@ -136,7 +136,7 @@ The matrix below shows category coverage and risk posture. A tool can appear in 
 | [`infra`](#infra) | 5 | 0 | 0 | 5 | control plane |
 | [`kubernetes`](#kubernetes) | 7 | 0 | 2 | 5 | control plane |
 | [`lint`](#lint) | 14 | 6 | 8 | 0 | operator surface |
-| [`mcp`](#mcp) | 4 | 0 | 0 | 4 | control plane |
+| [`mcp`](#mcp) | 5 | 0 | 0 | 5 | control plane |
 | [`metrics`](#metrics) | 1 | 1 | 0 | 0 | safe default |
 | [`mobile`](#mobile) | 10 | 0 | 5 | 5 | control plane |
 | [`network`](#network) | 9 | 0 | 5 | 4 | control plane |
@@ -144,7 +144,7 @@ The matrix below shows category coverage and risk posture. A tool can appear in 
 | [`runtime`](#runtime) | 9 | 0 | 9 | 0 | operator surface |
 | [`search`](#search) | 7 | 4 | 2 | 1 | control plane |
 | [`secrets`](#secrets) | 2 | 0 | 0 | 2 | control plane |
-| [`security`](#security) | 15 | 0 | 9 | 6 | control plane |
+| [`security`](#security) | 16 | 0 | 9 | 7 | control plane |
 | [`shell`](#shell) | 20 | 2 | 13 | 5 | control plane |
 | [`signing`](#signing) | 1 | 0 | 0 | 1 | control plane |
 | [`simulator`](#simulator) | 2 | 0 | 1 | 1 | control plane |
@@ -165,11 +165,11 @@ Browse by category. Multi-category tools intentionally appear in every relevant 
 
 - [`package-manager`](#package-manager) — 27 tools
 - [`build`](#build) — 26 tools
-- [`agent`](#agent) — 24 tools
+- [`agent`](#agent) — 25 tools
 - [`shell`](#shell) — 20 tools
 - [`test`](#test) — 19 tools
 - [`environment`](#environment) — 16 tools
-- [`security`](#security) — 15 tools
+- [`security`](#security) — 16 tools
 - [`docs`](#docs) — 14 tools
 
 </details>
@@ -224,6 +224,8 @@ Browse by category. Multi-category tools intentionally appear in every relevant 
   `sgpt` · ![risk: high](https://img.shields.io/badge/risk-high-cf222e) · lang: `all` · also: `shell` · [![GitHub Repo stars](https://img.shields.io/github/stars/TheR1D/shell_gpt?style=social)](https://github.com/TheR1D/shell_gpt)
 - [supergateway](https://github.com/supercorp-ai/supergateway#readme) — Gateway for exposing MCP stdio servers over SSE or HTTP-compatible transports.  \
   `supergateway` · ![risk: high](https://img.shields.io/badge/risk-high-cf222e) · lang: `all` · also: `agent`, `network` · [![GitHub Repo stars](https://img.shields.io/github/stars/supercorp-ai/supergateway?style=social)](https://github.com/supercorp-ai/supergateway)
+- [Tuning Engines](https://app.tuningengines.com/docs/cli) — Governed AI workflow CLI and MCP server for inference, approvals, traces, registry metadata, and fine-tuning.  \
+  `te` · ![risk: high](https://img.shields.io/badge/risk-high-cf222e) · lang: `all` · also: `mcp`, `security`
 
 ### agent-context
 
@@ -634,6 +636,8 @@ Browse by category. Multi-category tools intentionally appear in every relevant 
   `mcptools` · ![risk: high](https://img.shields.io/badge/risk-high-cf222e) · lang: `all` · also: `agent`, `debug` · [![GitHub Repo stars](https://img.shields.io/github/stars/f/mcptools?style=social)](https://github.com/f/mcptools)
 - [supergateway](https://github.com/supercorp-ai/supergateway#readme) — Gateway for exposing MCP stdio servers over SSE or HTTP-compatible transports.  \
   `supergateway` · ![risk: high](https://img.shields.io/badge/risk-high-cf222e) · lang: `all` · also: `agent`, `network` · [![GitHub Repo stars](https://img.shields.io/github/stars/supercorp-ai/supergateway?style=social)](https://github.com/supercorp-ai/supergateway)
+- [Tuning Engines](https://app.tuningengines.com/docs/cli) — Governed AI workflow CLI and MCP server for inference, approvals, traces, registry metadata, and fine-tuning.  \
+  `te` · ![risk: high](https://img.shields.io/badge/risk-high-cf222e) · lang: `all` · also: `mcp`, `security`
 
 ### metrics
 
@@ -816,6 +820,8 @@ Browse by category. Multi-category tools intentionally appear in every relevant 
   `trivy` · ![risk: medium](https://img.shields.io/badge/risk-medium-d29922) · lang: `all` · [![GitHub Repo stars](https://img.shields.io/github/stars/aquasecurity/trivy?style=social)](https://github.com/aquasecurity/trivy)
 - [trufflehog](https://github.com/trufflesecurity/trufflehog#readme) — Secret scanner for repositories, filesystems, and remote sources.  \
   `trufflehog` · ![risk: high](https://img.shields.io/badge/risk-high-cf222e) · lang: `all` · [![GitHub Repo stars](https://img.shields.io/github/stars/trufflesecurity/trufflehog?style=social)](https://github.com/trufflesecurity/trufflehog)
+- [Tuning Engines](https://app.tuningengines.com/docs/cli) — Governed AI workflow CLI and MCP server for inference, approvals, traces, registry metadata, and fine-tuning.  \
+  `te` · ![risk: high](https://img.shields.io/badge/risk-high-cf222e) · lang: `all` · also: `mcp`, `security`
 - [zizmor](https://docs.zizmor.sh/) — Static security analyzer for GitHub Actions workflows.  \
   `zizmor` · ![risk: medium](https://img.shields.io/badge/risk-medium-d29922) · lang: `yaml` · also: `security` · [![GitHub Repo stars](https://img.shields.io/github/stars/zizmorcore/zizmor?style=social)](https://github.com/zizmorcore/zizmor)
 
