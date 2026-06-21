@@ -1,0 +1,46 @@
+name: Tuning Engines
+binary: te
+aliases:
+- tuningengines-cli
+category:
+- agent
+- mcp
+- security
+lang:
+- all
+summary: Governed AI workflow CLI and MCP server for inference, approvals, traces, registry metadata, and fine-tuning.
+homepage: https://tuningengines.com/
+docs: https://app.tuningengines.com/docs/cli
+detect:
+  version_args:
+  - --version
+  local:
+    files:
+    - tuning-registry.yml
+    dirs:
+    - .tuning-engines
+    package_json:
+      package_manager_prefixes:
+      - tuningengines-cli
+use_when:
+- Configure governed AI workflows with explicit model, tool, agent, or skill access controls
+- Inspect traces, policy decisions, approval requests, or non-secret tenant registry metadata
+- Generate a LangGraph, Temporal, or other orchestration starter with stable run and request IDs
+avoid_when:
+- The user has not authenticated to the intended tenant or has not approved a remote configuration change
+- A local deterministic command can complete the task without a model, agent, or remote workflow
+risk:
+  level: high
+  effects:
+  - network_access
+  - remote_write
+  - secret_exposure
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - creating or changing tenant resources, policies, approvals, deployments, or training jobs
+  - enabling a registry sync or applying a generated configuration
+guardrails:
+- Use a least-privilege tenant API key and confirm the target tenant before mutations.
+- Keep provider credentials and inference keys in environment variables or a supported secret manager; never place them in manifests or logs.
+- Review approval, policy, and registry-sync diffs before applying changes.
