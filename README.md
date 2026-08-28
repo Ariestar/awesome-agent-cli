@@ -4,7 +4,7 @@
 
 **A machine-readable awesome list of CLI tools, risks, effects, and guardrails for AI coding agents.**
 
-![tools: 237](https://img.shields.io/badge/tools-237-0969da) ![categories: 45](https://img.shields.io/badge/categories-45-8250df) ![yaml: registry](https://img.shields.io/badge/yaml-registry-2ea44f) [![GitHub Repo stars](https://img.shields.io/github/stars/Ariestar/awesome-agent-cli?style=social)](https://github.com/Ariestar/awesome-agent-cli) [![Awesome](https://awesome.re/badge-flat.svg)](https://awesome.re) [![Update README](https://github.com/Ariestar/awesome-agent-cli/actions/workflows/update-readme.yml/badge.svg)](https://github.com/Ariestar/awesome-agent-cli/actions/workflows/update-readme.yml)
+![tools: 238](https://img.shields.io/badge/tools-238-0969da) ![categories: 45](https://img.shields.io/badge/categories-45-8250df) ![yaml: registry](https://img.shields.io/badge/yaml-registry-2ea44f) [![GitHub Repo stars](https://img.shields.io/github/stars/Ariestar/awesome-agent-cli?style=social)](https://github.com/Ariestar/awesome-agent-cli) [![Awesome](https://awesome.re/badge-flat.svg)](https://awesome.re) [![Update README](https://github.com/Ariestar/awesome-agent-cli/actions/workflows/update-readme.yml/badge.svg)](https://github.com/Ariestar/awesome-agent-cli/actions/workflows/update-readme.yml)
 
 </div>
 
@@ -35,11 +35,11 @@ AI coding agents do not just need a list of binaries. They need operational cont
 
 | Signal | Value |
 | --- | ---: |
-| Tool cards | **237** |
+| Tool cards | **238** |
 | Category tags | **45** |
 | Language/ecosystem tags | **32** |
-| GitHub-backed tools | **172** with live star badges |
-| Risk distribution | Low: **28** · Medium: **122** · High: **87** |
+| GitHub-backed tools | **173** with live star badges |
+| Risk distribution | Low: **28** · Medium: **122** · High: **88** |
 
 ## Quick use
 
@@ -110,8 +110,8 @@ The matrix below shows category coverage and risk posture. A tool can appear in 
 
 | Category | Total | Low | Medium | High | Posture |
 | --- | ---: | ---: | ---: | ---: | --- |
-| [`agent`](#agent) | 24 | 0 | 0 | 24 | control plane |
-| [`agent-context`](#agent-context) | 3 | 0 | 0 | 3 | control plane |
+| [`agent`](#agent) | 25 | 0 | 0 | 25 | control plane |
+| [`agent-context`](#agent-context) | 4 | 0 | 0 | 4 | control plane |
 | [`api`](#api) | 3 | 0 | 2 | 1 | control plane |
 | [`archive`](#archive) | 4 | 0 | 4 | 0 | operator surface |
 | [`automation`](#automation) | 9 | 0 | 8 | 1 | control plane |
@@ -165,7 +165,7 @@ Browse by category. Multi-category tools intentionally appear in every relevant 
 
 - [`package-manager`](#package-manager) — 27 tools
 - [`build`](#build) — 26 tools
-- [`agent`](#agent) — 24 tools
+- [`agent`](#agent) — 25 tools
 - [`shell`](#shell) — 20 tools
 - [`test`](#test) — 19 tools
 - [`environment`](#environment) — 16 tools
@@ -224,6 +224,8 @@ Browse by category. Multi-category tools intentionally appear in every relevant 
   `sgpt` · ![risk: high](https://img.shields.io/badge/risk-high-cf222e) · lang: `all` · also: `shell` · [![GitHub Repo stars](https://img.shields.io/github/stars/TheR1D/shell_gpt?style=social)](https://github.com/TheR1D/shell_gpt)
 - [supergateway](https://github.com/supercorp-ai/supergateway#readme) — Gateway for exposing MCP stdio servers over SSE or HTTP-compatible transports.  \
   `supergateway` · ![risk: high](https://img.shields.io/badge/risk-high-cf222e) · lang: `all` · also: `agent`, `network` · [![GitHub Repo stars](https://img.shields.io/github/stars/supercorp-ai/supergateway?style=social)](https://github.com/supercorp-ai/supergateway)
+- [tree-ring](https://github.com/TerminallyLazy/Tree-Ring-Memory#readme) — Local-first Rust CLI/TUI for AI-agent memory lifecycle.  \
+  `tree-ring` · ![risk: high](https://img.shields.io/badge/risk-high-cf222e) · lang: `all` · also: `agent` · [![GitHub Repo stars](https://img.shields.io/github/stars/TerminallyLazy/Tree-Ring-Memory?style=social)](https://github.com/TerminallyLazy/Tree-Ring-Memory)
 
 ### agent-context
 
@@ -233,6 +235,8 @@ Browse by category. Multi-category tools intentionally appear in every relevant 
   `gitingest` · ![risk: high](https://img.shields.io/badge/risk-high-cf222e) · lang: `all` · also: `agent`, `docs` · [![GitHub Repo stars](https://img.shields.io/github/stars/coderamp-labs/gitingest?style=social)](https://github.com/coderamp-labs/gitingest)
 - [repomix](https://github.com/yamadashy/repomix#readme) — Package repository contents into an AI-friendly context file.  \
   `repomix` · ![risk: high](https://img.shields.io/badge/risk-high-cf222e) · lang: `all` · also: `agent`, `docs` · [![GitHub Repo stars](https://img.shields.io/github/stars/yamadashy/repomix?style=social)](https://github.com/yamadashy/repomix)
+- [tree-ring](https://github.com/TerminallyLazy/Tree-Ring-Memory#readme) — Local-first Rust CLI/TUI for AI-agent memory lifecycle.  \
+  `tree-ring` · ![risk: high](https://img.shields.io/badge/risk-high-cf222e) · lang: `all` · also: `agent` · [![GitHub Repo stars](https://img.shields.io/github/stars/TerminallyLazy/Tree-Ring-Memory?style=social)](https://github.com/TerminallyLazy/Tree-Ring-Memory)
 
 ### api
 
