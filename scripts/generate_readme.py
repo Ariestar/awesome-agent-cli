@@ -1,23 +1,22 @@
 #!/usr/bin/env python3
 """Generate README.md from data/tools/*.yaml.
 
-This repository intentionally keeps the registry as plain YAML cards without a
-site build dependency. The parser below handles the small YAML subset used by
-our tool cards so the README workflow can run with only the Python standard
-library.
+The README generator and registry linter share the same safe YAML loader so
+the rendered catalog and validation use one input format.
 """
 
 from __future__ import annotations
 
+import re
 from collections import Counter, defaultdict
 from pathlib import Path
-import re
 from urllib.parse import urlparse
+
+from registry import load_card
 
 ROOT = Path(__file__).resolve().parents[1]
 TOOLS_DIR = ROOT / "data" / "tools"
 README = ROOT / "README.md"
-LIST_KEYS = {"aliases", "category", "lang", "platform", "use_when", "avoid_when", "guardrails"}
 RISK_ORDER = ("low", "medium", "high")
 RISK_LABEL = {"low": "Low", "medium": "Medium", "high": "High"}
 
@@ -30,68 +29,8 @@ def slugify(value: str) -> str:
     return value.strip("-")
 
 
-def clean_scalar(value: str) -> str | list[str]:
-    value = value.strip()
-    if value == "[]":
-        return []
-    if value.startswith("[") and value.endswith("]"):
-        inner = value[1:-1].strip()
-        if not inner:
-            return []
-        return [clean_scalar(part.strip()) for part in inner.split(",")]  # type: ignore[list-item]
-    if (value.startswith('"') and value.endswith('"')) or (value.startswith("'") and value.endswith("'")):
-        value = value[1:-1]
-    return value
-
-
 def parse_tool(path: Path) -> dict:
-    tool: dict = {"aliases": [], "category": [], "lang": [], "platform": []}
-    current_key: str | None = None
-    in_risk = False
-
-    for raw_line in path.read_text(encoding="utf-8").splitlines():
-        if not raw_line.strip() or raw_line.lstrip().startswith("#"):
-            continue
-
-        indent = len(raw_line) - len(raw_line.lstrip(" "))
-        line = raw_line.strip()
-
-        if line.startswith("- ") and current_key in LIST_KEYS:
-            item = clean_scalar(line[2:])
-            if isinstance(item, str):
-                tool.setdefault(current_key, []).append(item)
-            continue
-
-        if indent == 0:
-            in_risk = False
-            if line.endswith(":"):
-                current_key = line[:-1]
-                if current_key in LIST_KEYS:
-                    tool[current_key] = []
-                if current_key == "risk":
-                    tool["risk"] = {}
-                    in_risk = True
-                continue
-
-            if ":" not in line:
-                continue
-            key, value = line.split(":", 1)
-            parsed = clean_scalar(value)
-            tool[key] = parsed
-            current_key = key
-            continue
-
-        if current_key == "risk" and ":" in line:
-            key, value = line.split(":", 1)
-            tool.setdefault("risk", {})[key] = clean_scalar(value)
-            in_risk = True
-            continue
-
-        # Keep enough state to ignore nested detect fields without accidentally
-        # appending their list items to top-level fields.
-        if indent > 0 and line.endswith(":") and not in_risk:
-            current_key = None
-
+    tool = dict(load_card(path))
     tool["slug"] = path.stem
     tool.setdefault("name", path.stem)
     tool.setdefault("binary", tool["name"])

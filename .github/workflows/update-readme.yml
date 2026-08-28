@@ -5,26 +5,32 @@ on:
     branches:
       - main
     paths:
-      - 'data/tools/**/*.yaml'
+      - 'data/tools/**'
+      - 'requirements.txt'
       - 'scripts/generate_readme.py'
+      - 'scripts/lint_registry.py'
+      - 'scripts/registry.py'
       - '.github/workflows/update-readme.yml'
   pull_request:
     paths:
-      - 'data/tools/**/*.yaml'
+      - 'data/tools/**'
+      - 'requirements.txt'
       - 'scripts/generate_readme.py'
+      - 'scripts/lint_registry.py'
+      - 'scripts/registry.py'
       - '.github/workflows/update-readme.yml'
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: update-readme-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  readme:
-    name: Generate README from tool YAML
+  validate:
+    name: Validate registry and generated README
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -37,15 +43,62 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: Install Python dependencies
+        run: python -m pip install --disable-pip-version-check --no-input -r requirements.txt
+
+      - name: Lint registry
+        run: python scripts/lint_registry.py
+
+      - name: Reject generated README changes
+        if: github.event_name == 'pull_request'
+        shell: bash
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          if git diff --name-only "$BASE_SHA" "$HEAD_SHA" -- README.md | grep -q .; then
+            echo "README.md is generated; change only data/tools/*.yaml in pull requests."
+            exit 1
+          fi
+
       - name: Generate README
         run: python scripts/generate_readme.py
 
-      - name: Check README is committed
-        if: github.event_name == 'pull_request'
-        run: git diff --exit-code -- README.md
+      - name: Check README generation is deterministic
+        shell: bash
+        run: |
+          generated="$(mktemp)"
+          trap 'rm -f "$generated"' EXIT
+          cp README.md "$generated"
+          python scripts/generate_readme.py
+          cmp -- "$generated" README.md
+          git diff --check
+
+  update-readme:
+    name: Update generated README
+    if: github.event_name != 'pull_request'
+    needs: validate
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install Python dependencies
+        run: python -m pip install --disable-pip-version-check --no-input -r requirements.txt
+
+      - name: Generate README
+        run: python scripts/generate_readme.py
 
       - name: Commit generated README
-        if: github.event_name != 'pull_request'
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: 'docs: update generated README'
