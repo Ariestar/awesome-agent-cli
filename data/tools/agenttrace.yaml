@@ -1,0 +1,37 @@
+name: agenttrace
+binary: agenttrace
+aliases: []
+category:
+- agent
+- debug
+- metrics
+- terminal
+lang:
+- all
+summary: Local TUI for auditing AI coding-agent session logs, costs, tool failures, latency, and report regressions.
+homepage: https://github.com/luoyuctl/agenttrace
+docs: https://github.com/luoyuctl/agenttrace
+detect:
+  version_args:
+  - --version
+  local:
+    files: []
+    dirs: []
+    package_json:
+      package_manager_prefixes: []
+use_when:
+- Inspect AI coding-agent session logs, costs, tool failures, and latency locally
+avoid_when:
+- Logs contain unredacted secrets or sensitive context
+risk:
+  level: medium
+  effects:
+  - read_files
+  - write_files
+  - secret_exposure
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - exporting or generating report files
+guardrails:
+- Point it only at intended local agent log/session directories, and review output paths before generating reports.
