@@ -33,6 +33,7 @@ risk:
   - network_access
   - environment_mutation
   - write_files
+  - secret_exposure
   requires_auth: true
   destructive: false
   confirmation_required_for:

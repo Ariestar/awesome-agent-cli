@@ -4,7 +4,7 @@
 
 **A machine-readable awesome list of CLI tools, risks, effects, and guardrails for AI coding agents.**
 
-![tools: 238](https://img.shields.io/badge/tools-238-0969da) ![categories: 45](https://img.shields.io/badge/categories-45-8250df) ![yaml: registry](https://img.shields.io/badge/yaml-registry-2ea44f) [![GitHub Repo stars](https://img.shields.io/github/stars/Ariestar/awesome-agent-cli?style=social)](https://github.com/Ariestar/awesome-agent-cli) [![Awesome](https://awesome.re/badge-flat.svg)](https://awesome.re) [![Update README](https://github.com/Ariestar/awesome-agent-cli/actions/workflows/update-readme.yml/badge.svg)](https://github.com/Ariestar/awesome-agent-cli/actions/workflows/update-readme.yml)
+![tools: 237](https://img.shields.io/badge/tools-237-0969da) ![categories: 45](https://img.shields.io/badge/categories-45-8250df) ![yaml: registry](https://img.shields.io/badge/yaml-registry-2ea44f) [![GitHub Repo stars](https://img.shields.io/github/stars/Ariestar/awesome-agent-cli?style=social)](https://github.com/Ariestar/awesome-agent-cli) [![Awesome](https://awesome.re/badge-flat.svg)](https://awesome.re) [![Update README](https://github.com/Ariestar/awesome-agent-cli/actions/workflows/update-readme.yml/badge.svg)](https://github.com/Ariestar/awesome-agent-cli/actions/workflows/update-readme.yml)
 
 </div>
 
@@ -35,11 +35,11 @@ AI coding agents do not just need a list of binaries. They need operational cont
 
 | Signal | Value |
 | --- | ---: |
-| Tool cards | **238** |
+| Tool cards | **237** |
 | Category tags | **45** |
 | Language/ecosystem tags | **32** |
-| GitHub-backed tools | **173** with live star badges |
-| Risk distribution | Low: **28** · Medium: **122** · High: **88** |
+| GitHub-backed tools | **172** with live star badges |
+| Risk distribution | Low: **28** · Medium: **122** · High: **87** |
 
 ## Quick use
 
@@ -110,7 +110,7 @@ The matrix below shows category coverage and risk posture. A tool can appear in 
 
 | Category | Total | Low | Medium | High | Posture |
 | --- | ---: | ---: | ---: | ---: | --- |
-| [`agent`](#agent) | 25 | 0 | 0 | 25 | control plane |
+| [`agent`](#agent) | 24 | 0 | 0 | 24 | control plane |
 | [`agent-context`](#agent-context) | 3 | 0 | 0 | 3 | control plane |
 | [`api`](#api) | 3 | 0 | 2 | 1 | control plane |
 | [`archive`](#archive) | 4 | 0 | 4 | 0 | operator surface |
@@ -129,7 +129,7 @@ The matrix below shows category coverage and risk posture. A tool can appear in 
 | [`device`](#device) | 2 | 0 | 0 | 2 | control plane |
 | [`docs`](#docs) | 14 | 5 | 7 | 2 | control plane |
 | [`editor`](#editor) | 1 | 0 | 1 | 0 | operator surface |
-| [`environment`](#environment) | 17 | 0 | 4 | 13 | control plane |
+| [`environment`](#environment) | 16 | 0 | 4 | 12 | control plane |
 | [`file-viewer`](#file-viewer) | 11 | 7 | 4 | 0 | operator surface |
 | [`formatter`](#formatter) | 6 | 1 | 5 | 0 | operator surface |
 | [`image`](#image) | 2 | 0 | 2 | 0 | operator surface |
@@ -145,7 +145,7 @@ The matrix below shows category coverage and risk posture. A tool can appear in 
 | [`search`](#search) | 7 | 4 | 2 | 1 | control plane |
 | [`secrets`](#secrets) | 2 | 0 | 0 | 2 | control plane |
 | [`security`](#security) | 15 | 0 | 9 | 6 | control plane |
-| [`shell`](#shell) | 21 | 2 | 13 | 6 | control plane |
+| [`shell`](#shell) | 20 | 2 | 13 | 5 | control plane |
 | [`signing`](#signing) | 1 | 0 | 0 | 1 | control plane |
 | [`simulator`](#simulator) | 2 | 0 | 1 | 1 | control plane |
 | [`system`](#system) | 2 | 2 | 0 | 0 | safe default |
@@ -165,10 +165,10 @@ Browse by category. Multi-category tools intentionally appear in every relevant 
 
 - [`package-manager`](#package-manager) — 27 tools
 - [`build`](#build) — 26 tools
-- [`agent`](#agent) — 25 tools
-- [`shell`](#shell) — 21 tools
+- [`agent`](#agent) — 24 tools
+- [`shell`](#shell) — 20 tools
 - [`test`](#test) — 19 tools
-- [`environment`](#environment) — 17 tools
+- [`environment`](#environment) — 16 tools
 - [`security`](#security) — 15 tools
 - [`docs`](#docs) — 14 tools
 
@@ -186,8 +186,6 @@ Browse by category. Multi-category tools intentionally appear in every relevant 
   `claude` · ![risk: high](https://img.shields.io/badge/risk-high-cf222e) · lang: `all`
 - [codex](https://github.com/openai/codex#readme) — OpenAI Codex command-line coding agent.  \
   `codex` · ![risk: high](https://img.shields.io/badge/risk-high-cf222e) · lang: `all` · [![GitHub Repo stars](https://img.shields.io/github/stars/openai/codex?style=social)](https://github.com/openai/codex)
-- [codex-profile](https://github.com/Ducksss/codex-profiles#readme) — Switch Codex CLI and Desktop accounts with isolated CODEX_HOME profiles.  \
-  `codex-profile` · ![risk: high](https://img.shields.io/badge/risk-high-cf222e) · lang: `all` · also: `environment`, `shell` · [![GitHub Repo stars](https://img.shields.io/github/stars/Ducksss/codex-profiles?style=social)](https://github.com/Ducksss/codex-profiles)
 - [crush](https://github.com/charmbracelet/crush#readme) — Terminal-native AI coding agent from Charm.  \
   `crush` · ![risk: high](https://img.shields.io/badge/risk-high-cf222e) · lang: `all` · [![GitHub Repo stars](https://img.shields.io/github/stars/charmbracelet/crush?style=social)](https://github.com/charmbracelet/crush)
 - [cursor-agent](https://docs.cursor.com/) — Cursor's terminal coding agent.  \
@@ -495,8 +493,6 @@ Browse by category. Multi-category tools intentionally appear in every relevant 
   `brew` · ![risk: high](https://img.shields.io/badge/risk-high-cf222e) · lang: `all` · also: `environment`
 - [choco](https://docs.chocolatey.org/en-us/choco/commands/) — Chocolatey package manager for installing and maintaining Windows software from the command line.  \
   `choco` · ![risk: high](https://img.shields.io/badge/risk-high-cf222e) · lang: `all` · also: `environment`
-- [codex-profile](https://github.com/Ducksss/codex-profiles#readme) — Switch Codex CLI and Desktop accounts with isolated CODEX_HOME profiles.  \
-  `codex-profile` · ![risk: high](https://img.shields.io/badge/risk-high-cf222e) · lang: `all` · also: `environment`, `shell` · [![GitHub Repo stars](https://img.shields.io/github/stars/Ducksss/codex-profiles?style=social)](https://github.com/Ducksss/codex-profiles)
 - [devcontainer](https://github.com/devcontainers/cli#readme) — CLI for building and running Development Containers.  \
   `devcontainer` · ![risk: high](https://img.shields.io/badge/risk-high-cf222e) · lang: `all` · [![GitHub Repo stars](https://img.shields.io/github/stars/devcontainers/cli?style=social)](https://github.com/devcontainers/cli)
 - [direnv](https://direnv.net/) — Per-directory shell environment loader.  \
@@ -835,8 +831,6 @@ Browse by category. Multi-category tools intentionally appear in every relevant 
   `brush` · ![risk: medium](https://img.shields.io/badge/risk-medium-d29922) · lang: `all`
 - [cmd](https://learn.microsoft.com/windows-server/administration/windows-commands/cmd) — Windows Command Prompt interpreter for batch files and cmd.exe builtins.  \
   `cmd` · ![risk: medium](https://img.shields.io/badge/risk-medium-d29922) · lang: `all`
-- [codex-profile](https://github.com/Ducksss/codex-profiles#readme) — Switch Codex CLI and Desktop accounts with isolated CODEX_HOME profiles.  \
-  `codex-profile` · ![risk: high](https://img.shields.io/badge/risk-high-cf222e) · lang: `all` · also: `environment`, `shell` · [![GitHub Repo stars](https://img.shields.io/github/stars/Ducksss/codex-profiles?style=social)](https://github.com/Ducksss/codex-profiles)
 - [fish](https://fishshell.com/docs/current/) — Friendly interactive shell with syntax that is intentionally not POSIX-compatible.  \
   `fish` · ![risk: medium](https://img.shields.io/badge/risk-medium-d29922) · lang: `all`
 - [gh-copilot](https://docs.github.com/copilot/how-tos/use-copilot-agents/coding-agent/use-copilot-cli) — GitHub CLI Copilot extension for shell assistance and command explanation.  \
