@@ -1,0 +1,39 @@
+name: OpenAgentRelay
+binary: relay
+aliases: []
+category:
+- agent
+- network
+lang:
+- python
+summary: Call local agents and automations shared over a trusted LAN.
+homepage: https://github.com/ShakespeareLabs/open-agent-relay
+docs: https://github.com/ShakespeareLabs/open-agent-relay#readme
+detect:
+  version_args:
+  - version
+  local:
+    files: []
+    dirs: []
+    package_json:
+      package_manager_prefixes: []
+use_when:
+- Call a capability explicitly shared by a teammate over a trusted LAN
+- Request structured JSON from a remote local agent or automation
+avoid_when:
+- The Relay target is exposed to the public internet
+- The request involves sensitive data or production write operations
+risk:
+  level: high
+  effects:
+  - network_access
+  - secret_exposure
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - connecting to a new Relay target
+guardrails:
+- Verify the expected capability name with --expect-agent on every call.
+- Use --json and treat nonzero exit codes as failures.
+- Never print, log, or return RELAY_ACCESS_KEY.
+- Use only on a trusted LAN; the current Alpha uses plain HTTP and a shared key.
