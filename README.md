@@ -4,7 +4,7 @@
 
 **A machine-readable awesome list of CLI tools, risks, effects, and guardrails for AI coding agents.**
 
-![tools: 238](https://img.shields.io/badge/tools-238-0969da) ![categories: 45](https://img.shields.io/badge/categories-45-8250df) ![yaml: registry](https://img.shields.io/badge/yaml-registry-2ea44f) [![GitHub Repo stars](https://img.shields.io/github/stars/Ariestar/awesome-agent-cli?style=social)](https://github.com/Ariestar/awesome-agent-cli) [![Awesome](https://awesome.re/badge-flat.svg)](https://awesome.re) [![Update README](https://github.com/Ariestar/awesome-agent-cli/actions/workflows/update-readme.yml/badge.svg)](https://github.com/Ariestar/awesome-agent-cli/actions/workflows/update-readme.yml)
+![tools: 239](https://img.shields.io/badge/tools-239-0969da) ![categories: 45](https://img.shields.io/badge/categories-45-8250df) ![yaml: registry](https://img.shields.io/badge/yaml-registry-2ea44f) [![GitHub Repo stars](https://img.shields.io/github/stars/Ariestar/awesome-agent-cli?style=social)](https://github.com/Ariestar/awesome-agent-cli) [![Awesome](https://awesome.re/badge-flat.svg)](https://awesome.re) [![Update README](https://github.com/Ariestar/awesome-agent-cli/actions/workflows/update-readme.yml/badge.svg)](https://github.com/Ariestar/awesome-agent-cli/actions/workflows/update-readme.yml)
 
 </div>
 
@@ -35,11 +35,11 @@ AI coding agents do not just need a list of binaries. They need operational cont
 
 | Signal | Value |
 | --- | ---: |
-| Tool cards | **238** |
+| Tool cards | **239** |
 | Category tags | **45** |
 | Language/ecosystem tags | **32** |
-| GitHub-backed tools | **173** with live star badges |
-| Risk distribution | Low: **28** · Medium: **122** · High: **88** |
+| GitHub-backed tools | **174** with live star badges |
+| Risk distribution | Low: **28** · Medium: **123** · High: **88** |
 
 ## Quick use
 
@@ -110,7 +110,7 @@ The matrix below shows category coverage and risk posture. A tool can appear in 
 
 | Category | Total | Low | Medium | High | Posture |
 | --- | ---: | ---: | ---: | ---: | --- |
-| [`agent`](#agent) | 25 | 0 | 0 | 25 | control plane |
+| [`agent`](#agent) | 26 | 0 | 1 | 25 | control plane |
 | [`agent-context`](#agent-context) | 4 | 0 | 0 | 4 | control plane |
 | [`api`](#api) | 3 | 0 | 2 | 1 | control plane |
 | [`archive`](#archive) | 4 | 0 | 4 | 0 | operator surface |
@@ -124,7 +124,7 @@ The matrix below shows category coverage and risk posture. A tool can appear in 
 | [`container`](#container) | 4 | 1 | 0 | 3 | control plane |
 | [`data`](#data) | 2 | 0 | 2 | 0 | operator surface |
 | [`database`](#database) | 7 | 0 | 1 | 6 | control plane |
-| [`debug`](#debug) | 3 | 0 | 0 | 3 | control plane |
+| [`debug`](#debug) | 4 | 0 | 1 | 3 | control plane |
 | [`deploy`](#deploy) | 6 | 0 | 0 | 6 | control plane |
 | [`device`](#device) | 2 | 0 | 0 | 2 | control plane |
 | [`docs`](#docs) | 14 | 5 | 7 | 2 | control plane |
@@ -137,7 +137,7 @@ The matrix below shows category coverage and risk posture. A tool can appear in 
 | [`kubernetes`](#kubernetes) | 7 | 0 | 2 | 5 | control plane |
 | [`lint`](#lint) | 14 | 6 | 8 | 0 | operator surface |
 | [`mcp`](#mcp) | 4 | 0 | 0 | 4 | control plane |
-| [`metrics`](#metrics) | 1 | 1 | 0 | 0 | safe default |
+| [`metrics`](#metrics) | 2 | 1 | 1 | 0 | operator surface |
 | [`mobile`](#mobile) | 10 | 0 | 5 | 5 | control plane |
 | [`network`](#network) | 9 | 0 | 5 | 4 | control plane |
 | [`package-manager`](#package-manager) | 27 | 0 | 17 | 10 | control plane |
@@ -149,7 +149,7 @@ The matrix below shows category coverage and risk posture. A tool can appear in 
 | [`signing`](#signing) | 1 | 0 | 0 | 1 | control plane |
 | [`simulator`](#simulator) | 2 | 0 | 1 | 1 | control plane |
 | [`system`](#system) | 2 | 2 | 0 | 0 | safe default |
-| [`terminal`](#terminal) | 3 | 0 | 2 | 1 | control plane |
+| [`terminal`](#terminal) | 4 | 0 | 3 | 1 | control plane |
 | [`test`](#test) | 19 | 0 | 17 | 2 | control plane |
 | [`text`](#text) | 7 | 2 | 4 | 1 | control plane |
 | [`toolchain`](#toolchain) | 2 | 0 | 1 | 1 | control plane |
@@ -164,8 +164,8 @@ Browse by category. Multi-category tools intentionally appear in every relevant 
 <summary><strong>Popular categories</strong></summary>
 
 - [`package-manager`](#package-manager) — 27 tools
+- [`agent`](#agent) — 26 tools
 - [`build`](#build) — 26 tools
-- [`agent`](#agent) — 25 tools
 - [`shell`](#shell) — 20 tools
 - [`test`](#test) — 19 tools
 - [`environment`](#environment) — 16 tools
@@ -176,6 +176,8 @@ Browse by category. Multi-category tools intentionally appear in every relevant 
 
 ### agent
 
+- [agenttrace](https://github.com/luoyuctl/agenttrace) — Local TUI for auditing AI coding-agent session logs, costs, tool failures, latency, and report regressions.  \
+  `agenttrace` · ![risk: medium](https://img.shields.io/badge/risk-medium-d29922) · lang: `all` · also: `debug`, `metrics`, `terminal` · [![GitHub Repo stars](https://img.shields.io/github/stars/luoyuctl/agenttrace?style=social)](https://github.com/luoyuctl/agenttrace)
 - [aichat](https://github.com/sigoden/aichat#readme) — All-in-one command-line LLM chat, shell assistant, and RAG tool.  \
   `aichat` · ![risk: high](https://img.shields.io/badge/risk-high-cf222e) · lang: `all` · also: `shell` · [![GitHub Repo stars](https://img.shields.io/github/stars/sigoden/aichat?style=social)](https://github.com/sigoden/aichat)
 - [aider](https://aider.chat/docs/) — AI pair programming CLI that edits files through chat.  \
@@ -422,6 +424,8 @@ Browse by category. Multi-category tools intentionally appear in every relevant 
 
 - [adb](https://developer.android.com/tools/adb) — Android Debug Bridge for interacting with Android devices and emulators.  \
   `adb` · ![risk: high](https://img.shields.io/badge/risk-high-cf222e) · lang: `all` · also: `device`, `debug`
+- [agenttrace](https://github.com/luoyuctl/agenttrace) — Local TUI for auditing AI coding-agent session logs, costs, tool failures, latency, and report regressions.  \
+  `agenttrace` · ![risk: medium](https://img.shields.io/badge/risk-medium-d29922) · lang: `all` · also: `debug`, `metrics`, `terminal` · [![GitHub Repo stars](https://img.shields.io/github/stars/luoyuctl/agenttrace?style=social)](https://github.com/luoyuctl/agenttrace)
 - [mcp-inspector](https://github.com/modelcontextprotocol/inspector#readme) — Interactive developer tool for inspecting and debugging Model Context Protocol servers.  \
   `mcp-inspector` · ![risk: high](https://img.shields.io/badge/risk-high-cf222e) · lang: `all` · also: `agent`, `debug` · [![GitHub Repo stars](https://img.shields.io/github/stars/modelcontextprotocol/inspector?style=social)](https://github.com/modelcontextprotocol/inspector)
 - [mcptools](https://github.com/f/mcptools#readme) — Command-line utilities for interacting with and debugging MCP servers.  \
@@ -641,6 +645,8 @@ Browse by category. Multi-category tools intentionally appear in every relevant 
 
 ### metrics
 
+- [agenttrace](https://github.com/luoyuctl/agenttrace) — Local TUI for auditing AI coding-agent session logs, costs, tool failures, latency, and report regressions.  \
+  `agenttrace` · ![risk: medium](https://img.shields.io/badge/risk-medium-d29922) · lang: `all` · also: `debug`, `metrics`, `terminal` · [![GitHub Repo stars](https://img.shields.io/github/stars/luoyuctl/agenttrace?style=social)](https://github.com/luoyuctl/agenttrace)
 - [tokei](https://github.com/XAMPPRocky/tokei#readme) — Count code, comments, blanks, and files by language.  \
   `tokei` · ![risk: low](https://img.shields.io/badge/risk-low-2ea44f) · lang: `all` · [![GitHub Repo stars](https://img.shields.io/github/stars/XAMPPRocky/tokei?style=social)](https://github.com/XAMPPRocky/tokei)
 
@@ -887,6 +893,8 @@ Browse by category. Multi-category tools intentionally appear in every relevant 
 
 ### terminal
 
+- [agenttrace](https://github.com/luoyuctl/agenttrace) — Local TUI for auditing AI coding-agent session logs, costs, tool failures, latency, and report regressions.  \
+  `agenttrace` · ![risk: medium](https://img.shields.io/badge/risk-medium-d29922) · lang: `all` · also: `debug`, `metrics`, `terminal` · [![GitHub Repo stars](https://img.shields.io/github/stars/luoyuctl/agenttrace?style=social)](https://github.com/luoyuctl/agenttrace)
 - [paseo](https://github.com/mariozechner/pi-coding-agent) — Local daemon and CLI for supervising AI coding agents, worktrees, schedules, and terminals.  \
   `paseo` · ![risk: high](https://img.shields.io/badge/risk-high-cf222e) · lang: `all` · also: `automation`, `terminal` · [![GitHub Repo stars](https://img.shields.io/github/stars/mariozechner/pi-coding-agent?style=social)](https://github.com/mariozechner/pi-coding-agent)
 - [pueue](https://github.com/Nukesor/pueue#readme) — Command-line task queue for running and supervising background shell commands.  \
