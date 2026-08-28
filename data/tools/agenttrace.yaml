@@ -28,6 +28,7 @@ risk:
   effects:
   - read_files
   - write_files
+  - secret_exposure
   requires_auth: false
   destructive: false
   confirmation_required_for:
