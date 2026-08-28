@@ -1,0 +1,44 @@
+name: codex-profile
+binary: codex-profile
+aliases:
+- codex-profiles
+category:
+- agent
+- environment
+- shell
+lang:
+- all
+summary: Switch Codex CLI and Desktop accounts with isolated CODEX_HOME profiles.
+homepage: https://github.com/Ducksss/codex-profiles
+docs: https://github.com/Ducksss/codex-profiles#readme
+detect:
+  version_args:
+  - version
+  local:
+    files: []
+    dirs:
+    - .codex
+    package_json:
+      package_manager_prefixes: []
+use_when:
+- Run Codex CLI or Codex Desktop with a named profile
+- Inspect Codex login state and profile paths without copying auth files
+avoid_when:
+- The user only needs the default Codex profile
+- The task requires moving or exposing Codex auth tokens
+risk:
+  level: high
+  effects:
+  - execute_code
+  - network_access
+  - environment_mutation
+  - write_files
+  - secret_exposure
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - removing a profile
+  - launching Codex with autonomous edit arguments
+guardrails:
+- Prefer status --json, doctor --json, and path before launching a profile.
+- Never copy, print, parse, or edit auth.json by hand.
