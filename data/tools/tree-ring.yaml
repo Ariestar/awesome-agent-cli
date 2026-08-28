@@ -1,0 +1,42 @@
+name: tree-ring
+binary: tree-ring
+aliases: []
+category:
+  - agent-context
+  - agent
+lang:
+  - all
+summary: Local-first Rust CLI/TUI for AI-agent memory lifecycle.
+homepage: https://github.com/TerminallyLazy/Tree-Ring-Memory
+docs: https://github.com/TerminallyLazy/Tree-Ring-Memory#readme
+detect:
+  version_args:
+    - --version
+  local:
+    files:
+      - .tree-ring/AGENTS.md
+      - .tree-ring/SKILL.md
+    dirs:
+      - .tree-ring
+use_when:
+  - Capture or recall project-local AI-agent memory with explicit lifecycle controls
+  - Audit, consolidate, redact, or forget local memories before agent handoff
+avoid_when:
+  - The task only needs transient context and should not persist memory
+  - You have not reviewed whether memory content includes secrets or private data
+risk:
+  level: high
+  effects:
+    - read_files
+    - write_files
+    - delete_files
+    - secret_exposure
+  requires_auth: false
+  destructive: true
+  confirmation_required_for:
+    - remembering sensitive or user-identifying information
+    - exporting memory outside the project
+    - redacting or deleting stored memories
+guardrails:
+  - Review memory content before storing, exporting, or sharing it.
+  - Use audit and dry-run maintenance paths before destructive cleanup.
