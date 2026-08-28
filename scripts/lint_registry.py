@@ -158,28 +158,31 @@ def validate_card(path: Path) -> tuple[list[str], str | None]:
         errors.extend(error(path, f"unknown detect field: {key}") for key in unknown)
         string_list(detect.get("version_args"), "detect.version_args", errors, path, required=True)
 
-        local = mapping(detect.get("local"), "detect.local", errors, path)
+        local = mapping(detect.get("local"), "detect.local", errors, path) if "local" in detect else None
         if local is not None:
             unknown = sorted(set(local) - {"files", "dirs", "package_json"})
             errors.extend(error(path, f"unknown detect.local field: {key}") for key in unknown)
-            string_list(
-                local.get("files"),
-                "detect.local.files",
-                errors,
-                path,
-                required=True,
-                unique=False,
-            )
-            string_list(
-                local.get("dirs"),
-                "detect.local.dirs",
-                errors,
-                path,
-                required=True,
-                unique=False,
-            )
+            if "files" in local:
+                string_list(
+                    local.get("files"),
+                    "detect.local.files",
+                    errors,
+                    path,
+                    unique=False,
+                )
+            if "dirs" in local:
+                string_list(
+                    local.get("dirs"),
+                    "detect.local.dirs",
+                    errors,
+                    path,
+                    unique=False,
+                )
 
-            package_json = mapping(local.get("package_json"), "detect.local.package_json", errors, path)
+            if "package_json" in local:
+                package_json = mapping(local.get("package_json"), "detect.local.package_json", errors, path)
+            else:
+                package_json = None
             if package_json is not None:
                 unknown = sorted(set(package_json) - {"package_manager_prefixes"})
                 errors.extend(
@@ -191,7 +194,6 @@ def validate_card(path: Path) -> tuple[list[str], str | None]:
                     "detect.local.package_json.package_manager_prefixes",
                     errors,
                     path,
-                    required=True,
                 )
 
     risk = mapping(card.get("risk"), "risk", errors, path)
