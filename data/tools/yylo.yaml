@@ -1,0 +1,46 @@
+name: yylo
+binary: yylo
+aliases:
+  - yy
+category:
+  - agent
+  - automation
+lang:
+  - all
+platform:
+  - local
+summary: Command-line orchestrator for AI coding agents with typed task, evidence, and merge flows.
+homepage: https://github.com/yylo-dev/yylo
+docs: https://github.com/yylo-dev/yylo#readme
+detect:
+  version_args:
+    - --version
+  local:
+    files: []
+    dirs:
+      - .juno_task
+    package_json:
+      package_manager_prefixes: []
+use_when:
+  - Orchestrate coding-agent tasks in isolated worktrees with typed task, evidence, and merge flows
+  - Supervise agent runs through observable watch and evidence commands before protected delivery
+avoid_when:
+  - A single one-shot command is enough and no agent workflow is needed
+  - Provider credentials and model access are not already configured separately
+risk:
+  level: high
+  effects:
+    - execute_code
+    - network_access
+    - read_files
+    - write_files
+    - vcs_mutation
+    - secret_exposure
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+    - launching coding agents with write access to the repository
+    - merging agent worktrees into the target branch
+guardrails:
+  - Run yy doctor workspace and yy task preflight before finishing a task.
+  - Keep tag, publish, push, and deploy actions in their separately authorized flows.
