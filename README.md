@@ -4,7 +4,7 @@
 
 **A machine-readable awesome list of CLI tools, risks, effects, and guardrails for AI coding agents.**
 
-![tools: 456](https://img.shields.io/badge/tools-456-0969da) ![categories: 45](https://img.shields.io/badge/categories-45-8250df) ![yaml: registry](https://img.shields.io/badge/yaml-registry-2ea44f) [![GitHub Repo stars](https://img.shields.io/github/stars/Ariestar/awesome-agent-cli?style=social)](https://github.com/Ariestar/awesome-agent-cli) [![Awesome](https://awesome.re/badge-flat.svg)](https://awesome.re) [![Update README](https://github.com/Ariestar/awesome-agent-cli/actions/workflows/update-readme.yml/badge.svg)](https://github.com/Ariestar/awesome-agent-cli/actions/workflows/update-readme.yml)
+![tools: 460](https://img.shields.io/badge/tools-460-0969da) ![categories: 45](https://img.shields.io/badge/categories-45-8250df) ![yaml: registry](https://img.shields.io/badge/yaml-registry-2ea44f) [![GitHub Repo stars](https://img.shields.io/github/stars/Ariestar/awesome-agent-cli?style=social)](https://github.com/Ariestar/awesome-agent-cli) [![Awesome](https://awesome.re/badge-flat.svg)](https://awesome.re) [![Update README](https://github.com/Ariestar/awesome-agent-cli/actions/workflows/update-readme.yml/badge.svg)](https://github.com/Ariestar/awesome-agent-cli/actions/workflows/update-readme.yml)
 
 </div>
 
@@ -35,11 +35,11 @@ AI coding agents do not just need a list of binaries. They need operational cont
 
 | Signal | Value |
 | --- | ---: |
-| Tool cards | **456** |
+| Tool cards | **460** |
 | Category tags | **45** |
 | Language/ecosystem tags | **32** |
-| GitHub-backed tools | **375** with live star badges |
-| Risk distribution | Low: **95** · Medium: **221** · High: **140** |
+| GitHub-backed tools | **379** with live star badges |
+| Risk distribution | Low: **95** · Medium: **221** · High: **144** |
 
 ## Quick use
 
@@ -110,19 +110,19 @@ The matrix below shows category coverage and risk posture. A tool can appear in 
 
 | Category | Total | Low | Medium | High | Posture |
 | --- | ---: | ---: | ---: | ---: | --- |
-| [`agent`](#agent) | 103 | 12 | 28 | 63 | control plane |
-| [`agent-context`](#agent-context) | 25 | 18 | 2 | 5 | control plane |
+| [`agent`](#agent) | 106 | 12 | 28 | 66 | control plane |
+| [`agent-context`](#agent-context) | 26 | 18 | 2 | 6 | control plane |
 | [`api`](#api) | 13 | 3 | 9 | 1 | control plane |
 | [`archive`](#archive) | 4 | 0 | 4 | 0 | operator surface |
-| [`automation`](#automation) | 32 | 4 | 16 | 12 | control plane |
+| [`automation`](#automation) | 33 | 4 | 16 | 13 | control plane |
 | [`benchmark`](#benchmark) | 2 | 0 | 1 | 1 | control plane |
-| [`browser-test`](#browser-test) | 1 | 0 | 1 | 0 | operator surface |
+| [`browser-test`](#browser-test) | 2 | 0 | 1 | 1 | control plane |
 | [`build`](#build) | 33 | 1 | 28 | 4 | control plane |
 | [`ci`](#ci) | 3 | 1 | 1 | 1 | control plane |
 | [`cloud`](#cloud) | 12 | 0 | 1 | 11 | control plane |
 | [`compiler`](#compiler) | 2 | 0 | 2 | 0 | operator surface |
 | [`container`](#container) | 11 | 3 | 3 | 5 | control plane |
-| [`data`](#data) | 2 | 0 | 2 | 0 | operator surface |
+| [`data`](#data) | 3 | 0 | 2 | 1 | control plane |
 | [`database`](#database) | 21 | 4 | 10 | 7 | control plane |
 | [`debug`](#debug) | 17 | 4 | 9 | 4 | control plane |
 | [`deploy`](#deploy) | 10 | 0 | 1 | 9 | control plane |
@@ -136,7 +136,7 @@ The matrix below shows category coverage and risk posture. A tool can appear in 
 | [`infra`](#infra) | 15 | 2 | 5 | 8 | control plane |
 | [`kubernetes`](#kubernetes) | 12 | 0 | 3 | 9 | control plane |
 | [`lint`](#lint) | 21 | 10 | 11 | 0 | operator surface |
-| [`mcp`](#mcp) | 13 | 2 | 5 | 6 | control plane |
+| [`mcp`](#mcp) | 14 | 2 | 5 | 7 | control plane |
 | [`metrics`](#metrics) | 10 | 5 | 5 | 0 | operator surface |
 | [`mobile`](#mobile) | 11 | 0 | 5 | 6 | control plane |
 | [`network`](#network) | 24 | 1 | 15 | 8 | control plane |
@@ -150,7 +150,7 @@ The matrix below shows category coverage and risk posture. A tool can appear in 
 | [`simulator`](#simulator) | 2 | 0 | 1 | 1 | control plane |
 | [`system`](#system) | 3 | 2 | 0 | 1 | control plane |
 | [`terminal`](#terminal) | 11 | 2 | 8 | 1 | control plane |
-| [`test`](#test) | 42 | 7 | 32 | 3 | control plane |
+| [`test`](#test) | 43 | 7 | 32 | 4 | control plane |
 | [`text`](#text) | 13 | 7 | 5 | 1 | control plane |
 | [`toolchain`](#toolchain) | 5 | 0 | 4 | 1 | control plane |
 | [`type-checker`](#type-checker) | 3 | 2 | 1 | 0 | operator surface |
@@ -163,11 +163,11 @@ Browse by category. Multi-category tools intentionally appear in every relevant 
 <details open>
 <summary><strong>Popular categories</strong></summary>
 
-- [`agent`](#agent) — 103 tools
+- [`agent`](#agent) — 106 tools
+- [`test`](#test) — 43 tools
 - [`package-manager`](#package-manager) — 42 tools
-- [`test`](#test) — 42 tools
+- [`automation`](#automation) — 33 tools
 - [`build`](#build) — 33 tools
-- [`automation`](#automation) — 32 tools
 - [`security`](#security) — 32 tools
 - [`runtime`](#runtime) — 31 tools
 - [`environment`](#environment) — 29 tools
@@ -178,6 +178,8 @@ Browse by category. Multi-category tools intentionally appear in every relevant 
 
 - [acp](https://modelcontextprotocol.io) — Agent Communication Protocol CLI for agent-to-agent and tool discovery.  \
   `acp` · ![risk: low](https://img.shields.io/badge/risk-low-2ea44f) · lang: `all` · also: `agent`
+- [agent-qa](https://vostride.com/docs/agent-qa/cli) — Self-improving QA CLI for natural-language web and mobile tests.  \
+  `agent-qa` · ![risk: high](https://img.shields.io/badge/risk-high-cf222e) · lang: `all` · also: `browser-test`, `agent` · [![GitHub Repo stars](https://img.shields.io/github/stars/vostride/agent-qa?style=social)](https://github.com/vostride/agent-qa)
 - [agentless](https://github.com/OpenAutoCoder/Agentless#readme) — Lean agentic software development tool and CLI for automated fault localization and repair.  \
   `agentless` · ![risk: medium](https://img.shields.io/badge/risk-medium-d29922) · lang: `python` · also: `test` · [![GitHub Repo stars](https://img.shields.io/github/stars/OpenAutoCoder/Agentless?style=social)](https://github.com/OpenAutoCoder/Agentless)
 - [agenttrace](https://github.com/luoyuctl/agenttrace) — Local TUI for auditing AI coding-agent session logs, costs, tool failures, latency, and report regressions.  \
@@ -304,6 +306,8 @@ Browse by category. Multi-category tools intentionally appear in every relevant 
   `metagpt` · ![risk: high](https://img.shields.io/badge/risk-high-cf222e) · lang: `python` · [![GitHub Repo stars](https://img.shields.io/github/stars/geekan/MetaGPT?style=social)](https://github.com/geekan/MetaGPT)
 - [mods](https://github.com/charmbracelet/mods#readme) — Pipe-friendly AI assistant for the command line from Charm.  \
   `mods` · ![risk: high](https://img.shields.io/badge/risk-high-cf222e) · lang: `all` · also: `shell` · [![GitHub Repo stars](https://img.shields.io/github/stars/charmbracelet/mods?style=social)](https://github.com/charmbracelet/mods)
+- [molt](https://solvyx.xyz/work/molt) — Coding agent that won't say done on a false claim; checks pass on disk or it refuses.  \
+  `molt` · ![risk: high](https://img.shields.io/badge/risk-high-cf222e) · lang: `all` · [![GitHub Repo stars](https://img.shields.io/github/stars/solvyxtech/molt?style=social)](https://github.com/solvyxtech/molt)
 - [morph](https://morph.so/docs) — CLI for Morph Cloud isolated agent execution environments.  \
   `morph` · ![risk: medium](https://img.shields.io/badge/risk-medium-d29922) · lang: `all` · also: `environment`
 - [ollama](https://github.com/ollama/ollama#readme) — Local LLM runner CLI supporting tool calling, custom Modelfiles, and fast inference.  \
@@ -380,6 +384,8 @@ Browse by category. Multi-category tools intentionally appear in every relevant 
   `warp-cli` · ![risk: medium](https://img.shields.io/badge/risk-medium-d29922) · lang: `all` · also: `shell`
 - [wave-cli](https://docs.waveterm.dev) — Wave terminal agent CLI integrating graphical widgets and AI command cards.  \
   `wave` · ![risk: medium](https://img.shields.io/badge/risk-medium-d29922) · lang: `all` · also: `agent` · [![GitHub Repo stars](https://img.shields.io/github/stars/wavetermdev/waveterm?style=social)](https://github.com/wavetermdev/waveterm)
+- [yylo](https://github.com/yylo-dev/yylo#readme) — Command-line orchestrator for AI coding agents with typed task, evidence, and merge flows.  \
+  `yylo` · ![risk: high](https://img.shields.io/badge/risk-high-cf222e) · lang: `all` · also: `automation` · [![GitHub Repo stars](https://img.shields.io/github/stars/yylo-dev/yylo?style=social)](https://github.com/yylo-dev/yylo)
 - [zep](https://help.getzep.com) — Long-term memory store and graph database CLI for AI agent sessions.  \
   `zep` · ![risk: medium](https://img.shields.io/badge/risk-medium-d29922) · lang: `all` · also: `database` · [![GitHub Repo stars](https://img.shields.io/github/stars/getzep/zep?style=social)](https://github.com/getzep/zep)
 
@@ -405,6 +411,8 @@ Browse by category. Multi-category tools intentionally appear in every relevant 
   `firecrawl` · ![risk: medium](https://img.shields.io/badge/risk-medium-d29922) · lang: `all` · also: `search` · [![GitHub Repo stars](https://img.shields.io/github/stars/mendableai/firecrawl?style=social)](https://github.com/mendableai/firecrawl)
 - [gitingest](https://github.com/coderamp-labs/gitingest#readme) — Turn a Git repository or URL into an LLM-friendly text digest.  \
   `gitingest` · ![risk: high](https://img.shields.io/badge/risk-high-cf222e) · lang: `all` · also: `agent`, `docs` · [![GitHub Repo stars](https://img.shields.io/github/stars/coderamp-labs/gitingest?style=social)](https://github.com/coderamp-labs/gitingest)
+- [hc](https://github.com/louis030195/hyperconsciousness#readme) — Developer-alpha CLI for encrypted, append-only notes and files with device sync and scoped MCP access.  \
+  `hc` · ![risk: high](https://img.shields.io/badge/risk-high-cf222e) · lang: `all` · also: `mcp`, `data` · [![GitHub Repo stars](https://img.shields.io/github/stars/louis030195/hyperconsciousness?style=social)](https://github.com/louis030195/hyperconsciousness)
 - [jina-reader](https://jina.ai/reader/) — Reading and converting any URL into clean LLM-ready markdown via CLI.  \
   `jina` · ![risk: low](https://img.shields.io/badge/risk-low-2ea44f) · lang: `all` · also: `docs` · [![GitHub Repo stars](https://img.shields.io/github/stars/jina-ai/reader?style=social)](https://github.com/jina-ai/reader)
 - [magic-pdf](https://mineru.net) — MinerU document extractor CLI converting dense and scanned PDFs to markdown for LLMs.  \
@@ -542,6 +550,8 @@ Browse by category. Multi-category tools intentionally appear in every relevant 
   `watchexec` · ![risk: medium](https://img.shields.io/badge/risk-medium-d29922) · lang: `all` · [![GitHub Repo stars](https://img.shields.io/github/stars/watchexec/watchexec?style=social)](https://github.com/watchexec/watchexec)
 - [yt-dlp](https://github.com/yt-dlp/yt-dlp#readme) — Command-line media audio, video, and subtitle extractor for multimedia context collection.  \
   `yt-dlp` · ![risk: medium](https://img.shields.io/badge/risk-medium-d29922) · lang: `all` · also: `network` · [![GitHub Repo stars](https://img.shields.io/github/stars/yt-dlp/yt-dlp?style=social)](https://github.com/yt-dlp/yt-dlp)
+- [yylo](https://github.com/yylo-dev/yylo#readme) — Command-line orchestrator for AI coding agents with typed task, evidence, and merge flows.  \
+  `yylo` · ![risk: high](https://img.shields.io/badge/risk-high-cf222e) · lang: `all` · also: `automation` · [![GitHub Repo stars](https://img.shields.io/github/stars/yylo-dev/yylo?style=social)](https://github.com/yylo-dev/yylo)
 
 ### benchmark
 
@@ -552,6 +562,8 @@ Browse by category. Multi-category tools intentionally appear in every relevant 
 
 ### browser-test
 
+- [agent-qa](https://vostride.com/docs/agent-qa/cli) — Self-improving QA CLI for natural-language web and mobile tests.  \
+  `agent-qa` · ![risk: high](https://img.shields.io/badge/risk-high-cf222e) · lang: `all` · also: `browser-test`, `agent` · [![GitHub Repo stars](https://img.shields.io/github/stars/vostride/agent-qa?style=social)](https://github.com/vostride/agent-qa)
 - [playwright](https://playwright.dev/docs/test-cli) — End-to-end browser testing and automation CLI.  \
   `playwright` · ![risk: medium](https://img.shields.io/badge/risk-medium-d29922) · lang: `javascript`, `typescript` · [![GitHub Repo stars](https://img.shields.io/github/stars/microsoft/playwright?style=social)](https://github.com/microsoft/playwright)
 
@@ -694,6 +706,8 @@ Browse by category. Multi-category tools intentionally appear in every relevant 
 
 ### data
 
+- [hc](https://github.com/louis030195/hyperconsciousness#readme) — Developer-alpha CLI for encrypted, append-only notes and files with device sync and scoped MCP access.  \
+  `hc` · ![risk: high](https://img.shields.io/badge/risk-high-cf222e) · lang: `all` · also: `mcp`, `data` · [![GitHub Repo stars](https://img.shields.io/github/stars/louis030195/hyperconsciousness?style=social)](https://github.com/louis030195/hyperconsciousness)
 - [jq](https://jqlang.github.io/jq/manual/) — Command-line JSON processor.  \
   `jq` · ![risk: medium](https://img.shields.io/badge/risk-medium-d29922) · lang: `json` · [![GitHub Repo stars](https://img.shields.io/github/stars/jqlang/jq?style=social)](https://github.com/jqlang/jq)
 - [yq](https://mikefarah.gitbook.io/yq/) — Command-line YAML, JSON, XML, CSV, and properties processor.  \
@@ -1096,6 +1110,8 @@ Browse by category. Multi-category tools intentionally appear in every relevant 
   `composio` · ![risk: high](https://img.shields.io/badge/risk-high-cf222e) · lang: `all` · also: `mcp` · [![GitHub Repo stars](https://img.shields.io/github/stars/ComposioHQ/composio?style=social)](https://github.com/ComposioHQ/composio)
 - [fastmcp](https://github.com/jlowin/fastmcp#readme) — High-level Python CLI and framework for building, testing, and serving MCP tools.  \
   `fastmcp` · ![risk: low](https://img.shields.io/badge/risk-low-2ea44f) · lang: `python` · also: `build` · [![GitHub Repo stars](https://img.shields.io/github/stars/jlowin/fastmcp?style=social)](https://github.com/jlowin/fastmcp)
+- [hc](https://github.com/louis030195/hyperconsciousness#readme) — Developer-alpha CLI for encrypted, append-only notes and files with device sync and scoped MCP access.  \
+  `hc` · ![risk: high](https://img.shields.io/badge/risk-high-cf222e) · lang: `all` · also: `mcp`, `data` · [![GitHub Repo stars](https://img.shields.io/github/stars/louis030195/hyperconsciousness?style=social)](https://github.com/louis030195/hyperconsciousness)
 - [mcp-cli](https://github.com/wong2/mcp-cli#readme) — Interactive terminal REPL for communicating directly with MCP servers.  \
   `mcp-cli` · ![risk: medium](https://img.shields.io/badge/risk-medium-d29922) · lang: `all` · also: `debug` · [![GitHub Repo stars](https://img.shields.io/github/stars/wong2/mcp-cli?style=social)](https://github.com/wong2/mcp-cli)
 - [mcp-gateway](https://github.com/sparfenyuk/mcp-proxy#readme) — Multiplexing gateway CLI exposing several MCP servers under one endpoint.  \
@@ -1584,6 +1600,8 @@ Browse by category. Multi-category tools intentionally appear in every relevant 
 
 ### test
 
+- [agent-qa](https://vostride.com/docs/agent-qa/cli) — Self-improving QA CLI for natural-language web and mobile tests.  \
+  `agent-qa` · ![risk: high](https://img.shields.io/badge/risk-high-cf222e) · lang: `all` · also: `browser-test`, `agent` · [![GitHub Repo stars](https://img.shields.io/github/stars/vostride/agent-qa?style=social)](https://github.com/vostride/agent-qa)
 - [agentless](https://github.com/OpenAutoCoder/Agentless#readme) — Lean agentic software development tool and CLI for automated fault localization and repair.  \
   `agentless` · ![risk: medium](https://img.shields.io/badge/risk-medium-d29922) · lang: `python` · also: `test` · [![GitHub Repo stars](https://img.shields.io/github/stars/OpenAutoCoder/Agentless?style=social)](https://github.com/OpenAutoCoder/Agentless)
 - [bito](https://docs.bito.ai) — Developer CLI generating test cases, explaining diffs, and automating code reviews.  \
