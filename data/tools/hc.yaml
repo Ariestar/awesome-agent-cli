@@ -1,0 +1,56 @@
+name: hc
+binary: hc
+aliases:
+- hyperconsciousness
+category:
+- agent-context
+- mcp
+- data
+lang:
+- all
+platform:
+- local
+summary: Developer-alpha CLI for encrypted, append-only notes and files with device sync and scoped MCP access.
+homepage: https://github.com/louis030195/hyperconsciousness
+docs: https://github.com/louis030195/hyperconsciousness#readme
+detect:
+  version_args:
+  - --version
+use_when:
+- Read or append notes and inspect files in an explicitly selected HC store
+- Give an MCP client bounded access through a scoped, expiring grant
+- Inspect file inventories or review a read-only blob offload plan before applying it
+avoid_when:
+- The workflow requires an independently audited or production-stable knowledge store
+- An untrusted process shares the owner's OS account and can access its files or keys
+- Private plaintext would be returned to a hosted model without authorization
+risk:
+  level: high
+  effects:
+  - read_files
+  - write_files
+  - network_access
+  - remote_read
+  - remote_write
+  - delete_files
+  - secret_exposure
+  - execute_code
+  requires_auth: true
+  destructive: true
+  confirmation_required_for:
+  - writing or importing records into an existing store
+  - issuing or expanding grants and sharing data with another device or model
+  - configuring remote storage, syncing data, or exposing an HTTP server
+  - applying blob offload plans or removing local ciphertext
+  - configuring or invoking a credential adapter
+  - retracting records or changing recovery material
+
+guardrails:
+- Select the intended store with an absolute --dir path and verify its identity before access.
+- Use a read-only grant scoped by kind, tags, sensitivity and expiry; enable writes only when authorized.
+- Grants restrict server responses, not processes that already hold the owner's OS permissions or keys.
+- Protect device identity and recovery material; remote storage credentials do not grant plaintext access.
+- Review plaintext output before sending it to a hosted model or another recipient.
+- Review the read-only offload plan before applying its exact arguments; verify retrieval from an independent archive before releasing local copies.
+- Treat a storage receipt as a point-in-time observation, not guaranteed backup durability.
+- Verify the exact credential adapter executable and allowed operation before invocation.
