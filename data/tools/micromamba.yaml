@@ -1,0 +1,28 @@
+name: micromamba
+binary: micromamba
+aliases: []
+category:
+- package-manager
+lang:
+- all
+summary: Fast C++ pure drop-in executable replacement for conda package management.
+homepage: https://github.com/mamba-org/mamba
+docs: https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html
+detect:
+  version_args:
+  - --version
+use_when:
+- Installing conda packages in minimal Docker containers with sub-second dependency
+  resolution
+avoid_when:
+- Using native pip wheels exclusively
+risk:
+  level: medium
+  effects:
+  - install_packages
+  - write_files
+  - network_access
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - installing large conda environments

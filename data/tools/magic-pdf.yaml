@@ -1,0 +1,26 @@
+name: magic-pdf
+binary: magic-pdf
+aliases: []
+category:
+- agent-context
+- docs
+lang:
+- all
+summary: MinerU document extractor CLI converting dense and scanned PDFs to markdown
+  for LLMs.
+homepage: https://github.com/opendatalab/MinerU
+docs: https://mineru.net
+detect:
+  version_args:
+  - --version
+use_when:
+- Parsing corrupted, legacy, or scanned PDF books into clean text chunks
+avoid_when:
+- Processing native text markdown files
+risk:
+  level: low
+  effects:
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for: []

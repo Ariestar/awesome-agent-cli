@@ -1,0 +1,27 @@
+name: garak
+binary: garak
+aliases: []
+category:
+- security
+- test
+lang:
+- python
+summary: LLM vulnerability and hallucination scanner CLI checking agent prompt security.
+homepage: https://github.com/leondz/garak
+docs: https://garak.ai
+detect:
+  version_args:
+  - --version
+use_when:
+- Probing LLM endpoints and agent system prompts for prompt injection, jailbreaks,
+  and leaks
+avoid_when:
+- Evaluating factual code correctness
+risk:
+  level: medium
+  effects:
+  - network_access
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - launching targeted prompt injection scans

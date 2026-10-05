@@ -1,0 +1,26 @@
+name: mcp-gateway
+binary: mcp-gateway
+aliases: []
+category:
+- mcp
+- network
+lang:
+- all
+summary: Multiplexing gateway CLI exposing several MCP servers under one endpoint.
+homepage: https://github.com/sparfenyuk/mcp-proxy
+docs: https://github.com/sparfenyuk/mcp-proxy#readme
+detect:
+  version_args:
+  - --version
+use_when:
+- Aggregating multiple stdio or SSE MCP servers into a single multiplexed proxy address
+avoid_when:
+- Direct single-server connections
+risk:
+  level: medium
+  effects:
+  - network_access
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - binding public ports

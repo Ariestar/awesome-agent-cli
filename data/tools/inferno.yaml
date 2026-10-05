@@ -1,0 +1,26 @@
+name: inferno
+binary: inferno
+aliases: []
+category:
+- debug
+lang:
+- all
+summary: High-performance Rust reimplementation of flame graph generation tools for
+  profiling.
+homepage: https://github.com/jonhoo/inferno
+docs: https://github.com/jonhoo/inferno#readme
+detect:
+  version_args:
+  - --version
+use_when:
+- Generating interactive flame graph SVGs from stack trace sampling logs
+avoid_when:
+- Real-time terminal log watching
+risk:
+  level: low
+  effects:
+  - read_files
+  - write_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for: []

@@ -1,0 +1,28 @@
+name: otelcol
+binary: otelcol
+aliases: []
+category:
+- metrics
+- debug
+lang:
+- all
+summary: OpenTelemetry Collector CLI receiving, processing, and exporting telemetry
+  data.
+homepage: https://github.com/open-telemetry/opentelemetry-collector
+docs: https://opentelemetry.io/docs/collector/
+detect:
+  version_args:
+  - --version
+use_when:
+- Aggregating traces and metrics from agent services and forwarding to telemetry backends
+avoid_when:
+- Simple standalone CLI apps with no telemetry
+risk:
+  level: medium
+  effects:
+  - network_access
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - binding network collector receivers

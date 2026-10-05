@@ -1,0 +1,27 @@
+name: guidance
+binary: guidance
+aliases: []
+category:
+- agent
+- automation
+lang:
+- python
+summary: Microsoft templating and constrained generation CLI for interweaving generation
+  and logic.
+homepage: https://github.com/guidance-ai/guidance
+docs: https://guidance.readthedocs.io
+detect:
+  version_args:
+  - --version
+use_when:
+- Interleaving generation, prompting, and programmatic branching into single execution
+  graphs
+avoid_when:
+- Simple single-shot API queries
+risk:
+  level: low
+  effects:
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for: []

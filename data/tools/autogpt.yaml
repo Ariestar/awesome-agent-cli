@@ -1,0 +1,34 @@
+name: autogpt
+binary: autogpt
+aliases: []
+category:
+- agent
+lang:
+- python
+summary: Autonomous task-completion agent CLI with recursive planning and web exploration.
+homepage: https://github.com/Significant-Gravitas/AutoGPT
+docs: https://docs.agpt.co
+detect:
+  version_args:
+  - --version
+  local:
+    dirs:
+    - autogpt
+use_when:
+- Assigning ambitious multi-step goals that require internet search, file creation,
+  and planning
+avoid_when:
+- Constrained single-file bugfixes
+risk:
+  level: high
+  effects:
+  - write_files
+  - execute_code
+  - network_access
+  - delete_files
+  requires_auth: true
+  destructive: true
+  confirmation_required_for:
+  - unsupervised continuous mode execution
+guardrails:
+- Avoid running continuous mode without explicit directory isolation.

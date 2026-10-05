@@ -1,0 +1,32 @@
+name: promptfoo
+binary: promptfoo
+aliases: []
+category:
+- test
+- security
+lang:
+- all
+summary: CLI for testing, evaluating, and red-teaming LLM applications and agent prompts.
+homepage: https://github.com/promptfoo/promptfoo
+docs: https://www.promptfoo.dev/docs/intro/
+detect:
+  version_args:
+  - --version
+  local:
+    files:
+    - promptfooconfig.yaml
+    - promptfooconfig.json
+use_when:
+- Running automated assertions, regression tests, and red-teaming scans on prompt
+  suites
+avoid_when:
+- Single manual prompt checks
+risk:
+  level: medium
+  effects:
+  - network_access
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - running live red-team penetration attacks

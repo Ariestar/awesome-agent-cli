@@ -1,0 +1,28 @@
+name: cargo-vet
+binary: cargo-vet
+aliases: []
+category:
+- security
+- package-manager
+lang:
+- rust
+summary: Supply chain security tool ensuring third-party Rust crates are audited.
+homepage: https://github.com/mozilla/cargo-vet
+docs: https://mozilla.github.io/cargo-vet/
+detect:
+  version_args:
+  - --version
+  local:
+    dirs:
+    - supply-chain
+use_when:
+- Enforcing that all newly added Rust dependencies have trusted security audits
+avoid_when:
+- Scanning non-Rust projects
+risk:
+  level: low
+  effects:
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for: []

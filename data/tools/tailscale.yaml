@@ -1,0 +1,29 @@
+name: tailscale
+binary: tailscale
+aliases: []
+category:
+- network
+lang:
+- all
+summary: Zero-config mesh VPN CLI connecting devices and remote agent nodes over WireGuard.
+homepage: https://github.com/tailscale/tailscale
+docs: https://tailscale.com/kb/
+detect:
+  version_args:
+  - version
+use_when:
+- Securely connecting across distributed clouds, local laptops, and remote servers
+  via private mesh VPN
+avoid_when:
+- Public internet open web hosting
+risk:
+  level: high
+  effects:
+  - network_access
+  - environment_mutation
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - authorizing node connections to private tailnets
+guardrails:
+- Inspect tailscale status and allowed ACL tags before joining nodes.

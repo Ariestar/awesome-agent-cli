@@ -1,0 +1,26 @@
+name: visidata
+binary: visidata
+aliases: []
+category:
+- terminal
+- search
+lang:
+- all
+summary: Terminal spreadsheet multitool for exploring, cleaning, and analyzing tabular
+  datasets.
+homepage: https://github.com/saulpw/visidata
+docs: https://visidata.org
+detect:
+  version_args:
+  - --version
+use_when:
+- Browsing millions of rows in TSV, CSV, or Parquet files directly in the console
+avoid_when:
+- Headless non-interactive query pipelines
+risk:
+  level: low
+  effects:
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for: []

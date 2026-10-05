@@ -1,0 +1,31 @@
+name: sdkman
+binary: sdk
+aliases: []
+category:
+- package-manager
+- toolchain
+lang:
+- all
+summary: Software Development Kit Manager CLI managing parallel versions of Java,
+  Kotlin, and Scala.
+homepage: https://github.com/sdkman/sdkman-cli
+docs: https://sdkman.io
+detect:
+  version_args:
+  - version
+  local:
+    files:
+    - .sdkmanrc
+use_when:
+- Managing candidate JDKs, Gradle versions, and Maven binaries on candidate systems
+avoid_when:
+- Python or JavaScript exclusive stacks
+risk:
+  level: medium
+  effects:
+  - install_packages
+  - environment_mutation
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - overriding system default JVMs

@@ -1,0 +1,30 @@
+name: sivtr
+binary: sivtr
+aliases: []
+category:
+- agent-context
+- search
+lang:
+- all
+summary: Local terminal activity and AI session memory indexing CLI for agent context
+  retrieval.
+homepage: https://github.com/sivtr/sivtr
+docs: https://sivtr.dev
+detect:
+  version_args:
+  - --version
+  local:
+    dirs:
+    - .sivtr
+use_when:
+- Retrieving previous terminal outputs, validation evidence, and past conversation
+  logs
+avoid_when:
+- Searching live remote databases
+risk:
+  level: low
+  effects:
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for: []

@@ -1,0 +1,26 @@
+name: zep
+binary: zep
+aliases: []
+category:
+- agent
+- database
+lang:
+- all
+summary: Long-term memory store and graph database CLI for AI agent sessions.
+homepage: https://github.com/getzep/zep
+docs: https://help.getzep.com
+detect:
+  version_args:
+  - --version
+use_when:
+- Storing conversation history and constructing temporal knowledge graphs for agents
+avoid_when:
+- Pure in-memory test fixtures
+risk:
+  level: medium
+  effects:
+  - network_access
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - purging conversational graphs

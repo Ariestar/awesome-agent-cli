@@ -1,0 +1,26 @@
+name: heaptrack
+binary: heaptrack
+aliases: []
+category:
+- debug
+lang:
+- all
+summary: Heap memory profiler tracking allocations to find memory leaks and inefficiencies.
+homepage: https://github.com/KDE/heaptrack
+docs: https://github.com/KDE/heaptrack#readme
+detect:
+  version_args:
+  - --version
+use_when:
+- Tracing heap allocations and identifying memory leaks in native C/C++ or Rust processes
+avoid_when:
+- Interpreted pure Python programs
+risk:
+  level: medium
+  effects:
+  - execute_code
+  - read_processes
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - launching instrumented memory runs

@@ -1,0 +1,28 @@
+name: mcp-cli
+binary: mcp-cli
+aliases: []
+category:
+- mcp
+- debug
+lang:
+- all
+summary: Interactive terminal REPL for communicating directly with MCP servers.
+homepage: https://github.com/wong2/mcp-cli
+docs: https://github.com/wong2/mcp-cli#readme
+detect:
+  version_args:
+  - --version
+use_when:
+- Testing MCP tool invocations, prompts, and resources interactively from the command
+  line
+avoid_when:
+- Running headless automated background pipelines
+risk:
+  level: medium
+  effects:
+  - execute_code
+  - network_access
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - calling mutating tools on connected servers

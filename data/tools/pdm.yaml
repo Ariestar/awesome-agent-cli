@@ -1,0 +1,33 @@
+name: pdm
+binary: pdm
+aliases: []
+category:
+- package-manager
+- runtime
+lang:
+- python
+summary: Modern Python package and dependency manager supporting PEP 582 and PEP 621
+  standards.
+homepage: https://github.com/pdm-project/pdm
+docs: https://pdm-project.org
+detect:
+  version_args:
+  - --version
+  local:
+    files:
+    - pyproject.toml
+use_when:
+- Managing Python project dependencies, lockfiles, and virtual environments using
+  standard PEP specs
+avoid_when:
+- Managing non-Python language toolchains
+risk:
+  level: medium
+  effects:
+  - install_packages
+  - write_files
+  - network_access
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - installing unreviewed external packages

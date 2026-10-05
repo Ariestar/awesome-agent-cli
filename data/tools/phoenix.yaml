@@ -1,0 +1,28 @@
+name: phoenix
+binary: px
+aliases: []
+category:
+- debug
+- metrics
+lang:
+- python
+summary: AI observability CLI for agent tracing, evaluation, and latency profiling.
+homepage: https://github.com/Arize-ai/phoenix
+docs: https://docs.arize.com/phoenix
+detect:
+  version_args:
+  - --version
+use_when:
+- Visualizing agent execution spans, debugging RAG retrieval steps, and benchmarking
+  latency locally
+avoid_when:
+- Offline environments blocking local web dashboard servers
+risk:
+  level: medium
+  effects:
+  - read_files
+  - write_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - starting public telemetry servers

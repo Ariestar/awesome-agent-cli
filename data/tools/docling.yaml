@@ -1,0 +1,26 @@
+name: docling
+binary: docling
+aliases: []
+category:
+- agent-context
+- docs
+lang:
+- all
+summary: IBM document parsing CLI converting PDFs, tables, and complex formats into
+  LLM-ready markdown.
+homepage: https://github.com/DS4SD/docling
+docs: https://ds4sd.github.io/docling/
+detect:
+  version_args:
+  - --version
+use_when:
+- Converting complex PDF reports with multi-column tables and formulas into markdown
+avoid_when:
+- Simple plain text file processing
+risk:
+  level: low
+  effects:
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for: []

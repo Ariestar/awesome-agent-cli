@@ -1,0 +1,28 @@
+name: redocly
+binary: redocly
+aliases: []
+category:
+- api
+- docs
+lang:
+- all
+summary: All-in-one CLI for managing, linting, bundling, and rendering OpenAPI definitions.
+homepage: https://github.com/Redocly/redocly-cli
+docs: https://redocly.com/docs/cli/
+detect:
+  version_args:
+  - --version
+  local:
+    files:
+    - redocly.yaml
+use_when:
+- Bundling split OpenAPI definition files and previewing interactive documentation
+avoid_when:
+- Simple markdown document generation
+risk:
+  level: low
+  effects:
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for: []

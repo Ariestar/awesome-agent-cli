@@ -1,0 +1,30 @@
+name: autogenstudio
+binary: autogenstudio
+aliases: []
+category:
+- agent
+- runtime
+lang:
+- python
+summary: Microsoft AutoGen multi-agent prototyping and execution CLI.
+homepage: https://github.com/microsoft/autogen
+docs: https://microsoft.github.io/autogen/
+detect:
+  version_args:
+  - --version
+use_when:
+- Defining agent skills, models, and workflows with AutoGen in terminal or local web
+  UI
+avoid_when:
+- Lightweight single-agent tasks with no agent dialogue requirements
+risk:
+  level: high
+  effects:
+  - execute_code
+  - network_access
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - running code execution agent nodes
+guardrails:
+- Set code execution docker flags to true when evaluating agents.

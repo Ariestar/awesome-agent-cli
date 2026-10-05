@@ -1,0 +1,26 @@
+name: typechat
+binary: typechat
+aliases: []
+category:
+- agent
+- test
+lang:
+- all
+summary: Schema-guided prompt construction and validation CLI ensuring typed JSON
+  responses.
+homepage: https://github.com/microsoft/TypeChat
+docs: https://microsoft.github.io/TypeChat/
+detect:
+  version_args:
+  - --version
+use_when:
+- Enforcing strict TypeScript interface contract conformity on model generation
+avoid_when:
+- Freeform creative writing
+risk:
+  level: low
+  effects:
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for: []

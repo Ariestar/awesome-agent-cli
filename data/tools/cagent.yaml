@@ -1,0 +1,32 @@
+name: cagent
+binary: cagent
+aliases: []
+category:
+- agent
+- system
+lang:
+- all
+summary: Canonical agentic CLI tool for autonomous task execution and system diagnosis
+  on Linux.
+homepage: https://github.com/canonical/cagent
+docs: https://github.com/canonical/cagent#readme
+detect:
+  version_args:
+  - --version
+use_when:
+- Diagnosing system services, managing packages, and inspecting Linux host state with
+  an AI agent
+avoid_when:
+- Standard web development without host OS administration
+risk:
+  level: high
+  effects:
+  - execute_code
+  - read_processes
+  - network_access
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - running administrative system changes
+guardrails:
+- Require confirmation before executing root or system-modifying commands.

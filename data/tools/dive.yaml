@@ -1,0 +1,25 @@
+name: dive
+binary: dive
+aliases: []
+category:
+- container
+lang:
+- all
+summary: TUI analysis tool exploring Docker image layers and identifying wasted image
+  space.
+homepage: https://github.com/wagoodman/dive
+docs: https://github.com/wagoodman/dive#readme
+detect:
+  version_args:
+  - --version
+use_when:
+- Discovering duplicated files and optimizing Docker image build layer sizes
+avoid_when:
+- Deploying running containers
+risk:
+  level: low
+  effects:
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for: []

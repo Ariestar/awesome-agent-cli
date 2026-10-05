@@ -1,0 +1,33 @@
+name: devchat
+binary: devchat
+aliases: []
+category:
+- agent
+- vcs
+lang:
+- all
+summary: Developer-centric prompt and agentic workflow CLI supporting git diff tracking
+  and prompt reproducibility.
+homepage: https://github.com/devchat-ai/devchat
+docs: https://devchat.ai
+detect:
+  version_args:
+  - --version
+  local:
+    dirs:
+    - .chat
+use_when:
+- Recording prompt workflows, tying prompts to Git commits, and sharing prompts with
+  team members
+avoid_when:
+- Quick throwaway queries that do not need git provenance
+risk:
+  level: medium
+  effects:
+  - read_files
+  - write_files
+  - network_access
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - saving prompt workflows to repository

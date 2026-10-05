@@ -1,0 +1,28 @@
+name: marimo
+binary: marimo
+aliases: []
+category:
+- environment
+- docs
+lang:
+- python
+summary: Reactive, reproducible Python notebook CLI for building and testing agent
+  prototypes.
+homepage: https://github.com/marimo-team/marimo
+docs: https://docs.marimo.io
+detect:
+  version_args:
+  - --version
+use_when:
+- Prototyping agent evaluation pipelines and reactive data notebooks stored as pure
+  Python files
+avoid_when:
+- Traditional legacy Jupyter .ipynb workflows
+risk:
+  level: low
+  effects:
+  - read_files
+  - write_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for: []

@@ -1,0 +1,26 @@
+name: repo2txt
+binary: repo2txt
+aliases: []
+category:
+- agent-context
+- text
+lang:
+- all
+summary: Command-line tool packing git repositories into text representations for
+  prompt injection.
+homepage: https://github.com/taranjeet/repo2txt
+docs: https://github.com/taranjeet/repo2txt#readme
+detect:
+  version_args:
+  - --version
+use_when:
+- Dumping a repository's contents into a flat text format with clear file demarcations
+avoid_when:
+- Selective surgical retrieval of specific symbols
+risk:
+  level: low
+  effects:
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for: []

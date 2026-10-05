@@ -1,0 +1,28 @@
+name: openapi-generator-cli
+binary: openapi-generator-cli
+aliases: []
+category:
+- api
+- build
+lang:
+- all
+summary: CLI tool generating API client libraries, server stubs, and documentation
+  from OpenAPI.
+homepage: https://github.com/OpenAPITools/openapi-generator-cli
+docs: https://openapi-generator.tech
+detect:
+  version_args:
+  - version
+use_when:
+- Generating typed SDK client code and server boilerplate from OpenAPI contracts
+avoid_when:
+- Manual hand-crafted custom HTTP client logic
+risk:
+  level: medium
+  effects:
+  - read_files
+  - write_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - overwriting existing generated SDK code

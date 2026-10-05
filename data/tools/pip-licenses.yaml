@@ -1,0 +1,25 @@
+name: pip-licenses
+binary: pip-licenses
+aliases: []
+category:
+- security
+- package-manager
+lang:
+- python
+summary: CLI tool for checking software licenses of installed Python packages.
+homepage: https://github.com/raimon49/pip-licenses
+docs: https://github.com/raimon49/pip-licenses#readme
+detect:
+  version_args:
+  - --version
+use_when:
+- Auditing Python package dependencies for legal license compatibility
+avoid_when:
+- Auditing JavaScript or Rust packages
+risk:
+  level: low
+  effects:
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for: []

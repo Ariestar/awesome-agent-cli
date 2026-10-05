@@ -1,0 +1,31 @@
+name: ufo
+binary: ufo
+aliases: []
+category:
+- agent
+- automation
+lang:
+- python
+summary: Microsoft UI-Focused OS agent CLI for automating Windows and desktop applications.
+homepage: https://github.com/microsoft/UFO
+docs: https://microsoft.github.io/UFO/
+detect:
+  version_args:
+  - --version
+use_when:
+- Automating desktop GUI applications on Windows using dual-agent vision and action
+  models
+avoid_when:
+- Headless Linux servers without display servers
+risk:
+  level: high
+  effects:
+  - execute_code
+  - read_processes
+  - write_files
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - invoking mouse and keyboard control events
+guardrails:
+- Ensure user supervisor is present when running desktop automation.

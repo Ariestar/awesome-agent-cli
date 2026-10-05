@@ -1,0 +1,33 @@
+name: axolotl
+binary: axolotl
+aliases: []
+category:
+- runtime
+- build
+lang:
+- python
+summary: Declarative framework CLI for streamlining the fine-tuning of diverse AI
+  language models.
+homepage: https://github.com/axolotl-ai-cloud/axolotl
+docs: https://axolotl-ai-cloud.github.io/axolotl/
+detect:
+  version_args:
+  - --version
+  local:
+    files:
+    - config.yml
+use_when:
+- Configuring multi-GPU distributed model fine-tuning pipelines using declarative
+  YAML
+avoid_when:
+- Executing light inference queries
+risk:
+  level: medium
+  effects:
+  - read_files
+  - write_files
+  - execute_code
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - allocating multi-GPU training jobs

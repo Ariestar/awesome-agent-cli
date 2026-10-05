@@ -1,0 +1,26 @@
+name: safety
+binary: safety
+aliases: []
+category:
+- security
+- package-manager
+lang:
+- python
+summary: Python dependency vulnerability and security advisory scanner CLI.
+homepage: https://github.com/pyupio/safety
+docs: https://docs.safetycli.com
+detect:
+  version_args:
+  - --version
+use_when:
+- Checking installed Python packages against curated vulnerability databases
+avoid_when:
+- Scanning operating system system packages
+risk:
+  level: low
+  effects:
+  - read_files
+  - network_access
+  requires_auth: false
+  destructive: false
+  confirmation_required_for: []

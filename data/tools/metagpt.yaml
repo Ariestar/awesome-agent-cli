@@ -1,0 +1,33 @@
+name: metagpt
+binary: metagpt
+aliases: []
+category:
+- agent
+lang:
+- python
+summary: Multi-agent software company simulator CLI generating PRDs, designs, and
+  code.
+homepage: https://github.com/geekan/MetaGPT
+docs: https://docs.deepwisdom.ai/main/en/
+detect:
+  version_args:
+  - --version
+  local:
+    files:
+    - config.yaml
+use_when:
+- Simulating end-to-end software development phases with specialized role-based agents
+avoid_when:
+- Executing small ad-hoc refactorings in existing code
+risk:
+  level: high
+  effects:
+  - write_files
+  - network_access
+  - execute_code
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - writing generated projects to disk
+guardrails:
+- Review generated architecture documents and code before execution.

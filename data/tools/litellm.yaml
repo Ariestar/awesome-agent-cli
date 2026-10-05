@@ -1,0 +1,32 @@
+name: litellm
+binary: litellm
+aliases: []
+category:
+- network
+- agent
+lang:
+- python
+summary: Universal proxy CLI translating OpenAI format to 100+ LLM APIs with load
+  balancing.
+homepage: https://github.com/BerriAI/litellm
+docs: https://docs.litellm.ai
+detect:
+  version_args:
+  - --version
+  local:
+    files:
+    - litellm_config.yaml
+use_when:
+- Routing requests across diverse model providers using a unified OpenAI-compatible
+  endpoint
+avoid_when:
+- Hardcoded single-provider integrations with zero failover requirements
+risk:
+  level: medium
+  effects:
+  - network_access
+  - secret_exposure
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - managing proxy api keys

@@ -1,0 +1,26 @@
+name: logcli
+binary: logcli
+aliases: []
+category:
+- debug
+- search
+lang:
+- all
+summary: Command-line interface for querying and streaming logs from Grafana Loki
+  clusters.
+homepage: https://github.com/grafana/loki
+docs: https://grafana.com/docs/loki/latest/tools/logcli/
+detect:
+  version_args:
+  - --version
+use_when:
+- Querying and tailing distributed logs using LogQL directly from terminal
+avoid_when:
+- Searching static files locally with grep
+risk:
+  level: low
+  effects:
+  - network_access
+  requires_auth: true
+  destructive: false
+  confirmation_required_for: []

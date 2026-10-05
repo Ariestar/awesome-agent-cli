@@ -1,0 +1,27 @@
+name: chroma
+binary: chroma
+aliases: []
+category:
+- database
+- agent-context
+lang:
+- all
+summary: Open-source vector database CLI for storing and querying agent embeddings
+  locally.
+homepage: https://github.com/chroma-core/chroma
+docs: https://docs.trychroma.com
+detect:
+  version_args:
+  - --version
+use_when:
+- Running an embedded vector store for local agent RAG without cloud dependencies
+avoid_when:
+- Billion-scale distributed vector production deployments
+risk:
+  level: low
+  effects:
+  - read_files
+  - write_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for: []

@@ -1,0 +1,28 @@
+name: wave-cli
+binary: wave
+aliases: []
+category:
+- terminal
+- agent
+lang:
+- all
+summary: Wave terminal agent CLI integrating graphical widgets and AI command cards.
+homepage: https://github.com/wavetermdev/waveterm
+docs: https://docs.waveterm.dev
+detect:
+  version_args:
+  - --version
+use_when:
+- Rendering rich graphical cards, markdown documentation, and AI responses inside
+  terminal tabs
+avoid_when:
+- Standard SSH connections over low-bandwidth serial lines
+risk:
+  level: medium
+  effects:
+  - network_access
+  - execute_code
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - running remote widget commands

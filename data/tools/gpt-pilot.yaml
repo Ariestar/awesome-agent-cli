@@ -1,0 +1,36 @@
+name: gpt-pilot
+binary: gpt-pilot
+aliases: []
+category:
+- agent
+lang:
+- all
+summary: Autonomous full-stack software development agent CLI that scaffold-builds
+  applications.
+homepage: https://github.com/Pythagora-io/gpt-pilot
+docs: https://github.com/Pythagora-io/gpt-pilot#readme
+detect:
+  version_args:
+  - --version
+  local:
+    dirs:
+    - .gpt-pilot
+use_when:
+- Scaffolding an entire application step-by-step with autonomous code generation and
+  user checkpoints
+avoid_when:
+- Making surgical adjustments in an existing production codebase
+risk:
+  level: high
+  effects:
+  - execute_code
+  - write_files
+  - network_access
+  - install_packages
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - running install commands
+  - executing generated code
+guardrails:
+- Verify terminal commands and package installations before confirming execution.

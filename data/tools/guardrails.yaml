@@ -1,0 +1,26 @@
+name: guardrails
+binary: guardrails
+aliases: []
+category:
+- security
+- lint
+lang:
+- python
+summary: CLI for validating structured outputs, enforcing safety policies, and catching
+  hallucinations.
+homepage: https://github.com/guardrails-ai/guardrails
+docs: https://www.guardrailsai.com/docs
+detect:
+  version_args:
+  - --version
+use_when:
+- Validating that agent outputs adhere to structured schemas and safety specifications
+avoid_when:
+- Unconstrained freeform chat
+risk:
+  level: low
+  effects:
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for: []

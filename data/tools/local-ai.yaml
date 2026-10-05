@@ -1,0 +1,27 @@
+name: local-ai
+binary: local-ai
+aliases: []
+category:
+- runtime
+lang:
+- all
+summary: Self-hosted, drop-in OpenAI-compatible local API server and agent runtime
+  CLI.
+homepage: https://github.com/mudler/LocalAI
+docs: https://localai.io
+detect:
+  version_args:
+  - --version
+use_when:
+- Running multimodal AI APIs locally including speech, audio, image, and text generation
+avoid_when:
+- Direct API access to cloud proprietary models
+risk:
+  level: medium
+  effects:
+  - read_files
+  - network_access
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - downloading model galleries

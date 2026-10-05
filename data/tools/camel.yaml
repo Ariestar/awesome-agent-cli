@@ -1,0 +1,25 @@
+name: camel
+binary: camel
+aliases: []
+category:
+- agent
+lang:
+- python
+summary: Communicative Agents for Mind Exploration multi-agent role-playing CLI.
+homepage: https://github.com/camel-ai/camel
+docs: https://docs.camel-ai.org
+detect:
+  version_args:
+  - --version
+use_when:
+- Studying cooperative multi-agent dynamics and autonomous task decomposition
+avoid_when:
+- Deterministic rule-based workflows
+risk:
+  level: medium
+  effects:
+  - network_access
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - running high-volume autonomous dialogues

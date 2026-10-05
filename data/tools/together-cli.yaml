@@ -1,0 +1,28 @@
+name: together-cli
+binary: together
+aliases: []
+category:
+- network
+- agent
+lang:
+- all
+summary: Command line tool for querying, fine-tuning, and managing models on Together
+  AI.
+homepage: https://github.com/togethercomputer
+docs: https://docs.together.ai
+detect:
+  version_args:
+  - --version
+use_when:
+- Deploying, querying, and fine-tuning open source models on Together cloud GPU clusters
+avoid_when:
+- Completely airgapped local execution
+risk:
+  level: medium
+  effects:
+  - network_access
+  - secret_exposure
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - initiating paid cloud training jobs

@@ -1,0 +1,29 @@
+name: skopeo
+binary: skopeo
+aliases: []
+category:
+- container
+- network
+lang:
+- all
+summary: CLI tool for inspecting, copying, and signing container images without Docker
+  daemon.
+homepage: https://github.com/containers/skopeo
+docs: https://github.com/containers/skopeo#readme
+detect:
+  version_args:
+  - --version
+use_when:
+- Copying images directly between remote registries without pulling layers locally
+avoid_when:
+- Building container images from source Dockerfiles
+risk:
+  level: medium
+  effects:
+  - network_access
+  - remote_read
+  - remote_write
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - copying images across remote registries

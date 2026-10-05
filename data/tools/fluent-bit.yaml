@@ -1,0 +1,31 @@
+name: fluent-bit
+binary: fluent-bit
+aliases: []
+category:
+- metrics
+lang:
+- all
+summary: Fast and lightweight log processor and forwarder for Linux, embedded, and
+  cloud.
+homepage: https://github.com/fluent/fluent-bit
+docs: https://docs.fluentbit.io
+detect:
+  version_args:
+  - --version
+  local:
+    files:
+    - fluent-bit.conf
+use_when:
+- Forwarding application log files to centralized observability servers with low RAM
+  usage
+avoid_when:
+- One-off query filtering
+risk:
+  level: medium
+  effects:
+  - network_access
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - forwarding logs to remote endpoints

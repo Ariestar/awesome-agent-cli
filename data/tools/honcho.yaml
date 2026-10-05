@@ -1,0 +1,29 @@
+name: honcho
+binary: honcho
+aliases: []
+category:
+- automation
+lang:
+- python
+summary: Python port of Foreman managing multi-process applications defined in Procfiles.
+homepage: https://github.com/nickstenning/honcho
+docs: https://honcho.readthedocs.io
+detect:
+  version_args:
+  - --version
+  local:
+    files:
+    - Procfile
+use_when:
+- Orchestrating multi-process Python web stacks and workers from Procfile
+avoid_when:
+- Single threaded command calls
+risk:
+  level: medium
+  effects:
+  - execute_code
+  - read_processes
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - terminating running process groups

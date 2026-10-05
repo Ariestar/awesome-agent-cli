@@ -1,0 +1,30 @@
+name: codegraph
+binary: codegraph
+aliases: []
+category:
+- agent-context
+- search
+lang:
+- all
+summary: Tree-sitter powered knowledge graph CLI indexing symbols, callers, and AST
+  paths for agents.
+homepage: https://github.com/Ariestar/agent-runbook
+docs: https://github.com/Ariestar/agent-runbook#readme
+detect:
+  version_args:
+  - --version
+  local:
+    dirs:
+    - .codegraph
+use_when:
+- Querying structural call graphs, symbol definitions, and impact analysis without
+  full text grep
+avoid_when:
+- Searching literal text strings, comments, or log messages
+risk:
+  level: low
+  effects:
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for: []

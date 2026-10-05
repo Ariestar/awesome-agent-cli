@@ -1,0 +1,32 @@
+name: coderabbit
+binary: coderabbit
+aliases: []
+category:
+- vcs
+- lint
+lang:
+- all
+summary: Command-line client for AI code reviews and automated pull request feedback.
+homepage: https://coderabbit.ai
+docs: https://docs.coderabbit.ai
+detect:
+  version_args:
+  - --version
+  local:
+    files:
+    - .coderabbit.yaml
+use_when:
+- Validating pull request readiness and receiving line-by-line review comments before
+  push
+avoid_when:
+- Offline local code editing without git remotes
+risk:
+  level: medium
+  effects:
+  - read_files
+  - remote_read
+  - network_access
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - submitting code reviews to pull requests

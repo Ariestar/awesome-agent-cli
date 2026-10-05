@@ -1,0 +1,28 @@
+name: strace
+binary: strace
+aliases: []
+category:
+- debug
+lang:
+- all
+summary: Diagnostic and debugging CLI monitoring system calls and signals produced
+  by processes.
+homepage: https://github.com/strace/strace
+docs: https://strace.io
+detect:
+  version_args:
+  - -V
+use_when:
+- Tracing system calls to diagnose missing files, permission denials, and hangs on
+  Linux
+avoid_when:
+- Operating on non-Linux platforms
+risk:
+  level: medium
+  effects:
+  - read_processes
+  - execute_code
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - tracing processes with sensitive memory context

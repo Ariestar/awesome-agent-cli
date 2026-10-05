@@ -1,0 +1,34 @@
+name: gpt-engineer
+binary: gpt-engineer
+aliases: []
+category:
+- agent
+- build
+lang:
+- all
+summary: CLI tool generating complete codebases from high-level specifications and
+  natural language prompts.
+homepage: https://github.com/gpt-engineer-org/gpt-engineer
+docs: https://gpt-engineer.readthedocs.io/
+detect:
+  version_args:
+  - --version
+  local:
+    files:
+    - prompt
+use_when:
+- Starting a greenfield project from a single prompt description
+avoid_when:
+- Refactoring existing large enterprise repositories with strict style constraints
+risk:
+  level: high
+  effects:
+  - write_files
+  - execute_code
+  - network_access
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - overwriting existing files
+guardrails:
+- Inspect generated project structure before running generated entrypoint scripts.

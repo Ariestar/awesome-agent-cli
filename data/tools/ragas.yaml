@@ -1,0 +1,26 @@
+name: ragas
+binary: ragas
+aliases: []
+category:
+- test
+lang:
+- python
+summary: Evaluation framework and CLI for retrieval-augmented generation and multi-step
+  agents.
+homepage: https://github.com/explodinggradients/ragas
+docs: https://docs.ragas.io
+detect:
+  version_args:
+  - --version
+use_when:
+- Evaluating context recall, precision, and faithfulness of agent retrieval systems
+avoid_when:
+- General text summarization evaluation without RAG context
+risk:
+  level: medium
+  effects:
+  - network_access
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - scoring large evaluation datasets

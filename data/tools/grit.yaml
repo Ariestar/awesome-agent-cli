@@ -1,0 +1,31 @@
+name: grit
+binary: grit
+aliases: []
+category:
+- agent
+- formatter
+lang:
+- all
+summary: Agentic program transformation and automated refactoring CLI tool supporting
+  GritQL query patterns.
+homepage: https://github.com/getgrit/gritql
+docs: https://docs.grit.io
+detect:
+  version_args:
+  - --version
+  local:
+    dirs:
+    - .grit
+use_when:
+- Applying structural search-and-replace rules with AST awareness across codebases
+avoid_when:
+- Freeform generative conversational coding without formal rules
+risk:
+  level: medium
+  effects:
+  - read_files
+  - write_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - applying rewrite patterns across files

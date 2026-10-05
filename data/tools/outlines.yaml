@@ -1,0 +1,27 @@
+name: outlines
+binary: outlines
+aliases: []
+category:
+- agent
+- runtime
+lang:
+- python
+summary: Guided generation CLI enforcing context-free grammars and regex schemas on
+  agent outputs.
+homepage: https://github.com/dottxt-ai/outlines
+docs: https://outlines-dev.github.io/outlines/
+detect:
+  version_args:
+  - --version
+use_when:
+- Guiding token generation with regex, JSON schemas, or CFGs for guaranteed parsable
+  output
+avoid_when:
+- Unstructured creative text writing
+risk:
+  level: low
+  effects:
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for: []

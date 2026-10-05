@@ -1,0 +1,28 @@
+name: checkov
+binary: checkov
+aliases: []
+category:
+- security
+- infra
+lang:
+- all
+summary: Static analysis tool for infrastructure-as-code security and compliance policies.
+homepage: https://github.com/bridgecrewio/checkov
+docs: https://www.checkov.io
+detect:
+  version_args:
+  - --version
+  local:
+    files:
+    - .checkov.yaml
+use_when:
+- Auditing Terraform, CloudFormation, and Kubernetes manifests for security misconfigurations
+avoid_when:
+- Scanning compiled binary executable files
+risk:
+  level: low
+  effects:
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for: []

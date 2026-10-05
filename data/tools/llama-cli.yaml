@@ -1,0 +1,24 @@
+name: llama-cli
+binary: llama-cli
+aliases: []
+category:
+- runtime
+lang:
+- all
+summary: Llama.cpp CLI for running GGUF quantized models with minimal overhead.
+homepage: https://github.com/ggerganov/llama.cpp
+docs: https://github.com/ggerganov/llama.cpp#readme
+detect:
+  version_args:
+  - --version
+use_when:
+- Running quantized GGUF models directly on CPU, Apple Silicon, or discrete GPUs
+avoid_when:
+- Enterprise distributed inference across multiple GPU nodes
+risk:
+  level: low
+  effects:
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for: []

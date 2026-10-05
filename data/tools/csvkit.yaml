@@ -1,0 +1,25 @@
+name: csvkit
+binary: csvkit
+aliases: []
+category:
+- text
+lang:
+- python
+summary: Suite of command-line tools for converting, slicing, querying, and analyzing
+  CSV files.
+homepage: https://github.com/wireservice/csvkit
+docs: https://csvkit.readthedocs.io
+detect:
+  version_args:
+  - --version
+use_when:
+- Executing SQL queries on raw CSV files or cleaning headers via terminal pipelines
+avoid_when:
+- Operating on non-tabular binary file formats
+risk:
+  level: low
+  effects:
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for: []

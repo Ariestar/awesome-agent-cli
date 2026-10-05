@@ -1,0 +1,26 @@
+name: unstructured
+binary: unstructured-ingest
+aliases: []
+category:
+- agent-context
+- text
+lang:
+- all
+summary: Data ingestion CLI for preprocessing unstructured files into clean text chunks
+  for RAG.
+homepage: https://github.com/Unstructured-IO/unstructured
+docs: https://docs.unstructured.io
+detect:
+  version_args:
+  - --version
+use_when:
+- Preprocessing heterogeneous document directories before vector embedding
+avoid_when:
+- Single file quick cat inspection
+risk:
+  level: low
+  effects:
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for: []

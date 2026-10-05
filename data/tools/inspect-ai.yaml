@@ -1,0 +1,29 @@
+name: inspect-ai
+binary: inspect
+aliases: []
+category:
+- test
+- agent
+lang:
+- python
+summary: UK AI Safety Institute framework and CLI for evaluating agent capabilities
+  and autonomy.
+homepage: https://github.com/UKGovernmentBEIS/inspect_ai
+docs: https://inspect.ai-safety-institute.org.uk/
+detect:
+  version_args:
+  - --version
+use_when:
+- Benchmarking agent problem-solving, cyber capabilities, and autonomy with standard
+  safety suites
+avoid_when:
+- Basic unit testing of deterministic software functions
+risk:
+  level: medium
+  effects:
+  - network_access
+  - execute_code
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - running benchmark suites with tool execution

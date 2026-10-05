@@ -1,0 +1,30 @@
+name: nvm
+binary: nvm
+aliases: []
+category:
+- environment
+- runtime
+lang:
+- all
+summary: Node Version Manager CLI allowing per-shell switching between Node.js releases.
+homepage: https://github.com/nvm-sh/nvm
+docs: https://github.com/nvm-sh/nvm#readme
+detect:
+  version_args:
+  - --version
+  local:
+    files:
+    - .nvmrc
+use_when:
+- Switching between active Node.js LTS and legacy versions across projects
+avoid_when:
+- Static compiled binary projects with zero Node dependency
+risk:
+  level: medium
+  effects:
+  - install_packages
+  - environment_mutation
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - installing new node releases

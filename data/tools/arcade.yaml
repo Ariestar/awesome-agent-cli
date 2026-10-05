@@ -1,0 +1,30 @@
+name: arcade
+binary: arcade
+aliases: []
+category:
+- agent
+- security
+lang:
+- all
+summary: Tool execution and auth gateway CLI for securing agent actions.
+homepage: https://github.com/ArcadeAI/arcade-ai
+docs: https://docs.arcade.dev
+detect:
+  version_args:
+  - --version
+use_when:
+- Enforcing granular permission boundaries and user authorization on agent tool calls
+avoid_when:
+- Single-user local test environments with no security constraints
+risk:
+  level: high
+  effects:
+  - network_access
+  - remote_write
+  - secret_exposure
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - authorizing sensitive scopes
+guardrails:
+- Enforce least privilege access for connected services.

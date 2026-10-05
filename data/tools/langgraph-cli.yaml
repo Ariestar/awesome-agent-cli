@@ -1,0 +1,30 @@
+name: langgraph-cli
+binary: langgraph
+aliases: []
+category:
+- agent
+- runtime
+lang:
+- python
+summary: CLI for testing, building, and running LangGraph stateful multi-agent workflows.
+homepage: https://github.com/langchain-ai/langgraph-cli
+docs: https://langchain-ai.github.io/langgraph/
+detect:
+  version_args:
+  - --version
+  local:
+    files:
+    - langgraph.json
+use_when:
+- Local testing and deployment of cyclical state machines and multi-agent graphs
+avoid_when:
+- Simple linear chains without state persistence
+risk:
+  level: medium
+  effects:
+  - network_access
+  - execute_code
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - deploying graph servers

@@ -1,0 +1,30 @@
+name: devika
+binary: devika
+aliases: []
+category:
+- agent
+lang:
+- all
+summary: Autonomous open-source AI software engineer CLI supporting research and multi-language
+  development.
+homepage: https://github.com/stitionai/devika
+docs: https://github.com/stitionai/devika#readme
+detect:
+  version_args:
+  - --version
+use_when:
+- Planning, researching, and writing code across multiple technologies autonomously
+avoid_when:
+- Executing small manual edits that require zero planning
+risk:
+  level: high
+  effects:
+  - write_files
+  - execute_code
+  - network_access
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - executing shell commands
+guardrails:
+- Confirm proposed terminal execution steps.

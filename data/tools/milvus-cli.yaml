@@ -1,0 +1,25 @@
+name: milvus-cli
+binary: milvus_cli
+aliases: []
+category:
+- database
+lang:
+- python
+summary: Command-line interface for managing Milvus vector databases used by agents.
+homepage: https://github.com/milvus-io/milvus-cli
+docs: https://milvus.io/docs
+detect:
+  version_args:
+  - --version
+use_when:
+- Inspecting collections, partitions, and vector indexes in Milvus clusters
+avoid_when:
+- Working with local lightweight SQLite embeddings
+risk:
+  level: medium
+  effects:
+  - network_access
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - dropping vector collections

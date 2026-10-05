@@ -1,0 +1,28 @@
+name: morph
+binary: morph
+aliases: []
+category:
+- agent
+- environment
+lang:
+- all
+summary: CLI for Morph Cloud isolated agent execution environments.
+homepage: https://github.com/morph-cloud
+docs: https://morph.so/docs
+detect:
+  version_args:
+  - --version
+use_when:
+- Deploying agents into microVM cloud sandboxes with low latency
+avoid_when:
+- Local bare-metal execution without isolation requirements
+risk:
+  level: medium
+  effects:
+  - network_access
+  - environment_mutation
+  - remote_write
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - provisioning cloud agent instances

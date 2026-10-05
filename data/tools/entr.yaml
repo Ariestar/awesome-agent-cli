@@ -1,0 +1,27 @@
+name: entr
+binary: entr
+aliases: []
+category:
+- automation
+- build
+lang:
+- all
+summary: Event-driven file listener running arbitrary commands whenever selected files
+  change.
+homepage: https://github.com/eradman/entr
+docs: https://eradman.com/entrproject/
+detect:
+  version_args:
+  - --version
+use_when:
+- Triggering fast feedback loops like rebuilding or running tests upon file save
+avoid_when:
+- Static one-off tasks
+risk:
+  level: medium
+  effects:
+  - execute_code
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - triggering continuous execution loops

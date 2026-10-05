@@ -1,0 +1,29 @@
+name: clai
+binary: clai
+aliases: []
+category:
+- agent
+- shell
+lang:
+- all
+summary: IBM Command Line AI framework bringing agent skills into bash environments.
+homepage: https://github.com/IBM/clai
+docs: https://github.com/IBM/clai#readme
+detect:
+  version_args:
+  - --version
+use_when:
+- Adding skill-based intelligent assistants directly into Linux terminal sessions
+avoid_when:
+- Windows native environments without bash emulation
+risk:
+  level: high
+  effects:
+  - execute_code
+  - environment_mutation
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - installing shell skill hooks
+guardrails:
+- Review CLAI skill plugins before activating them in user shell sessions.

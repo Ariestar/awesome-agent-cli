@@ -1,0 +1,30 @@
+name: flywheel
+binary: flywheel
+aliases: []
+category:
+- container
+- infra
+lang:
+- all
+summary: CLI runner creating disposable Docker containers for untrusted agent code
+  runs.
+homepage: https://github.com/flywheel-io/flywheel
+docs: https://flywheel.io/docs
+detect:
+  version_args:
+  - --version
+use_when:
+- Spawning clean ephemeral containers to test generated code changes
+avoid_when:
+- Running code directly in the host OS
+risk:
+  level: high
+  effects:
+  - execute_code
+  - container_mutation
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - executing arbitrary root container commands
+guardrails:
+- Mount host volumes with read-only permissions in agent containers.

@@ -1,0 +1,29 @@
+name: dredd
+binary: dredd
+aliases: []
+category:
+- api
+- test
+lang:
+- all
+summary: Contract testing tool CLI validating backend API implementation against documentation.
+homepage: https://github.com/apiaryio/dredd
+docs: https://dredd.org
+detect:
+  version_args:
+  - --version
+  local:
+    files:
+    - dredd.yml
+use_when:
+- Verifying that real HTTP responses match backend API documentation
+avoid_when:
+- Mocking third-party external services
+risk:
+  level: medium
+  effects:
+  - network_access
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - running mutation test requests

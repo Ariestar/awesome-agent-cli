@@ -1,0 +1,28 @@
+name: aicommits
+binary: aicommits
+aliases: []
+category:
+- vcs
+- agent
+lang:
+- all
+summary: CLI tool producing git commit messages from staged changes using OpenAI models.
+homepage: https://github.com/Nutlope/aicommits
+docs: https://github.com/Nutlope/aicommits#readme
+detect:
+  version_args:
+  - --version
+use_when:
+- Creating concise commit messages from git status without manual drafting
+avoid_when:
+- Offline git commits without network connection
+risk:
+  level: medium
+  effects:
+  - read_files
+  - vcs_mutation
+  - network_access
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - applying generated commit messages

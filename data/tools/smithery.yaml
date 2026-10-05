@@ -1,0 +1,28 @@
+name: smithery
+binary: smithery
+aliases: []
+category:
+- mcp
+- package-manager
+lang:
+- all
+summary: Registry and package installer CLI for discovering and running MCP servers.
+homepage: https://github.com/smithery-ai/cli
+docs: https://smithery.ai/docs
+detect:
+  version_args:
+  - --version
+use_when:
+- Installing, configuring, and updating Model Context Protocol servers in agent configs
+avoid_when:
+- Manually managing stdio MCP server scripts
+risk:
+  level: medium
+  effects:
+  - network_access
+  - write_files
+  - install_packages
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - installing untrusted MCP server configurations

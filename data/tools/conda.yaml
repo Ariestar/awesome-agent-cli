@@ -1,0 +1,32 @@
+name: conda
+binary: conda
+aliases: []
+category:
+- package-manager
+- environment
+lang:
+- all
+summary: Cross-platform package and environment manager for data science and AI runtimes.
+homepage: https://github.com/conda/conda
+docs: https://docs.conda.io
+detect:
+  version_args:
+  - --version
+  local:
+    files:
+    - environment.yml
+use_when:
+- Managing deep learning CUDA libraries and isolated Python environments on multi-OS
+  machines
+avoid_when:
+- Standard web frontend JavaScript projects
+risk:
+  level: medium
+  effects:
+  - install_packages
+  - write_files
+  - network_access
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - removing environments

@@ -1,0 +1,27 @@
+name: instructor
+binary: instructor
+aliases: []
+category:
+- agent
+- test
+lang:
+- python
+summary: Type-safe structured extraction framework and CLI tool enforcing schemas
+  on model outputs.
+homepage: https://github.com/jxnl/instructor
+docs: https://python.useinstructor.com
+detect:
+  version_args:
+  - --version
+use_when:
+- Enforcing strict Pydantic models and schema validations on LLM outputs and agent
+  tools
+avoid_when:
+- Unconstrained text conversations
+risk:
+  level: low
+  effects:
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for: []

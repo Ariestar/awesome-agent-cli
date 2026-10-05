@@ -1,0 +1,28 @@
+name: mcp-get
+binary: mcp-get
+aliases: []
+category:
+- mcp
+- package-manager
+lang:
+- all
+summary: Community command-line package manager for MCP server discovery and installation.
+homepage: https://github.com/mcp-get/mcp-get
+docs: https://github.com/mcp-get/mcp-get#readme
+detect:
+  version_args:
+  - --version
+use_when:
+- Searching and installing published MCP servers directly from command line
+avoid_when:
+- Developing private internal MCP servers not listed in registries
+risk:
+  level: medium
+  effects:
+  - write_files
+  - network_access
+  - install_packages
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - installing MCP servers

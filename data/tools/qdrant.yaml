@@ -1,0 +1,29 @@
+name: qdrant
+binary: qdrant
+aliases: []
+category:
+- database
+- search
+lang:
+- all
+summary: Production-grade vector search engine CLI managing knowledge collections
+  for agents.
+homepage: https://github.com/qdrant/qdrant
+docs: https://qdrant.tech/documentation/
+detect:
+  version_args:
+  - --version
+use_when:
+- Indexing and searching vectors with complex metadata payload filtering
+avoid_when:
+- Simple in-process array matching
+risk:
+  level: medium
+  effects:
+  - read_files
+  - write_files
+  - network_access
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - deleting collections

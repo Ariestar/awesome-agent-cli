@@ -1,0 +1,25 @@
+name: scorecard
+binary: scorecard
+aliases: []
+category:
+- security
+lang:
+- all
+summary: OpenSSF tool analyzing open-source repositories against security best practices.
+homepage: https://github.com/ossf/scorecard
+docs: https://scorecard.dev
+detect:
+  version_args:
+  - --version
+use_when:
+- Evaluating the supply-chain security posture and maintenance risks of open-source
+  projects
+avoid_when:
+- Private offline repos with no remote forge
+risk:
+  level: low
+  effects:
+  - network_access
+  requires_auth: false
+  destructive: false
+  confirmation_required_for: []

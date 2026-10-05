@@ -1,0 +1,33 @@
+name: plandex
+binary: plandex
+aliases: []
+category:
+- agent
+lang:
+- all
+summary: Terminal-native AI development engine for complex, cross-file development
+  tasks.
+homepage: https://github.com/plandex-ai/plandex
+docs: https://plandex.ai/docs
+detect:
+  version_args:
+  - --version
+  local:
+    dirs:
+    - .plandex
+use_when:
+- Building complex multi-file features that require planning and sandboxed verification
+avoid_when:
+- One-off questions or small localized fixes
+risk:
+  level: high
+  effects:
+  - write_files
+  - network_access
+  - secret_exposure
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - applying plan changes to project
+guardrails:
+- Review planned diffs before merging them to the main workspace.

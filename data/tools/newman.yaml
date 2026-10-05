@@ -1,0 +1,27 @@
+name: newman
+binary: newman
+aliases: []
+category:
+- api
+- test
+lang:
+- all
+summary: Command-line collection runner for Postman API requests and automated testing.
+homepage: https://github.com/postmanlabs/newman
+docs: https://learning.postman.com/docs/collections/using-newman-cli/command-line-integration-with-newman/
+detect:
+  version_args:
+  - --version
+use_when:
+- Executing Postman collection JSON exports and checking assertions in automated pipelines
+avoid_when:
+- Plain curl single requests
+risk:
+  level: medium
+  effects:
+  - network_access
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - executing destructive collection runs

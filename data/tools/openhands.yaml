@@ -1,0 +1,38 @@
+name: openhands
+binary: openhands
+aliases: []
+category:
+- agent
+- automation
+lang:
+- all
+summary: Autonomous AI software engineering agent CLI for multi-file editing and automated
+  debugging.
+homepage: https://github.com/All-Hands-AI/OpenHands
+docs: https://docs.all-hands.dev/
+detect:
+  version_args:
+  - --version
+  local:
+    files:
+    - config.toml
+use_when:
+- The task requires an autonomous agent to inspect, edit, and verify code inside an
+  isolated environment
+avoid_when:
+- The user has not approved autonomous code modifications or command execution
+risk:
+  level: high
+  effects:
+  - execute_code
+  - write_files
+  - network_access
+  - secret_exposure
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - running generated commands
+  - committing changes
+guardrails:
+- Review proposed diffs before applying changes.
+- Run generated tests inside a sandbox.

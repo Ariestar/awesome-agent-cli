@@ -1,0 +1,29 @@
+name: bito
+binary: bito
+aliases: []
+category:
+- agent
+- test
+lang:
+- all
+summary: Developer CLI generating test cases, explaining diffs, and automating code
+  reviews.
+homepage: https://bito.ai
+docs: https://docs.bito.ai
+detect:
+  version_args:
+  - --version
+use_when:
+- Automating unit test generation, code explanations, and security reviews in terminal
+  pipelines
+avoid_when:
+- Autonomous multi-file repository edits without human review
+risk:
+  level: medium
+  effects:
+  - read_files
+  - network_access
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - generating test suites

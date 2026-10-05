@@ -1,0 +1,29 @@
+name: gptcommit
+binary: gptcommit
+aliases: []
+category:
+- vcs
+- agent
+lang:
+- all
+summary: Fast Rust CLI generating git commit messages locally from repository diffs.
+homepage: https://github.com/zurawiki/gptcommit
+docs: https://github.com/zurawiki/gptcommit#readme
+detect:
+  version_args:
+  - --version
+  local:
+    files:
+    - .gptcommit.toml
+use_when:
+- Integrating commit message synthesis into git prepare-commit-msg hooks
+avoid_when:
+- Repositories with automated release bot commits
+risk:
+  level: low
+  effects:
+  - read_files
+  - vcs_mutation
+  requires_auth: false
+  destructive: false
+  confirmation_required_for: []

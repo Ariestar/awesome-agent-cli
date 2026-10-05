@@ -1,0 +1,29 @@
+name: git-cliff
+binary: git-cliff
+aliases: []
+category:
+- vcs
+- docs
+lang:
+- all
+summary: Highly customizable changelog generator CLI with conventional commit parsing.
+homepage: https://github.com/orhun/git-cliff
+docs: https://git-cliff.org/docs/
+detect:
+  version_args:
+  - --version
+  local:
+    files:
+    - cliff.toml
+use_when:
+- Generating release changelogs automatically from git history and conventional commits
+avoid_when:
+- Repositories that do not use structured commit messages
+risk:
+  level: low
+  effects:
+  - read_files
+  - write_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for: []

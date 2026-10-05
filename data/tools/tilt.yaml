@@ -1,0 +1,31 @@
+name: tilt
+binary: tilt
+aliases: []
+category:
+- kubernetes
+- automation
+lang:
+- all
+summary: Multi-service microservice development and live-reload orchestrator for Kubernetes.
+homepage: https://github.com/tilt-dev/tilt
+docs: https://docs.tilt.dev
+detect:
+  version_args:
+  - version
+  local:
+    files:
+    - Tiltfile
+use_when:
+- Live updating containers in local Kubernetes upon code edits without full rebuilds
+avoid_when:
+- Static monolith batch runs
+risk:
+  level: medium
+  effects:
+  - deployment
+  - execute_code
+  - container_mutation
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - deploying live containers to clusters

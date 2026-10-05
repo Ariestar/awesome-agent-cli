@@ -1,0 +1,36 @@
+name: modal
+binary: modal
+aliases: []
+category:
+- cloud
+- deploy
+lang:
+- python
+summary: Serverless cloud infrastructure CLI running agentic workloads, fine-tuning,
+  and inference.
+homepage: https://github.com/modal-labs/modal-client
+docs: https://modal.com/docs
+detect:
+  version_args:
+  - --version
+  local:
+    files:
+    - modal.toml
+use_when:
+- Running serverless Python functions, remote GPU jobs, and agent sandbox containers
+avoid_when:
+- Running quick local scripts on CPU
+risk:
+  level: high
+  effects:
+  - deployment
+  - network_access
+  - execute_code
+  - cloud_mutation
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - deploying production app workloads
+  - stopping active cloud jobs
+guardrails:
+- Check cost budgets before executing high-GPU serverless jobs.

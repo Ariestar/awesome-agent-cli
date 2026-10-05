@@ -1,0 +1,35 @@
+name: daytona
+binary: daytona
+aliases: []
+category:
+- environment
+- infra
+lang:
+- all
+summary: Open-source development environment manager CLI provisioning isolated workspaces
+  for agents.
+homepage: https://github.com/daytonaio/daytona
+docs: https://www.daytona.io/docs/
+detect:
+  version_args:
+  - --version
+  local:
+    dirs:
+    - .daytona
+use_when:
+- Creating, starting, and sharing standardised developer environments for agentic
+  execution
+avoid_when:
+- Bare-metal local machine development
+risk:
+  level: high
+  effects:
+  - environment_mutation
+  - execute_code
+  - container_mutation
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - destroying workspaces
+guardrails:
+- Back up changes before destroying or resetting workspace instances.

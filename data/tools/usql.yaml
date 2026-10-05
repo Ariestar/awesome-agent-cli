@@ -1,0 +1,29 @@
+name: usql
+binary: usql
+aliases: []
+category:
+- database
+lang:
+- all
+summary: Universal command-line interface for PostgreSQL, MySQL, Oracle, SQLite, and
+  NoSQL databases.
+homepage: https://github.com/xo/usql
+docs: https://github.com/xo/usql#readme
+detect:
+  version_args:
+  - --version
+use_when:
+- Connecting to varied relational and NoSQL databases using a single consistent CLI
+  binary
+avoid_when:
+- Targeting features exclusive to vendor-specific interactive shells
+risk:
+  level: medium
+  effects:
+  - read_files
+  - write_files
+  - network_access
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - running drop or alter table queries

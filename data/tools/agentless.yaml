@@ -1,0 +1,29 @@
+name: agentless
+binary: agentless
+aliases: []
+category:
+- agent
+- test
+lang:
+- python
+summary: Lean agentic software development tool and CLI for automated fault localization
+  and repair.
+homepage: https://github.com/OpenAutoCoder/Agentless
+docs: https://github.com/OpenAutoCoder/Agentless#readme
+detect:
+  version_args:
+  - --version
+use_when:
+- Localizing faults and generating patches without multi-turn agent conversation overhead
+avoid_when:
+- Open-ended interactive exploration or architecture redesign
+risk:
+  level: medium
+  effects:
+  - read_files
+  - write_files
+  - network_access
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - applying generated repair patches

@@ -1,0 +1,25 @@
+name: polars-cli
+binary: polars-cli
+aliases: []
+category:
+- database
+lang:
+- all
+summary: Blazing fast DataFrame library CLI for running SQL queries against local
+  datasets.
+homepage: https://github.com/pola-rs/polars
+docs: https://docs.pola.rs
+detect:
+  version_args:
+  - --version
+use_when:
+- Querying tabular files with multithreaded SIMD vectorized execution in terminal
+avoid_when:
+- Unstructured textual notes
+risk:
+  level: low
+  effects:
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for: []

@@ -1,0 +1,26 @@
+name: firecrawl
+binary: firecrawl
+aliases: []
+category:
+- agent-context
+- search
+lang:
+- all
+summary: Turn entire websites into clean Markdown and structured JSON for agent consumption.
+homepage: https://github.com/mendableai/firecrawl
+docs: https://docs.firecrawl.dev
+detect:
+  version_args:
+  - --version
+use_when:
+- Scraping and converting complex multi-page documentation into LLM-ready markdown
+avoid_when:
+- Local offline file parsing
+risk:
+  level: medium
+  effects:
+  - network_access
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - initiating wide domain scrape jobs

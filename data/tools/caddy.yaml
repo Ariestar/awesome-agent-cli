@@ -1,0 +1,31 @@
+name: caddy
+binary: caddy
+aliases: []
+category:
+- network
+- deploy
+lang:
+- all
+summary: Fast, multi-platform web server and reverse proxy with automatic HTTPS by
+  default.
+homepage: https://github.com/caddyserver/caddy
+docs: https://caddyserver.com/docs/
+detect:
+  version_args:
+  - version
+  local:
+    files:
+    - Caddyfile
+use_when:
+- Serving static sites or reverse proxying local backend services with automatic TLS
+avoid_when:
+- Low-level kernel packet filtering
+risk:
+  level: medium
+  effects:
+  - network_access
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - binding privileged web ports

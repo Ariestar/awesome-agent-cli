@@ -1,0 +1,32 @@
+name: pr-agent
+binary: pr-agent
+aliases: []
+category:
+- vcs
+- agent
+lang:
+- python
+summary: Autonomous PR reviewer and test generator CLI from Qodo (Codium).
+homepage: https://github.com/Codium-ai/pr-agent
+docs: https://qodo-merge-docs.qodo.ai
+detect:
+  version_args:
+  - --version
+  local:
+    files:
+    - .pr_agent.toml
+use_when:
+- Reviewing GitHub pull requests, checking security issues, and generating test cases
+  from CLI
+avoid_when:
+- Local unstaged scratch code
+risk:
+  level: medium
+  effects:
+  - remote_read
+  - remote_write
+  - network_access
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - publishing review comments to remote pull requests

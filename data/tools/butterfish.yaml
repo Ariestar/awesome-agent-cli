@@ -1,0 +1,28 @@
+name: butterfish
+binary: butterfish
+aliases: []
+category:
+- agent
+- shell
+lang:
+- all
+summary: Terminal wrapper and shell booster embedding AI into interactive bash and
+  zsh sessions.
+homepage: https://github.com/bakks/butterfish
+docs: https://butterfish.run
+detect:
+  version_args:
+  - --version
+use_when:
+- Synthesizing command line instructions and autocompleting shell workflows with AI
+avoid_when:
+- Headless non-interactive scripts and cron environments
+risk:
+  level: medium
+  effects:
+  - network_access
+  - execute_code
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - running suggested shell actions

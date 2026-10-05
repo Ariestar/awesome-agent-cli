@@ -1,0 +1,32 @@
+name: augment
+binary: augment
+aliases: []
+category:
+- agent
+lang:
+- all
+summary: Augment Code CLI for enterprise repository indexing and AI-driven edits.
+homepage: https://www.augmentcode.com
+docs: https://docs.augmentcode.com
+detect:
+  version_args:
+  - --version
+  local:
+    files:
+    - .augmentignore
+use_when:
+- Indexing massive enterprise codebases with fast cross-repository context retrieval
+avoid_when:
+- Small open-source scripts with no proprietary indexing needs
+risk:
+  level: high
+  effects:
+  - read_files
+  - write_files
+  - network_access
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - applying codebase modifications
+guardrails:
+- Validate changes and repository privacy settings before indexing.

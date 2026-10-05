@@ -1,0 +1,31 @@
+name: fabric
+binary: fabric
+aliases: []
+category:
+- agent
+- text
+lang:
+- all
+summary: Modular command-line AI augmentation framework with curated system prompts
+  and task patterns.
+homepage: https://github.com/danielmiessler/fabric
+docs: https://github.com/danielmiessler/fabric#readme
+detect:
+  version_args:
+  - --version
+  local:
+    dirs:
+    - .config/fabric
+use_when:
+- Applying battle-tested prompt patterns to text piped through Unix command lines
+avoid_when:
+- Autonomous multi-step coding requiring direct file system modifications
+risk:
+  level: medium
+  effects:
+  - network_access
+  - read_files
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - executing outbound model queries with confidential text

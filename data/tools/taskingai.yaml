@@ -1,0 +1,27 @@
+name: taskingai
+binary: taskingai
+aliases: []
+category:
+- agent
+- infra
+lang:
+- python
+summary: Unified agent management and workflow execution CLI.
+homepage: https://github.com/TaskingAI/TaskingAI
+docs: https://docs.tasking.ai
+detect:
+  version_args:
+  - --version
+use_when:
+- Managing models, retrieval collections, and tool functions through a unified backend
+  CLI
+avoid_when:
+- Zero-dependency standalone shell utility tasks
+risk:
+  level: medium
+  effects:
+  - network_access
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - updating cloud workflow configurations

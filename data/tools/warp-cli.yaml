@@ -1,0 +1,27 @@
+name: warp-cli
+binary: warp-cli
+aliases: []
+category:
+- agent
+- shell
+lang:
+- all
+summary: Warp terminal AI assistant integrating documentation lookup and command generation.
+homepage: https://www.warp.dev
+docs: https://docs.warp.dev
+detect:
+  version_args:
+  - --version
+use_when:
+- Looking up shell syntax and error diagnostics inside the Warp terminal ecosystem
+avoid_when:
+- Running headless scripts without terminal integration
+risk:
+  level: medium
+  effects:
+  - network_access
+  - execute_code
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - running suggested shell actions

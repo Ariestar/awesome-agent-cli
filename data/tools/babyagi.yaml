@@ -1,0 +1,31 @@
+name: babyagi
+binary: babyagi
+aliases: []
+category:
+- agent
+- automation
+lang:
+- python
+summary: Task-driven autonomous agent CLI executing, reprioritizing, and generating
+  tasks.
+homepage: https://github.com/yoheinakajima/babyagi
+docs: https://github.com/yoheinakajima/babyagi#readme
+detect:
+  version_args:
+  - --version
+use_when:
+- Managing automated task queues where an agent self-generates and completes tasks
+  toward a target
+avoid_when:
+- Short-lived single-turn commands
+risk:
+  level: high
+  effects:
+  - network_access
+  - execute_code
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - unbounded autonomous execution loops
+guardrails:
+- Set maximum loop iterations to prevent runaway execution.

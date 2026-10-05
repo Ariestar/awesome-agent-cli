@@ -1,0 +1,31 @@
+name: vector-cli
+binary: vector
+aliases: []
+category:
+- metrics
+lang:
+- all
+summary: High-performance observability data pipeline CLI for collecting and routing
+  logs and metrics.
+homepage: https://github.com/vectordotdev/vector
+docs: https://vector.dev/docs/
+detect:
+  version_args:
+  - --version
+  local:
+    files:
+    - vector.toml
+    - vector.yaml
+use_when:
+- Transforming, filtering, and piping massive volumes of logs and metrics across destinations
+avoid_when:
+- Basic stdout piping without routing needs
+risk:
+  level: medium
+  effects:
+  - network_access
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - starting background telemetry forwarders

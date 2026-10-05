@@ -1,0 +1,28 @@
+name: crawl4ai
+binary: crawl4ai
+aliases: []
+category:
+- agent-context
+- search
+lang:
+- python
+summary: Open-source, LLM-friendly web crawler and data extractor CLI.
+homepage: https://github.com/unclecode/crawl4ai
+docs: https://crawl4ai.com
+detect:
+  version_args:
+  - --version
+use_when:
+- Extracting clean, token-efficient markdown representations of modern web applications
+  for LLMs
+avoid_when:
+- Performing authenticated form mutations on live production sites
+risk:
+  level: medium
+  effects:
+  - network_access
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - crawling external URLs with rate limits

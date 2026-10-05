@@ -1,0 +1,26 @@
+name: braintrust
+binary: braintrust
+aliases: []
+category:
+- test
+- debug
+lang:
+- all
+summary: Enterprise evaluation, dataset curation, and proxy CLI for agent teams.
+homepage: https://github.com/braintrustdata
+docs: https://www.braintrust.dev/docs
+detect:
+  version_args:
+  - --version
+use_when:
+- Running regression test suites on agent prompts and managing golden datasets
+avoid_when:
+- Ad-hoc exploratory prompt prototyping
+risk:
+  level: medium
+  effects:
+  - network_access
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - updating remote datasets

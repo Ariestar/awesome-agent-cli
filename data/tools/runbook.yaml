@@ -1,0 +1,30 @@
+name: runbook
+binary: runbook
+aliases: []
+category:
+- agent
+- automation
+lang:
+- all
+summary: Runbook CLI for project environment scanning and tool recommendations for
+  AI agents.
+homepage: https://github.com/Ariestar/agent-runbook
+docs: https://github.com/Ariestar/agent-runbook#readme
+detect:
+  version_args:
+  - --version
+  local:
+    files:
+    - runbook.toml
+use_when:
+- Scanning machine and repository environments to provide context-aware CLI tool guidance
+  to agents
+avoid_when:
+- Writing manual environment configuration scripts from scratch
+risk:
+  level: low
+  effects:
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for: []

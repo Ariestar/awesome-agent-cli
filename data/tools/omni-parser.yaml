@@ -1,0 +1,26 @@
+name: omni-parser
+binary: omniparsed
+aliases: []
+category:
+- agent
+- automation
+lang:
+- python
+summary: Microsoft visual recognition CLI converting UI screenshots into structured
+  agent action spaces.
+homepage: https://github.com/microsoft/OmniParser
+docs: https://github.com/microsoft/OmniParser#readme
+detect:
+  version_args:
+  - --version
+use_when:
+- Parsing screen images to detect bounding boxes and interactable UI icons for agents
+avoid_when:
+- Text-only terminal processing
+risk:
+  level: low
+  effects:
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for: []

@@ -1,0 +1,24 @@
+name: whisper
+binary: whisper
+aliases: []
+category:
+- agent-context
+lang:
+- all
+summary: OpenAI automatic speech recognition CLI converting audio recordings to text.
+homepage: https://github.com/openai/whisper
+docs: https://github.com/openai/whisper#readme
+detect:
+  version_args:
+  - --version
+use_when:
+- Transcribing meeting recordings and audio podcasts into textual agent context
+avoid_when:
+- Real-time low-latency voice chat on edge devices
+risk:
+  level: low
+  effects:
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for: []

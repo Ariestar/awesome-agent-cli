@@ -1,0 +1,31 @@
+name: tabby
+binary: tabby
+aliases: []
+category:
+- agent
+- runtime
+lang:
+- all
+summary: Self-hosted AI coding assistant and language server CLI for local repository
+  completions.
+homepage: https://github.com/TabbyML/tabby
+docs: https://tabby.tabbyml.com
+detect:
+  version_args:
+  - --version
+  local:
+    dirs:
+    - .tabby
+use_when:
+- Hosting private code completion and chat services on on-premise infrastructure
+avoid_when:
+- Using SaaS API models directly without self-hosting hardware
+risk:
+  level: medium
+  effects:
+  - read_files
+  - network_access
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - indexing proprietary repositories

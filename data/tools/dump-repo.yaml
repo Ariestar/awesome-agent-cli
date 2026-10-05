@@ -1,0 +1,24 @@
+name: dump-repo
+binary: dump-repo
+aliases: []
+category:
+- agent-context
+lang:
+- all
+summary: CLI tool extracting relevant code snippets matching token budgets.
+homepage: https://github.com/jimmylbr/dump-repo
+docs: https://github.com/jimmylbr/dump-repo#readme
+detect:
+  version_args:
+  - --version
+use_when:
+- Extracting repo segments that fit precisely into a specified LLM context window
+avoid_when:
+- Working with full codebase editors
+risk:
+  level: low
+  effects:
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for: []

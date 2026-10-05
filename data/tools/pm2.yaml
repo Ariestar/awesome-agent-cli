@@ -1,0 +1,34 @@
+name: pm2
+binary: pm2
+aliases: []
+category:
+- runtime
+- automation
+lang:
+- all
+summary: Production runtime and process manager for Node.js applications with load
+  balancing.
+homepage: https://github.com/Unitech/pm2
+docs: https://pm2.keymetrics.io
+detect:
+  version_args:
+  - --version
+  local:
+    files:
+    - ecosystem.config.js
+use_when:
+- Keeping server apps alive forever with clustering and automated zero-downtime reloads
+avoid_when:
+- Ephemeral short-lived script runs
+risk:
+  level: high
+  effects:
+  - execute_code
+  - read_processes
+  - write_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - deleting registered daemon services
+guardrails:
+- Check running service names before calling pm2 delete.

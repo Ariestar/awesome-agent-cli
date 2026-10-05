@@ -1,0 +1,25 @@
+name: acp
+binary: acp
+aliases: []
+category:
+- mcp
+- agent
+lang:
+- all
+summary: Agent Communication Protocol CLI for agent-to-agent and tool discovery.
+homepage: https://github.com/modelcontextprotocol
+docs: https://modelcontextprotocol.io
+detect:
+  version_args:
+  - --version
+use_when:
+- Establishing agent-to-agent communication channels and discovery protocols
+avoid_when:
+- Single agent standalone scripts
+risk:
+  level: low
+  effects:
+  - network_access
+  requires_auth: false
+  destructive: false
+  confirmation_required_for: []

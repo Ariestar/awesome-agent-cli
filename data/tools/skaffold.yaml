@@ -1,0 +1,34 @@
+name: skaffold
+binary: skaffold
+aliases: []
+category:
+- kubernetes
+- deploy
+lang:
+- all
+summary: Google continuous development tool facilitating iterative build and deploy
+  to Kubernetes.
+homepage: https://github.com/GoogleContainerTools/skaffold
+docs: https://skaffold.dev
+detect:
+  version_args:
+  - version
+  local:
+    files:
+    - skaffold.yaml
+use_when:
+- Automating build, push, and deployment pipelines for Kubernetes microservices
+avoid_when:
+- Single-container standalone Docker runs
+risk:
+  level: high
+  effects:
+  - deployment
+  - container_mutation
+  - network_access
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - running automated continuous deployment loops
+guardrails:
+- Review target kubecontext before initiating skaffold dev.

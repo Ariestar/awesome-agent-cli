@@ -1,0 +1,24 @@
+name: faster-whisper
+binary: faster-whisper
+aliases: []
+category:
+- agent-context
+lang:
+- all
+summary: Fast speech-to-text CLI using CTranslate2 reimplementation of Whisper models.
+homepage: https://github.com/SYSTRAN/faster-whisper
+docs: https://github.com/SYSTRAN/faster-whisper#readme
+detect:
+  version_args:
+  - --version
+use_when:
+- Transcribing audio files with minimal GPU/CPU overhead and fast execution
+avoid_when:
+- Zero-dependency standalone shell scripts
+risk:
+  level: low
+  effects:
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for: []

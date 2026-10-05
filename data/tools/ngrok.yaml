@@ -1,0 +1,30 @@
+name: ngrok
+binary: ngrok
+aliases: []
+category:
+- network
+- automation
+lang:
+- all
+summary: Reverse proxy tool creating public secure tunnels to locally hosted web services.
+homepage: https://github.com/inconshreveable/ngrok
+docs: https://ngrok.com/docs
+detect:
+  version_args:
+  - version
+use_when:
+- Exposing a local web server to receive external webhooks and public callbacks
+avoid_when:
+- Private isolated network topologies
+risk:
+  level: high
+  effects:
+  - network_access
+  - remote_read
+  - remote_write
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - opening unauthenticated public ingress tunnels
+guardrails:
+- Require auth tokens and domain restrictions when exposing local ports.

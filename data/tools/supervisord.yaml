@@ -1,0 +1,29 @@
+name: supervisord
+binary: supervisorctl
+aliases: []
+category:
+- automation
+lang:
+- python
+summary: Client control tool for supervisor process management and daemon supervision.
+homepage: https://github.com/Supervisor/supervisor
+docs: http://supervisord.org
+detect:
+  version_args:
+  - --version
+  local:
+    files:
+    - supervisord.conf
+use_when:
+- Supervising, restarting, and querying statuses of background processes on Unix servers
+avoid_when:
+- Transient interactive shell sessions
+risk:
+  level: medium
+  effects:
+  - read_processes
+  - execute_code
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - stopping managed system services

@@ -1,0 +1,30 @@
+name: bruno
+binary: bru
+aliases: []
+category:
+- api
+- test
+lang:
+- all
+summary: CLI runner for Bruno API collections allowing programmatic execution in terminals.
+homepage: https://github.com/usebruno/bruno
+docs: https://docs.usebruno.com/bru-cli/overview.html
+detect:
+  version_args:
+  - --version
+  local:
+    files:
+    - bruno.json
+use_when:
+- Running local Git-friendly API request collections in headless CI and automation
+avoid_when:
+- Cloud-locked proprietary collection workflows
+risk:
+  level: medium
+  effects:
+  - network_access
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - running mutating collection requests

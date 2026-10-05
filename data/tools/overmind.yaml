@@ -1,0 +1,30 @@
+name: overmind
+binary: overmind
+aliases: []
+category:
+- terminal
+- automation
+lang:
+- all
+summary: Process manager for Procfile-based applications using tmux under the hood.
+homepage: https://github.com/DarthSim/overmind
+docs: https://github.com/DarthSim/overmind#readme
+detect:
+  version_args:
+  - --version
+  local:
+    files:
+    - Procfile
+use_when:
+- Running multi-component web development stacks with independent tmux pseudo-terminals
+avoid_when:
+- Single standalone script execution
+risk:
+  level: medium
+  effects:
+  - execute_code
+  - read_processes
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - killing managed process trees

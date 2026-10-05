@@ -1,0 +1,31 @@
+name: mprocs
+binary: mprocs
+aliases: []
+category:
+- terminal
+- automation
+lang:
+- all
+summary: TUI tool for launching and monitoring multiple long-running commands in parallel.
+homepage: https://github.com/pvolok/mprocs
+docs: https://github.com/pvolok/mprocs#readme
+detect:
+  version_args:
+  - --version
+  local:
+    files:
+    - mprocs.yaml
+use_when:
+- Viewing concurrent log streams from several build, test, and server tasks in one
+  terminal
+avoid_when:
+- Headless non-interactive scripts with no display
+risk:
+  level: medium
+  effects:
+  - execute_code
+  - read_processes
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - killing active background tasks

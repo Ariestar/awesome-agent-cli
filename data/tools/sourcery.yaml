@@ -1,0 +1,31 @@
+name: sourcery
+binary: sourcery
+aliases: []
+category:
+- lint
+- formatter
+lang:
+- python
+summary: Command-line refactoring and code review agent checking Python, JavaScript,
+  and TypeScript.
+homepage: https://sourcery.ai
+docs: https://docs.sourcery.ai
+detect:
+  version_args:
+  - --version
+  local:
+    files:
+    - .sourcery.yaml
+use_when:
+- Scanning code for anti-patterns and applying immediate clean code refactorings
+avoid_when:
+- Languages outside Python, JS, and TS ecosystems
+risk:
+  level: medium
+  effects:
+  - read_files
+  - write_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - applying automatic in-place code refactorings

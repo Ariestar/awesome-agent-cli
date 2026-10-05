@@ -1,0 +1,28 @@
+name: hurl
+binary: hurl
+aliases: []
+category:
+- api
+- test
+lang:
+- all
+summary: Command-line HTTP request runner and test suite tool using simple plain text
+  syntax.
+homepage: https://github.com/Orange-OpenSource/hurl
+docs: https://hurl.dev
+detect:
+  version_args:
+  - --version
+use_when:
+- Running sequential HTTP integration tests defined in clean plain text files
+avoid_when:
+- Visual GUI API exploration
+risk:
+  level: medium
+  effects:
+  - network_access
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - dispatching state-changing HTTP requests

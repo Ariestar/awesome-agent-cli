@@ -1,0 +1,24 @@
+name: lms
+binary: lms
+aliases: []
+category:
+- runtime
+lang:
+- all
+summary: Command-line tool managing and serving local models through LM Studio.
+homepage: https://lmstudio.ai
+docs: https://lmstudio.ai/docs/cli
+detect:
+  version_args:
+  - --version
+use_when:
+- Controlling LM Studio server instances and downloading local models from terminal
+avoid_when:
+- Headless Linux environments without LM Studio installed
+risk:
+  level: low
+  effects:
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for: []

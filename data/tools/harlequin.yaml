@@ -1,0 +1,27 @@
+name: harlequin
+binary: harlequin
+aliases: []
+category:
+- database
+- terminal
+lang:
+- all
+summary: Terminal SQL IDE for DuckDB, SQLite, and PostgreSQL with syntax highlighting.
+homepage: https://github.com/tconbeer/harlequin
+docs: https://harlequin.sh
+detect:
+  version_args:
+  - --version
+use_when:
+- Interactively viewing query plans, schemas, and table records inside terminal tabs
+avoid_when:
+- Automated headless batch script executions
+risk:
+  level: medium
+  effects:
+  - read_files
+  - write_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - executing mutating database queries

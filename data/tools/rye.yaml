@@ -1,0 +1,31 @@
+name: rye
+binary: rye
+aliases: []
+category:
+- package-manager
+- toolchain
+lang:
+- python
+summary: Comprehensive Python project and toolchain manager from Astral.
+homepage: https://github.com/astral-sh/rye
+docs: https://rye.astral.sh
+detect:
+  version_args:
+  - --version
+  local:
+    files:
+    - requirements.lock
+use_when:
+- Managing Python interpreter installations and project packaging under one CLI tool
+avoid_when:
+- Working with system-managed OS Python packages
+risk:
+  level: medium
+  effects:
+  - install_packages
+  - write_files
+  - network_access
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - installing python interpreter toolchains

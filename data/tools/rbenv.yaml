@@ -1,0 +1,30 @@
+name: rbenv
+binary: rbenv
+aliases: []
+category:
+- environment
+- runtime
+lang:
+- ruby
+summary: Groom your app's Ruby environment with simple and unobtrusive version switching.
+homepage: https://github.com/rbenv/rbenv
+docs: https://github.com/rbenv/rbenv#readme
+detect:
+  version_args:
+  - --version
+  local:
+    files:
+    - .ruby-version
+use_when:
+- Switching between Ruby versions across Ruby on Rails application directories
+avoid_when:
+- Non-Ruby development workspaces
+risk:
+  level: medium
+  effects:
+  - install_packages
+  - environment_mutation
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - installing ruby versions

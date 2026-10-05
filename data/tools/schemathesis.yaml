@@ -1,0 +1,28 @@
+name: schemathesis
+binary: schemathesis
+aliases: []
+category:
+- api
+- test
+lang:
+- python
+summary: Property-based API testing tool CLI generating test cases directly from OpenAPI
+  schemas.
+homepage: https://github.com/schemathesis/schemathesis
+docs: https://schemathesis.readthedocs.io
+detect:
+  version_args:
+  - --version
+use_when:
+- Fuzzing live web APIs with automatically generated schema boundary cases
+avoid_when:
+- Unit testing internal private functions
+risk:
+  level: medium
+  effects:
+  - network_access
+  - execute_code
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - sending fuzzing payloads to live servers

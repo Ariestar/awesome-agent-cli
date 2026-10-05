@@ -1,0 +1,28 @@
+name: vllm
+binary: vllm
+aliases: []
+category:
+- runtime
+- infra
+lang:
+- python
+summary: High-throughput LLM serving engine and CLI with PagedAttention and OpenAI-compatible
+  endpoints.
+homepage: https://github.com/vllm-project/vllm
+docs: https://docs.vllm.ai
+detect:
+  version_args:
+  - --version
+use_when:
+- Serving high-concurrency model inference for multi-agent fleets on GPU infrastructure
+avoid_when:
+- Low-resource laptop CPU environments
+risk:
+  level: medium
+  effects:
+  - read_files
+  - network_access
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - allocating GPU memory pools

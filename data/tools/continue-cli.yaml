@@ -1,0 +1,32 @@
+name: continue-cli
+binary: continue
+aliases: []
+category:
+- agent
+lang:
+- all
+summary: Headless CLI for the open-source Continue AI coding framework.
+homepage: https://github.com/continuedev/continue
+docs: https://docs.continue.dev
+detect:
+  version_args:
+  - --version
+  local:
+    dirs:
+    - .continue
+use_when:
+- Scripting codebase indexing and batch code generation with Continue configurations
+avoid_when:
+- Using Continue through the IDE GUI exclusively
+risk:
+  level: high
+  effects:
+  - write_files
+  - network_access
+  - execute_code
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - modifying workspace files
+guardrails:
+- Verify generated code before accepting file modifications.

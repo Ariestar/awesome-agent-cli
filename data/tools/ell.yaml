@@ -1,0 +1,27 @@
+name: ell
+binary: ell
+aliases: []
+category:
+- agent
+- test
+lang:
+- python
+summary: Prompt engineering and agent optimization framework CLI treating prompts
+  as programs.
+homepage: https://github.com/MadcowD/ell
+docs: https://docs.ell.so
+detect:
+  version_args:
+  - --version
+use_when:
+- Treating prompts as functional code with automated versioning, tracing, and monitoring
+  in terminal
+avoid_when:
+- Static prompt string templates without version tracking
+risk:
+  level: low
+  effects:
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for: []

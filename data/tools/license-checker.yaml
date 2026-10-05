@@ -1,0 +1,25 @@
+name: license-checker
+binary: license-checker
+aliases: []
+category:
+- security
+- package-manager
+lang:
+- all
+summary: NPM dependency license analyzer checking legal compliance of package trees.
+homepage: https://github.com/davglass/license-checker
+docs: https://github.com/davglass/license-checker#readme
+detect:
+  version_args:
+  - --version
+use_when:
+- Verifying that third-party node_modules licenses comply with organizational policy
+avoid_when:
+- Checking non-npm package ecosystems
+risk:
+  level: low
+  effects:
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for: []

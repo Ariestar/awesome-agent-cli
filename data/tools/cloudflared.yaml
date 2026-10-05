@@ -1,0 +1,30 @@
+name: cloudflared
+binary: cloudflared
+aliases: []
+category:
+- network
+- cloud
+lang:
+- all
+summary: Cloudflare Tunnel client exposing local servers securely without public IP
+  addresses.
+homepage: https://github.com/cloudflare/cloudflared
+docs: https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/
+detect:
+  version_args:
+  - version
+use_when:
+- Creating zero-trust inbound tunnels routed through Cloudflare DNS
+avoid_when:
+- Direct peer-to-peer LAN networking
+risk:
+  level: high
+  effects:
+  - network_access
+  - remote_write
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - establishing remote ingress routing rules
+guardrails:
+- Review tunnel hostname routes before running cloudflared tunnel run.

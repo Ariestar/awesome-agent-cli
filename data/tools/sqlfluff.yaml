@@ -1,0 +1,31 @@
+name: sqlfluff
+binary: sqlfluff
+aliases: []
+category:
+- lint
+- formatter
+lang:
+- all
+summary: Modular SQL linter and auto-formatter supporting multiple SQL dialects for
+  agents.
+homepage: https://github.com/sqlfluff/sqlfluff
+docs: https://docs.sqlfluff.com
+detect:
+  version_args:
+  - --version
+  local:
+    files:
+    - .sqlfluff
+use_when:
+- Formatting and enforcing style and anti-pattern rules across SQL files
+avoid_when:
+- Non-SQL programming languages
+risk:
+  level: medium
+  effects:
+  - read_files
+  - write_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - running automated sql fix commands

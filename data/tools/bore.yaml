@@ -1,0 +1,26 @@
+name: bore
+binary: bore
+aliases: []
+category:
+- network
+lang:
+- all
+summary: Modern, minimalist TCP tunnel CLI written in Rust for forwarding local ports
+  to remote.
+homepage: https://github.com/ekzhang/bore
+docs: https://github.com/ekzhang/bore#readme
+detect:
+  version_args:
+  - --version
+use_when:
+- Quickly forwarding a local port to a remote bore server without account signups
+avoid_when:
+- Enterprise production traffic requiring enterprise SSO
+risk:
+  level: medium
+  effects:
+  - network_access
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - forwarding local sensitive ports

@@ -1,0 +1,24 @@
+name: cortex
+binary: cortex
+aliases: []
+category:
+- runtime
+lang:
+- all
+summary: Local AI model engine CLI running models locally via ONNX and llama.cpp.
+homepage: https://github.com/janhq/cortex
+docs: https://cortex.so/docs
+detect:
+  version_args:
+  - --version
+use_when:
+- Managing local LLM engines packaged with C++ backends in cross-platform environments
+avoid_when:
+- Cloud serverless APIs with managed infrastructure
+risk:
+  level: low
+  effects:
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for: []

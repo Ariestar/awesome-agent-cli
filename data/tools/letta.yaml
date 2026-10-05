@@ -1,0 +1,33 @@
+name: letta
+binary: letta
+aliases: []
+category:
+- agent
+- runtime
+lang:
+- python
+summary: Stateful agent platform and CLI managing perpetual memory tiers.
+homepage: https://github.com/letta-ai/letta
+docs: https://docs.letta.com
+detect:
+  version_args:
+  - --version
+  local:
+    dirs:
+    - .letta
+use_when:
+- Running perpetual stateful agents with core memory editing and archival recall
+avoid_when:
+- Ephemeral ephemeral prompt pipelines
+risk:
+  level: high
+  effects:
+  - write_files
+  - network_access
+  - execute_code
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - deleting persistent agent personas
+guardrails:
+- Confirm agent memory partition deletions.

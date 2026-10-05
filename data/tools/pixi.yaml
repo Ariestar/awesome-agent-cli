@@ -1,0 +1,31 @@
+name: pixi
+binary: pixi
+aliases: []
+category:
+- package-manager
+- environment
+lang:
+- all
+summary: High-performance package management CLI based on the Conda ecosystem.
+homepage: https://github.com/prefix-dev/pixi
+docs: https://pixi.sh
+detect:
+  version_args:
+  - --version
+  local:
+    files:
+    - pixi.toml
+use_when:
+- Resolving multi-language dependencies (C++, Python, CUDA) in reproducible lockfiles
+avoid_when:
+- Simple pure JavaScript npm projects
+risk:
+  level: medium
+  effects:
+  - install_packages
+  - write_files
+  - network_access
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - modifying environment locks

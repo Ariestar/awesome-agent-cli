@@ -1,0 +1,36 @@
+name: sweep
+binary: sweep
+aliases: []
+category:
+- agent
+- vcs
+lang:
+- all
+summary: AI developer CLI for issue triaging, refactoring, and automated GitHub pull
+  request creation.
+homepage: https://github.com/sweepai/sweep
+docs: https://docs.sweep.dev
+detect:
+  version_args:
+  - --version
+  local:
+    files:
+    - sweep.yaml
+use_when:
+- Turning GitHub issues into draft PRs with automated unit testing and lint fixing
+avoid_when:
+- Local offline scratchpad development
+risk:
+  level: high
+  effects:
+  - write_files
+  - network_access
+  - remote_write
+  - vcs_mutation
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - pushing commits
+  - opening pull requests
+guardrails:
+- Verify generated branches and review PR bodies before publishing.

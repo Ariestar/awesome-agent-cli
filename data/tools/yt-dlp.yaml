@@ -1,0 +1,28 @@
+name: yt-dlp
+binary: yt-dlp
+aliases: []
+category:
+- automation
+- network
+lang:
+- all
+summary: Command-line media audio, video, and subtitle extractor for multimedia context
+  collection.
+homepage: https://github.com/yt-dlp/yt-dlp
+docs: https://github.com/yt-dlp/yt-dlp#readme
+detect:
+  version_args:
+  - --version
+use_when:
+- Downloading video subtitles or audio tracks for agent multimodal analysis
+avoid_when:
+- Local offline text processing
+risk:
+  level: medium
+  effects:
+  - network_access
+  - write_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - downloading large media files

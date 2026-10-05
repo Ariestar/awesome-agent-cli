@@ -1,0 +1,28 @@
+name: procfile
+binary: procfile
+aliases: []
+category:
+- automation
+lang:
+- all
+summary: CLI validator and runner for Procfile definitions in cloud and container
+  deployments.
+homepage: https://github.com/ddollar/foreman
+docs: https://devcenter.heroku.com/articles/procfile
+detect:
+  version_args:
+  - --version
+  local:
+    files:
+    - Procfile
+use_when:
+- Verifying Procfile declarations before pushing code to PaaS providers
+avoid_when:
+- Docker Compose stack workflows
+risk:
+  level: low
+  effects:
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for: []

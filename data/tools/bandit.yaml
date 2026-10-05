@@ -1,0 +1,30 @@
+name: bandit
+binary: bandit
+aliases: []
+category:
+- security
+- lint
+lang:
+- python
+summary: Security linter scanning Python codebases for common vulnerabilities using
+  AST analysis.
+homepage: https://github.com/PyCQA/bandit
+docs: https://bandit.readthedocs.io
+detect:
+  version_args:
+  - --version
+  local:
+    files:
+    - .bandit
+use_when:
+- Scanning Python code for insecure function calls, hardcoded passwords, and shell
+  injections
+avoid_when:
+- Scanning non-Python repositories
+risk:
+  level: low
+  effects:
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for: []

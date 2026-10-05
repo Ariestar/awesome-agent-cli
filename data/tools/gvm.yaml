@@ -1,0 +1,28 @@
+name: gvm
+binary: gvm
+aliases: []
+category:
+- environment
+- toolchain
+lang:
+- go
+summary: Go Version Manager CLI providing multi-version Go installation and environment
+  switching.
+homepage: https://github.com/moovweb/gvm
+docs: https://github.com/moovweb/gvm#readme
+detect:
+  version_args:
+  - version
+use_when:
+- Installing and switching between various Go releases on a single machine
+avoid_when:
+- Building projects in non-Go languages
+risk:
+  level: medium
+  effects:
+  - install_packages
+  - environment_mutation
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - switching global go toolchains

@@ -1,0 +1,29 @@
+name: tgi
+binary: text-generation-launcher
+aliases: []
+category:
+- runtime
+- infra
+lang:
+- all
+summary: Hugging Face Text Generation Inference production serving engine and launcher
+  CLI.
+homepage: https://github.com/huggingface/text-generation-inference
+docs: https://huggingface.co/docs/text-generation-inference/
+detect:
+  version_args:
+  - --version
+use_when:
+- Hosting enterprise-grade high-throughput LLM endpoints with continuous batching
+  and PagedAttention
+avoid_when:
+- Running small quantized models on lightweight laptop hardware
+risk:
+  level: medium
+  effects:
+  - network_access
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - spawning GPU inference servers

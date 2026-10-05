@@ -1,0 +1,25 @@
+name: summarize
+binary: summarize
+aliases: []
+category:
+- agent-context
+- docs
+lang:
+- all
+summary: Command-line utility generating hierarchical AST summaries of files for agents.
+homepage: https://github.com/steven-tey/summarize
+docs: https://github.com/steven-tey/summarize#readme
+detect:
+  version_args:
+  - --version
+use_when:
+- Extracting interfaces, signatures, and outlines without sending full file implementations
+avoid_when:
+- The agent needs full implementation source code to complete the edit
+risk:
+  level: low
+  effects:
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for: []

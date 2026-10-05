@@ -1,0 +1,31 @@
+name: chatdev
+binary: chatdev
+aliases: []
+category:
+- agent
+lang:
+- python
+summary: Communicative agent simulation CLI organizing agents as CEO, CPO, CTO, programmer,
+  and tester.
+homepage: https://github.com/OpenBMB/ChatDev
+docs: https://github.com/OpenBMB/ChatDev#readme
+detect:
+  version_args:
+  - --version
+use_when:
+- Prototyping software applications through multi-agent communicative development
+  loops
+avoid_when:
+- Maintaining large existing production software repositories
+risk:
+  level: high
+  effects:
+  - write_files
+  - network_access
+  - execute_code
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - running generated software builds
+guardrails:
+- Isolate generated applications during initial test runs.

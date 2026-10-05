@@ -1,0 +1,55 @@
+name: skills
+binary: npx
+aliases:
+- skills
+- add-skill
+category:
+- agent
+- agent-context
+- package-manager
+lang:
+- all
+platform:
+- local
+summary: npx-powered CLI for discovering, installing, updating, and syncing portable agent skills.
+homepage: https://github.com/vercel-labs/skills
+docs: https://github.com/vercel-labs/skills#readme
+detect:
+  version_args:
+  - skills
+  - --version
+  local:
+    files:
+    - skills-lock.json
+    dirs:
+    - .skills
+    package_json:
+      package_manager_prefixes: []
+use_when:
+- Install or update reusable instructions and workflows for coding agents with `npx skills`
+- List or sync project skills across supported agent directories
+avoid_when:
+- A skill repository is untrusted or has not been reviewed for prompt-injection and command instructions
+- The task only needs a one-off prompt instead of durable agent behavior
+risk:
+  level: high
+  effects:
+  - install_packages
+  - execute_code
+  - network_access
+  - read_files
+  - write_files
+  - secret_exposure
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - installing skills from remote or unreviewed repositories
+  - syncing skills into global or multi-agent directories
+  - removing or updating existing skills
+  - sharing private project context while searching or installing
+  - running generated or skill-provided commands
+guardrails:
+- Prefer listing available skills before installing from an unfamiliar repository.
+- Review SKILL.md and any bundled scripts before enabling a skill for an agent.
+- Use project scope by default; ask before installing or syncing global skills.
+- Pin or record trusted skill sources when reproducibility matters.

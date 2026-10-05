@@ -1,0 +1,26 @@
+name: trafilatura
+binary: trafilatura
+aliases: []
+category:
+- agent-context
+- search
+lang:
+- python
+summary: Python CLI for extracting main body text and metadata from web pages without
+  clutter.
+homepage: https://github.com/adbar/trafilatura
+docs: https://trafilatura.readthedocs.io
+detect:
+  version_args:
+  - --version
+use_when:
+- Scraping clean article body text from HTML files and web URLs
+avoid_when:
+- Interacting with JavaScript-rendered dynamic web forms
+risk:
+  level: low
+  effects:
+  - network_access
+  requires_auth: false
+  destructive: false
+  confirmation_required_for: []

@@ -1,0 +1,35 @@
+name: codegen
+binary: codegen
+aliases: []
+category:
+- agent
+- formatter
+lang:
+- all
+summary: Scriptable CLI for large-scale codebase transformation, automated refactoring,
+  and agentic migrations.
+homepage: https://github.com/codegen-sh/codegen
+docs: https://docs.codegen.com
+detect:
+  version_args:
+  - --version
+  local:
+    files:
+    - codegen.yml
+use_when:
+- Running program transformations, deprecation removals, and bulk refactorings across
+  repos
+avoid_when:
+- Single-line manual adjustments or non-code documentation edits
+risk:
+  level: high
+  effects:
+  - write_files
+  - read_files
+  - execute_code
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - writing bulk AST transforms to disk
+guardrails:
+- Run git diff and automated tests after executing large-scale refactor codemods.

@@ -1,0 +1,35 @@
+name: crewai
+binary: crewai
+aliases: []
+category:
+- agent
+- automation
+lang:
+- python
+summary: CLI for scaffolding, training, deploying, and running collaborative multi-agent
+  crews.
+homepage: https://github.com/crewAIInc/crewAI
+docs: https://docs.crewai.com
+detect:
+  version_args:
+  - --version
+  local:
+    files:
+    - pyproject.toml
+use_when:
+- Building, testing, and managing teams of specialized agents working toward a shared
+  goal
+avoid_when:
+- Simple single-prompt scripts with no role delegation
+risk:
+  level: high
+  effects:
+  - execute_code
+  - write_files
+  - network_access
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - executing crew custom tool calls
+guardrails:
+- Inspect tool permissions configured for individual crew agents.

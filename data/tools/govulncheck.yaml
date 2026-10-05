@@ -1,0 +1,27 @@
+name: govulncheck
+binary: govulncheck
+aliases: []
+category:
+- security
+- test
+lang:
+- go
+summary: Official Go vulnerability scanner identifying CVEs in imported package call
+  graphs.
+homepage: https://github.com/golang/vuln
+docs: https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck
+detect:
+  version_args:
+  - --version
+use_when:
+- Checking Go modules to verify if vulnerable functions are actually invoked in the
+  code
+avoid_when:
+- Scanning non-Go codebases
+risk:
+  level: low
+  effects:
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for: []

@@ -1,0 +1,33 @@
+name: helmfile
+binary: helmfile
+aliases: []
+category:
+- kubernetes
+- deploy
+lang:
+- all
+summary: Declarative orchestrator for managing and deploying multiple Helm chart releases.
+homepage: https://github.com/helmfile/helmfile
+docs: https://helmfile.readthedocs.io
+detect:
+  version_args:
+  - --version
+  local:
+    files:
+    - helmfile.yaml
+use_when:
+- Syncing, diffing, and deploying dozens of Helm releases declaratively
+avoid_when:
+- Simple single-chart manual testing
+risk:
+  level: high
+  effects:
+  - deployment
+  - network_access
+  - cloud_mutation
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - applying chart releases to production namespaces
+guardrails:
+- Use helmfile diff before applying live state changes.

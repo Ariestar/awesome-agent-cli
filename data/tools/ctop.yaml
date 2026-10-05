@@ -1,0 +1,24 @@
+name: ctop
+binary: ctop
+aliases: []
+category:
+- container
+lang:
+- all
+summary: Top-like real-time metric viewer for active container resource consumption.
+homepage: https://github.com/bcicen/ctop
+docs: https://ctop.sh
+detect:
+  version_args:
+  - -v
+use_when:
+- Monitoring live container CPU, memory, and network usage in a terminal dashboard
+avoid_when:
+- Headless non-interactive scripts
+risk:
+  level: low
+  effects:
+  - read_processes
+  requires_auth: false
+  destructive: false
+  confirmation_required_for: []

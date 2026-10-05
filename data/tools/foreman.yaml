@@ -1,0 +1,29 @@
+name: foreman
+binary: foreman
+aliases: []
+category:
+- automation
+lang:
+- ruby
+summary: Application lifecycle manager for Procfile-based web and worker processes.
+homepage: https://github.com/ddollar/foreman
+docs: https://github.com/ddollar/foreman#readme
+detect:
+  version_args:
+  - version
+  local:
+    files:
+    - Procfile
+use_when:
+- Managing local multi-process application stacks with unified stdout logging
+avoid_when:
+- Operating system daemon level services
+risk:
+  level: medium
+  effects:
+  - execute_code
+  - read_processes
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - starting background process fleets

@@ -1,0 +1,31 @@
+name: pyenv
+binary: pyenv
+aliases: []
+category:
+- environment
+- runtime
+lang:
+- python
+summary: Simple Python version management CLI allowing seamless per-directory Python
+  switching.
+homepage: https://github.com/pyenv/pyenv
+docs: https://github.com/pyenv/pyenv#readme
+detect:
+  version_args:
+  - --version
+  local:
+    files:
+    - .python-version
+use_when:
+- Changing global and directory-specific Python versions seamlessly via shims
+avoid_when:
+- Systems relying strictly on containerized runtime environments
+risk:
+  level: medium
+  effects:
+  - install_packages
+  - environment_mutation
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - installing python build dependencies

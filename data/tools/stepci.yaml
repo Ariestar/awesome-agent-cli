@@ -1,0 +1,27 @@
+name: stepci
+binary: stepci
+aliases: []
+category:
+- api
+- test
+lang:
+- all
+summary: Automated API testing and monitoring CLI using declarative YAML test suites.
+homepage: https://github.com/stepci/stepci
+docs: https://docs.stepci.com
+detect:
+  version_args:
+  - --version
+use_when:
+- Authoring and executing multi-step API integration tests with declarative assertions
+avoid_when:
+- Browser UI end-to-end tests
+risk:
+  level: medium
+  effects:
+  - network_access
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - running automated live endpoint test suites

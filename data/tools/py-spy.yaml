@@ -1,0 +1,26 @@
+name: py-spy
+binary: py-spy
+aliases: []
+category:
+- debug
+lang:
+- python
+summary: Sampling profiler for Python applications visualizing bottlenecks without
+  restarting.
+homepage: https://github.com/benfred/py-spy
+docs: https://github.com/benfred/py-spy#readme
+detect:
+  version_args:
+  - --version
+use_when:
+- Inspecting call stacks and generating flame graphs for running Python agent processes
+avoid_when:
+- Profiling non-Python processes
+risk:
+  level: medium
+  effects:
+  - read_processes
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - attaching to running production process IDs

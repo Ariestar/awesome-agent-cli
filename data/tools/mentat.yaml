@@ -1,0 +1,33 @@
+name: mentat
+binary: mentat
+aliases: []
+category:
+- agent
+lang:
+- all
+summary: AI coding assistant CLI with AST parsing and git coordination for multi-file
+  edits.
+homepage: https://github.com/AbanteAI/mentat
+docs: https://mentat.ai
+detect:
+  version_args:
+  - --version
+  local:
+    dirs:
+    - .mentat
+use_when:
+- Editing code across multiple files while tracking changes with git context
+avoid_when:
+- The task requires simple single-file generation without project AST awareness
+risk:
+  level: high
+  effects:
+  - write_files
+  - network_access
+  - secret_exposure
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - applying multi-file diffs
+guardrails:
+- Inspect generated edits before committing.

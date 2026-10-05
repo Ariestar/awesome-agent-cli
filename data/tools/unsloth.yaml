@@ -1,0 +1,27 @@
+name: unsloth
+binary: unsloth
+aliases: []
+category:
+- runtime
+- build
+lang:
+- python
+summary: Fast and memory-efficient fine-tuning and export framework CLI for open LLMs.
+homepage: https://github.com/unslothai/unsloth
+docs: https://docs.unsloth.ai
+detect:
+  version_args:
+  - --version
+use_when:
+- Fine-tuning open models like Llama, Mistral, and Gemma with maximum VRAM efficiency
+avoid_when:
+- Calling closed proprietary model APIs
+risk:
+  level: medium
+  effects:
+  - read_files
+  - write_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - initiating high-VRAM model fine-tuning runs

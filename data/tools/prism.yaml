@@ -1,0 +1,26 @@
+name: prism
+binary: prism
+aliases: []
+category:
+- api
+- test
+lang:
+- all
+summary: HTTP mock server CLI generating realistic mock responses from OpenAPI specifications.
+homepage: https://github.com/stoplightio/prism
+docs: https://stoplight.io/open-source/prism
+detect:
+  version_args:
+  - --version
+use_when:
+- Spinning up a mock API endpoint to test client code against OpenAPI specs
+avoid_when:
+- Running live backend integration services with databases
+risk:
+  level: low
+  effects:
+  - read_files
+  - network_access
+  requires_auth: false
+  destructive: false
+  confirmation_required_for: []

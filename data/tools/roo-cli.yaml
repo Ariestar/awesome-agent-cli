@@ -1,0 +1,32 @@
+name: roo-cli
+binary: roo-cli
+aliases: []
+category:
+- agent
+lang:
+- all
+summary: Headless CLI runner for Roo Code agent sessions in CI and terminal environments.
+homepage: https://github.com/RooVetGit/Roo-Code
+docs: https://docs.roocode.com
+detect:
+  version_args:
+  - --version
+  local:
+    dirs:
+    - .roo
+use_when:
+- Running Roo Code agent instructions autonomously from scripts or headless environments
+avoid_when:
+- Interactive graphical VS Code extension usage
+risk:
+  level: high
+  effects:
+  - write_files
+  - execute_code
+  - network_access
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - executing batch code changes
+guardrails:
+- Review tool permissions and diffs before applying changes in automated environments.

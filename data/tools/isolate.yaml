@@ -1,0 +1,27 @@
+name: isolate
+binary: isolate
+aliases: []
+category:
+- security
+- environment
+lang:
+- all
+summary: Lightweight sandbox runner CLI enforcing resource and syscall limits on agent
+  subprocesses.
+homepage: https://github.com/iovisor/isolate
+docs: https://github.com/iovisor/isolate#readme
+detect:
+  version_args:
+  - --version
+use_when:
+- Limiting CPU, memory, and disk syscall access when executing untrusted scripts
+avoid_when:
+- Non-Linux systems without cgroups
+risk:
+  level: medium
+  effects:
+  - execute_code
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - initializing control groups

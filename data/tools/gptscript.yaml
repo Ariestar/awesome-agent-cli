@@ -1,0 +1,31 @@
+name: gptscript
+binary: gptscript
+aliases: []
+category:
+- agent
+- automation
+lang:
+- all
+summary: Natural language script execution engine that translates English files into
+  CLI workflows.
+homepage: https://github.com/gptscript-ai/gptscript
+docs: https://docs.gptscript.ai
+detect:
+  version_args:
+  - --version
+use_when:
+- Creating repeatable automation workflows written in plain English with tool definitions
+avoid_when:
+- Strict deterministic build tasks with zero tolerance for probabilistic variance
+risk:
+  level: high
+  effects:
+  - execute_code
+  - write_files
+  - network_access
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - executing tool actions defined in scripts
+guardrails:
+- Review tool permissions defined inside GPTScript files before execution.

@@ -1,0 +1,26 @@
+name: code2prompt
+binary: code2prompt
+aliases: []
+category:
+- agent-context
+- docs
+lang:
+- all
+summary: CLI tool to convert codebases into single LLM prompt files with tree structures
+  and token counting.
+homepage: https://github.com/mufeedvh/code2prompt
+docs: https://github.com/mufeedvh/code2prompt#readme
+detect:
+  version_args:
+  - --version
+use_when:
+- Packaging entire projects into a single well-structured prompt for web LLM interfaces
+avoid_when:
+- Incremental editing inside a local coding agent with direct file access
+risk:
+  level: low
+  effects:
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for: []

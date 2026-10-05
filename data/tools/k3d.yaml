@@ -1,0 +1,31 @@
+name: k3d
+binary: k3d
+aliases: []
+category:
+- kubernetes
+- container
+lang:
+- all
+summary: Lightweight CLI wrapper creating single- and multi-node k3s clusters inside
+  Docker.
+homepage: https://github.com/k3d-io/k3d
+docs: https://k3d.io
+detect:
+  version_args:
+  - --version
+use_when:
+- Spinning up ephemeral multi-node Kubernetes clusters locally within seconds
+avoid_when:
+- Production cloud bare-metal cluster management
+risk:
+  level: high
+  effects:
+  - container_mutation
+  - execute_code
+  - network_access
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - deleting local kubernetes clusters
+guardrails:
+- Confirm cluster name before running cluster delete commands.

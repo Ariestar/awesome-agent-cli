@@ -1,0 +1,33 @@
+name: composio
+binary: composio
+aliases: []
+category:
+- agent
+- mcp
+lang:
+- all
+summary: CLI toolchain providing 250+ production integrations and tool execution for
+  agents.
+homepage: https://github.com/ComposioHQ/composio
+docs: https://docs.composio.dev
+detect:
+  version_args:
+  - --version
+use_when:
+- Equipping agents with authenticated tools for GitHub, Jira, Slack, Linear, and cloud
+  platforms
+avoid_when:
+- Offline local operations with zero external service access
+risk:
+  level: high
+  effects:
+  - remote_write
+  - network_access
+  - secret_exposure
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - authenticating external integrations
+  - running write operations
+guardrails:
+- Review scope of OAuth connections granted to agent tools.

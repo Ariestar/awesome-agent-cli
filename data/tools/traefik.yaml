@@ -1,0 +1,32 @@
+name: traefik
+binary: traefik
+aliases: []
+category:
+- network
+- infra
+lang:
+- all
+summary: Cloud-native HTTP reverse proxy and load balancer with automatic service
+  discovery.
+homepage: https://github.com/traefik/traefik
+docs: https://doc.traefik.io/traefik/
+detect:
+  version_args:
+  - version
+  local:
+    files:
+    - traefik.yml
+    - traefik.toml
+use_when:
+- Dynamically routing ingress traffic to Docker containers and Kubernetes pods
+avoid_when:
+- Simple static file serving
+risk:
+  level: medium
+  effects:
+  - network_access
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - binding production ingress ports

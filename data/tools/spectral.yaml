@@ -1,0 +1,28 @@
+name: spectral
+binary: spectral
+aliases: []
+category:
+- api
+- lint
+lang:
+- all
+summary: Flexible JSON/YAML linter for validating OpenAPI, AsyncAPI, and schema conventions.
+homepage: https://github.com/stoplightio/spectral
+docs: https://stoplight.io/open-source/spectral
+detect:
+  version_args:
+  - --version
+  local:
+    files:
+    - .spectral.yaml
+use_when:
+- Validating API specification files against company API style guidelines
+avoid_when:
+- Formatting general program source code
+risk:
+  level: low
+  effects:
+  - read_files
+  requires_auth: false
+  destructive: false
+  confirmation_required_for: []

@@ -1,0 +1,35 @@
+name: dbmate
+binary: dbmate
+aliases: []
+category:
+- database
+- automation
+lang:
+- all
+summary: Database migration tool with zero dependencies supporting multiple relational
+  backends.
+homepage: https://github.com/amacneil/dbmate
+docs: https://github.com/amacneil/dbmate#readme
+detect:
+  version_args:
+  - --version
+  local:
+    dirs:
+    - db/migrations
+use_when:
+- Running reproducible schema migrations without heavy language runtime dependencies
+avoid_when:
+- Using ORM-managed schema migration engines
+risk:
+  level: high
+  effects:
+  - write_files
+  - network_access
+  - execute_code
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - applying schema rollbacks
+  - dropping migration tables
+guardrails:
+- Review migration scripts before applying migrations to production databases.
