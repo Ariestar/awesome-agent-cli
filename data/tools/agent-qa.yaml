@@ -1,0 +1,41 @@
+name: agent-qa
+binary: agent-qa
+aliases: []
+category:
+- test
+- browser-test
+- agent
+lang:
+- all
+summary: Self-improving QA CLI for natural-language web and mobile tests.
+homepage: https://github.com/vostride/agent-qa
+docs: https://vostride.com/docs/agent-qa/cli
+detect:
+  version_args:
+  - --version
+  local:
+    files: []
+    dirs: []
+    package_json:
+      package_manager_prefixes: []
+use_when:
+- Run Agent QA web or mobile test suites from a terminal or CI job.
+avoid_when:
+- Node.js 24 or the required browser or mobile drivers are unavailable.
+risk:
+  level: high
+  effects:
+  - execute_code
+  - network_access
+  - read_files
+  - write_files
+  - remote_write
+  - secret_exposure
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - Running tests against production services.
+  - Executing test hooks that can alter fixtures or external systems.
+guardrails:
+- Review test steps and hook scripts before a run; they can change application state.
+- Prefer test accounts and non-production targets unless production execution is approved.
