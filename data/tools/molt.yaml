@@ -1,0 +1,38 @@
+name: molt
+binary: molt
+aliases: []
+category:
+- agent
+lang:
+- all
+summary: Coding agent that won't say done on a false claim; checks pass on disk or it refuses.
+homepage: https://github.com/solvyxtech/molt
+docs: https://solvyx.xyz/work/molt
+detect:
+  version_args:
+  - --version
+  local:
+    files:
+    - .molt/done.yml
+    dirs:
+    - .molt
+    package_json:
+      package_manager_prefixes: []
+use_when:
+- Use a terminal or desktop coding agent that verifies done against on-disk checks
+avoid_when:
+- The task should stay within the current agent session without a separate molt install
+risk:
+  level: high
+  effects:
+  - execute_code
+  - network_access
+  - write_files
+  - secret_exposure
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - running autonomous edits
+guardrails:
+- Review generated diffs and project instruction files before accepting changes.
+- Confirm `.molt/done.yml` checks match the intended acceptance bar before treating a receipt as done.
