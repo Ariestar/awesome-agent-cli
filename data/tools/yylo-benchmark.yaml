@@ -1,0 +1,43 @@
+name: yylo-benchmark
+binary: yylo-benchmark
+aliases: []
+category:
+  - test
+  - agent
+lang:
+  - all
+platform:
+  - local
+summary: Thin trusted-host experiment runner for historical Ledger tasks, supplied coding prompts, and workflows.
+homepage: https://github.com/yylo-dev/yylo-benchmark
+docs: https://github.com/yylo-dev/yylo-benchmark#readme
+detect:
+  version_args:
+    - --version
+  local:
+    files: []
+    dirs: []
+    package_json:
+      package_manager_prefixes: []
+use_when:
+  - Compare models, harnesses and configurations across independent attempts with retained outputs
+  - Evaluate retained outputs later with different checks or judges
+avoid_when:
+  - A combined score, winner, or capability inference is needed
+  - Filesystem, account, or network isolation is required
+risk:
+  level: high
+  effects:
+    - execute_code
+    - network_access
+    - read_files
+    - write_files
+    - secret_exposure
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+    - running attempts whose harnesses inherit host authentication
+    - rerunning attempts explicitly into a new output directory
+guardrails:
+  - Treat the runner as workspace and context hygiene, not an isolation boundary; it inherits host authentication and can access other host paths.
+  - Keep publication, global installation, and live model calls as separate authorized actions.
