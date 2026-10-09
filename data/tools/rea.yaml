@@ -1,0 +1,43 @@
+name: rea
+binary: rea
+aliases:
+- rea-agents
+category:
+- security
+- debug
+- mcp
+lang:
+- all
+summary: Local CLI and MCP tools for agents to inspect binaries and JavaScript/Electron applications with evidence provenance.
+homepage: https://rea.tools
+docs: https://github.com/morluto/rea/blob/main/docs/cli.md
+detect:
+  version_args:
+  - --version
+use_when:
+- Inspect a caller-selected application artifact and consume JSON observations, source locations, and explicit unknowns
+- Map readable JavaScript/Electron modules, imports, and IPC relationships before choosing deeper analysis
+avoid_when:
+- Deep native analysis is required but no supported Hopper, Ghidra, or IDA provider is configured
+- Opaque JavaScript bytecode requires a decoder that is not available
+- The workflow assumes every command is read-only or automatically sandboxed
+risk:
+  level: high
+  effects:
+  - read_files
+  - write_files
+  - read_processes
+  - execute_code
+  - network_access
+  - install_packages
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - launching or injecting into a target process
+  - changing analysis annotations
+  - installing Hopper or changing agent configuration during setup
+guardrails:
+- Select the exact artifact, process, and output paths; use static inspection when execution is not authorized.
+- Configure bring-your-own Hopper, Ghidra, or IDA for deep native analysis; do not infer engine availability from MCP startup.
+- Use annotation and runtime operations only when the requested task authorizes their effects.
+- Review the setup plan before approving configuration writes or the optional Hopper installation.
