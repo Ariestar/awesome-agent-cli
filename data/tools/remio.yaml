@@ -1,0 +1,44 @@
+name: remio
+binary: remio
+aliases: []
+category:
+- agent-context
+- agent
+- text
+lang:
+- all
+summary: Query a local-first AI memory and knowledge base through the Remio desktop client.
+homepage: https://remio.ai/
+docs: https://remio.ai/
+detect:
+  version_args:
+  - --version
+  local:
+    files: []
+    dirs: []
+    package_json:
+      package_manager_prefixes: []
+use_when:
+- Retrieve focused personal context from the user's Remio knowledge base for an AI agent
+- Read indexed local files, webpages, recordings, emails, messages, images, notes, or synced folders through Remio
+- Avoid repeatedly scanning folders, grepping files, or loading whole documents into a prompt
+avoid_when:
+- The Remio desktop client is not installed, running, or authorized for the current user
+- The user has not approved using private personal or work knowledge as agent context
+- A standalone memory backend, MCP server, or open-source vector database is required
+risk:
+  level: high
+  effects:
+  - read_files
+  - write_files
+  - secret_exposure
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - reading sensitive personal or work knowledge
+  - adding or changing synced folders
+  - creating or updating notes
+guardrails:
+- Confirm Remio desktop is installed and running before invoking the CLI.
+- Treat retrieved context as private user data and do not share it with external models or services without user approval.
+- Prefer targeted semantic retrieval over broad folder scans or whole-document prompt loading.
