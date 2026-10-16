@@ -1,0 +1,42 @@
+name: cloudpin
+binary: cloudpin
+aliases: []
+category:
+- security
+- cloud
+lang:
+- all
+summary: Pins cloud accounts (Azure, AWS, GCP, Vercel, GitHub, Kubernetes, Supabase, Cloudflare) to a repo and blocks CLI commands, yours or your AI agent's, that would run on the wrong one.
+homepage: https://github.com/paureis/cloudpin
+docs: https://github.com/paureis/cloudpin#readme
+detect:
+  version_args:
+  - --version
+  local:
+    files:
+    - .cloudpin.yml
+    dirs: []
+    package_json:
+      package_manager_prefixes: []
+use_when:
+- Before running az, aws, gcloud, vercel, gh, kubectl, helm, supabase or wrangler in a repo that has a .cloudpin.yml
+- Checking which account a cloud CLI command would use, without running it (cloudpin explain -- <command>)
+avoid_when:
+- The repo has no .cloudpin.yml and the user has not asked to pin accounts
+risk:
+  level: medium
+  effects:
+  - read_files
+  - write_files
+  - environment_mutation
+  - execute_code
+  - network_access
+  - remote_read
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - cloudpin init (writes .cloudpin.yml with the accounts logged in now)
+  - installing agent hooks or shell wrappers
+guardrails:
+- When cloudpin blocks a command, stop and tell the user; do not switch accounts or set CLOUDPIN_SKIP to get past it.
+- Without a hook installed, run cloudpin explain -- <command> before cloud write operations.
