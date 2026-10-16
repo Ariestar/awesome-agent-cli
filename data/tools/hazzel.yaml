@@ -1,0 +1,52 @@
+name: hazzel
+binary: hazzel
+aliases: []
+category:
+- agent
+- vcs
+lang:
+- python
+summary: Approval-first terminal coding agent — every write is a diff you approve,
+  and undo reverts only the agent's hunks.
+homepage: https://github.com/mukundzha/hazzel
+docs: https://github.com/mukundzha/hazzel#readme
+detect:
+  version_args:
+  - --version
+  local:
+    dirs:
+    - .hazzel
+use_when:
+- Editing or running code in a real repo where you want to see every proposed
+  change before it lands
+- Reviewing an uncommitted diff, drafting a commit message, or reverting a single
+  agent change without losing edits you made afterwards
+- Tracking real spend with provider-reported tokens instead of estimates
+avoid_when:
+- Unattended autonomous runs — every mutating action needs approval
+- Environments where an interactive TTY approval step is impossible
+risk:
+  level: high
+  effects:
+  - read_files
+  - write_files
+  - execute_code
+  - network_access
+  - vcs_mutation
+  - delete_files
+  - secret_exposure
+  requires_auth: true
+  destructive: true
+  confirmation_required_for:
+  - every file write, not covered by an /allow rule
+  - every shell command that is not in the read-only allowlist
+  - git commit, staged separately behind its own diff preview
+guardrails:
+- Every mutating tool call stops at a diff preview and blocks until approved.
+- Prior bytes are snapshotted under ~/.config/hazzel/undo before any write lands,
+  so /undo reverts the agent's hunks and keeps edits you made afterwards.
+- Commands are sandboxed to the project root; `git reset --hard` and `git clean`
+  are blocked outright and raw `git commit` is redirected to /commit.
+- Ask-once approvals settle a y/N for the whole turn instead of re-prompting.
+- Opt out of the interactive gate entirely with /allow only when you accept that
+  writes land unprompted.

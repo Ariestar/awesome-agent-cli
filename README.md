@@ -4,7 +4,7 @@
 
 **A machine-readable awesome list of CLI tools, risks, effects, and guardrails for AI coding agents.**
 
-![tools: 460](https://img.shields.io/badge/tools-460-0969da) ![categories: 45](https://img.shields.io/badge/categories-45-8250df) ![yaml: registry](https://img.shields.io/badge/yaml-registry-2ea44f) [![GitHub Repo stars](https://img.shields.io/github/stars/Ariestar/awesome-agent-cli?style=social)](https://github.com/Ariestar/awesome-agent-cli) [![Awesome](https://awesome.re/badge-flat.svg)](https://awesome.re) [![Update README](https://github.com/Ariestar/awesome-agent-cli/actions/workflows/update-readme.yml/badge.svg)](https://github.com/Ariestar/awesome-agent-cli/actions/workflows/update-readme.yml)
+![tools: 461](https://img.shields.io/badge/tools-461-0969da) ![categories: 45](https://img.shields.io/badge/categories-45-8250df) ![yaml: registry](https://img.shields.io/badge/yaml-registry-2ea44f) [![GitHub Repo stars](https://img.shields.io/github/stars/Ariestar/awesome-agent-cli?style=social)](https://github.com/Ariestar/awesome-agent-cli) [![Awesome](https://awesome.re/badge-flat.svg)](https://awesome.re) [![Update README](https://github.com/Ariestar/awesome-agent-cli/actions/workflows/update-readme.yml/badge.svg)](https://github.com/Ariestar/awesome-agent-cli/actions/workflows/update-readme.yml)
 
 </div>
 
@@ -35,11 +35,11 @@ AI coding agents do not just need a list of binaries. They need operational cont
 
 | Signal | Value |
 | --- | ---: |
-| Tool cards | **460** |
+| Tool cards | **461** |
 | Category tags | **45** |
 | Language/ecosystem tags | **32** |
-| GitHub-backed tools | **379** with live star badges |
-| Risk distribution | Low: **95** · Medium: **221** · High: **144** |
+| GitHub-backed tools | **380** with live star badges |
+| Risk distribution | Low: **95** · Medium: **221** · High: **145** |
 
 ## Quick use
 
@@ -110,7 +110,7 @@ The matrix below shows category coverage and risk posture. A tool can appear in 
 
 | Category | Total | Low | Medium | High | Posture |
 | --- | ---: | ---: | ---: | ---: | --- |
-| [`agent`](#agent) | 106 | 12 | 28 | 66 | control plane |
+| [`agent`](#agent) | 107 | 12 | 28 | 67 | control plane |
 | [`agent-context`](#agent-context) | 26 | 18 | 2 | 6 | control plane |
 | [`api`](#api) | 13 | 3 | 9 | 1 | control plane |
 | [`archive`](#archive) | 4 | 0 | 4 | 0 | operator surface |
@@ -154,7 +154,7 @@ The matrix below shows category coverage and risk posture. A tool can appear in 
 | [`text`](#text) | 13 | 7 | 5 | 1 | control plane |
 | [`toolchain`](#toolchain) | 5 | 0 | 4 | 1 | control plane |
 | [`type-checker`](#type-checker) | 3 | 2 | 1 | 0 | operator surface |
-| [`vcs`](#vcs) | 13 | 3 | 7 | 3 | control plane |
+| [`vcs`](#vcs) | 14 | 3 | 7 | 4 | control plane |
 
 ## Catalog
 
@@ -163,7 +163,7 @@ Browse by category. Multi-category tools intentionally appear in every relevant 
 <details open>
 <summary><strong>Popular categories</strong></summary>
 
-- [`agent`](#agent) — 106 tools
+- [`agent`](#agent) — 107 tools
 - [`test`](#test) — 43 tools
 - [`package-manager`](#package-manager) — 42 tools
 - [`automation`](#automation) — 33 tools
@@ -278,6 +278,8 @@ Browse by category. Multi-category tools intentionally appear in every relevant 
   `groq` · ![risk: medium](https://img.shields.io/badge/risk-medium-d29922) · lang: `all` · also: `agent`
 - [guidance](https://guidance.readthedocs.io) — Microsoft templating and constrained generation CLI for interweaving generation and logic.  \
   `guidance` · ![risk: low](https://img.shields.io/badge/risk-low-2ea44f) · lang: `python` · also: `automation` · [![GitHub Repo stars](https://img.shields.io/github/stars/guidance-ai/guidance?style=social)](https://github.com/guidance-ai/guidance)
+- [hazzel](https://github.com/mukundzha/hazzel#readme) — Approval-first terminal coding agent — every write is a diff you approve, and undo reverts only the agent's hunks.  \
+  `hazzel` · ![risk: high](https://img.shields.io/badge/risk-high-cf222e) · lang: `python` · also: `vcs` · [![GitHub Repo stars](https://img.shields.io/github/stars/mukundzha/hazzel?style=social)](https://github.com/mukundzha/hazzel)
 - [inspect-ai](https://inspect.ai-safety-institute.org.uk/) — UK AI Safety Institute framework and CLI for evaluating agent capabilities and autonomy.  \
   `inspect` · ![risk: medium](https://img.shields.io/badge/risk-medium-d29922) · lang: `python` · also: `agent` · [![GitHub Repo stars](https://img.shields.io/github/stars/UKGovernmentBEIS/inspect_ai?style=social)](https://github.com/UKGovernmentBEIS/inspect_ai)
 - [instructor](https://python.useinstructor.com) — Type-safe structured extraction framework and CLI tool enforcing schemas on model outputs.  \
@@ -1758,6 +1760,8 @@ Browse by category. Multi-category tools intentionally appear in every relevant 
   `git-lfs` · ![risk: medium](https://img.shields.io/badge/risk-medium-d29922) · lang: `all` · [![GitHub Repo stars](https://img.shields.io/github/stars/git-lfs/git-lfs?style=social)](https://github.com/git-lfs/git-lfs)
 - [gptcommit](https://github.com/zurawiki/gptcommit#readme) — Fast Rust CLI generating git commit messages locally from repository diffs.  \
   `gptcommit` · ![risk: low](https://img.shields.io/badge/risk-low-2ea44f) · lang: `all` · also: `agent` · [![GitHub Repo stars](https://img.shields.io/github/stars/zurawiki/gptcommit?style=social)](https://github.com/zurawiki/gptcommit)
+- [hazzel](https://github.com/mukundzha/hazzel#readme) — Approval-first terminal coding agent — every write is a diff you approve, and undo reverts only the agent's hunks.  \
+  `hazzel` · ![risk: high](https://img.shields.io/badge/risk-high-cf222e) · lang: `python` · also: `vcs` · [![GitHub Repo stars](https://img.shields.io/github/stars/mukundzha/hazzel?style=social)](https://github.com/mukundzha/hazzel)
 - [lazygit](https://github.com/jesseduffield/lazygit#readme) — Terminal UI for git repositories.  \
   `lazygit` · ![risk: medium](https://img.shields.io/badge/risk-medium-d29922) · lang: `all` · [![GitHub Repo stars](https://img.shields.io/github/stars/jesseduffield/lazygit?style=social)](https://github.com/jesseduffield/lazygit)
 - [opencommit](https://github.com/di-sukharev/opencommit#readme) — AI-powered git commit message generator CLI analyzing diffs with conventional formats.  \
