@@ -1,0 +1,47 @@
+name: rowsafe
+binary: rowsafe
+aliases: []
+category:
+- database
+lang:
+- sql
+summary: PostgreSQL health diagnostics and tuning CLI with reviewed fixes and MCP integration.
+homepage: https://rowsafe.sh
+docs: https://rowsafe.sh/docs
+detect:
+  version_args:
+  - version
+  local:
+    files: []
+    dirs: []
+    package_json:
+      package_manager_prefixes: []
+use_when:
+- Inspect PostgreSQL health, queries, indexes, activity and settings
+- Review database tuning recommendations and proposed fixes
+avoid_when:
+- The target database, environment or granted permissions are unclear
+- Database changes have not been reviewed and explicitly approved
+risk:
+  level: high
+  effects:
+  - network_access
+  - requires_auth
+  - remote_read
+  - remote_write
+  - secret_exposure
+  - read_files
+  - write_files
+  requires_auth: true
+  destructive: true
+  confirmation_required_for:
+  - Applying fixes or tuning changes
+  - Enabling MCP write tools
+  - Saving connection configuration or project database selection
+  - Any operation affecting production data or configuration
+guardrails:
+- Confirm the database host, name, environment and permissions before connecting.
+- Review proposed changes before applying fixes or tuning; never pass --yes without explicit approval.
+- Keep MCP write tools disabled unless their use is explicitly approved and each proposed change is reviewed.
+- Protect database credentials and sensitive diagnostic output; use a read-only database role for inspection where supported.
+- Verify recovery arrangements before destructive operations; direct diagnostics do not imply an automatic restore point.
