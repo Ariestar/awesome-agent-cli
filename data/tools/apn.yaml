@@ -1,0 +1,60 @@
+name: apn
+binary: apn
+aliases: []
+category:
+- mcp
+lang:
+- typescript
+platform:
+- macos-arm64
+summary: Local buyer-side x402 payment runtime and stdio MCP tools for AI agents (Apple
+  Silicon macOS and Node 24 only).
+homepage: https://github.com/nuanu-ai/agent-payment-node
+docs: https://github.com/nuanu-ai/agent-payment-node#readme
+detect:
+  version_args:
+  - version
+  local:
+    files: []
+    dirs: []
+    package_json:
+      package_manager_prefixes: []
+use_when:
+- Inspect supported x402 offers, prepare bounded operations, and query operation status
+  or receipts through CLI/stdio MCP.
+- Use owner-configured payment policies only when the exact payment scope is authorized.
+avoid_when:
+- The host is Linux, Windows or an Intel Mac, or a hosted MCP endpoint is required.
+- Wallet setup, recipient, asset, network, amount, fees or spending authority are
+  unclear.
+- The task requires a read-only server, custody guarantee, general sandbox or independent
+  security audit.
+risk:
+  level: high
+  effects:
+  - network_access
+  - requires_auth
+  - read_files
+  - write_files
+  - remote_read
+  - remote_write
+  - secret_exposure
+  requires_auth: true
+  destructive: true
+  confirmation_required_for:
+  - creating or changing wallet credentials, payment policy or allowances
+  - direct transfers, EVM x402 signing, or any payment outside an explicitly admitted
+    policy
+guardrails:
+- Use only Apple Silicon macOS with Node 24; follow upstream Homebrew installation
+  and generated MCP configuration.
+- APN is spend-capable local software. Confirm recipient, chain, asset, amount, fees
+  and budget before authorizing money movement.
+- Direct transfers and EVM x402 signing require foreground owner approval; Solana
+  exact x402 can run only within an owner-admitted policy.
+- Do not expose private keys, seed phrases or provider credentials in prompts, logs
+  or public configurations.
+- Use disposable local-software custody with limited funds; compromised-host and recovery
+  limits remain owner responsibilities.
+- Software is free; network/provider fees are separate. Do not infer successful payment,
+  security audit or hosted transport from metadata discovery.
