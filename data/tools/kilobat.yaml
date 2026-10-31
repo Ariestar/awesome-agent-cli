@@ -1,0 +1,48 @@
+name: kilobat
+binary: kilobat
+aliases: []
+category:
+- network
+- mcp
+lang:
+- all
+platform:
+- macos
+summary: macOS network diagnostics and monitoring CLI with JSON output and a local MCP server.
+homepage: https://github.com/seifip/kilobat-cli
+docs: https://github.com/seifip/kilobat-cli#readme
+detect:
+  version_args:
+  - --version
+  local:
+    files: []
+    dirs: []
+    package_json:
+      package_manager_prefixes: []
+use_when:
+- Diagnose a host connection from a Mac running macOS 14 or later.
+- Keep a Mac awake for an explicitly requested command.
+avoid_when:
+- The host is not macOS or the tool is unavailable.
+- Network diagnostics would expose sensitive addresses or network details without authorization.
+risk:
+  level: high
+  effects:
+  - network_access
+  - remote_read
+  - read_processes
+  - execute_code
+  - environment_mutation
+  - secret_exposure
+  requires_auth: false
+  destructive: false
+  confirmation_required_for:
+  - running commands on the user's behalf
+  - changing system settings
+  - sharing diagnostic output containing network details
+guardrails:
+- Inspect the requested subcommand and target before running it; checks contact network services.
+- Treat diagnostic results as potentially sensitive and redact them before sharing.
+- The awake command can execute a supplied process; run only a command authorized by the user.
+- Some settings changes may require administrator authorization.
+- Wi-Fi names, filter status and per-network budgets depend on the separate proprietary desktop app; Wi-Fi names also depend on macOS Location permission.
