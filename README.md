@@ -4,7 +4,7 @@
 
 **A machine-readable awesome list of CLI tools, risks, effects, and guardrails for AI coding agents.**
 
-![tools: 460](https://img.shields.io/badge/tools-460-0969da) ![categories: 45](https://img.shields.io/badge/categories-45-8250df) ![yaml: registry](https://img.shields.io/badge/yaml-registry-2ea44f) [![GitHub Repo stars](https://img.shields.io/github/stars/Ariestar/awesome-agent-cli?style=social)](https://github.com/Ariestar/awesome-agent-cli) [![Awesome](https://awesome.re/badge-flat.svg)](https://awesome.re) [![Update README](https://github.com/Ariestar/awesome-agent-cli/actions/workflows/update-readme.yml/badge.svg)](https://github.com/Ariestar/awesome-agent-cli/actions/workflows/update-readme.yml)
+![tools: 461](https://img.shields.io/badge/tools-461-0969da) ![categories: 45](https://img.shields.io/badge/categories-45-8250df) ![yaml: registry](https://img.shields.io/badge/yaml-registry-2ea44f) [![GitHub Repo stars](https://img.shields.io/github/stars/Ariestar/awesome-agent-cli?style=social)](https://github.com/Ariestar/awesome-agent-cli) [![Awesome](https://awesome.re/badge-flat.svg)](https://awesome.re) [![Update README](https://github.com/Ariestar/awesome-agent-cli/actions/workflows/update-readme.yml/badge.svg)](https://github.com/Ariestar/awesome-agent-cli/actions/workflows/update-readme.yml)
 
 </div>
 
@@ -35,11 +35,11 @@ AI coding agents do not just need a list of binaries. They need operational cont
 
 | Signal | Value |
 | --- | ---: |
-| Tool cards | **460** |
+| Tool cards | **461** |
 | Category tags | **45** |
 | Language/ecosystem tags | **32** |
-| GitHub-backed tools | **379** with live star badges |
-| Risk distribution | Low: **95** · Medium: **221** · High: **144** |
+| GitHub-backed tools | **380** with live star badges |
+| Risk distribution | Low: **95** · Medium: **222** · High: **144** |
 
 ## Quick use
 
@@ -110,7 +110,7 @@ The matrix below shows category coverage and risk posture. A tool can appear in 
 
 | Category | Total | Low | Medium | High | Posture |
 | --- | ---: | ---: | ---: | ---: | --- |
-| [`agent`](#agent) | 106 | 12 | 28 | 66 | control plane |
+| [`agent`](#agent) | 107 | 12 | 29 | 66 | control plane |
 | [`agent-context`](#agent-context) | 26 | 18 | 2 | 6 | control plane |
 | [`api`](#api) | 13 | 3 | 9 | 1 | control plane |
 | [`archive`](#archive) | 4 | 0 | 4 | 0 | operator surface |
@@ -136,13 +136,13 @@ The matrix below shows category coverage and risk posture. A tool can appear in 
 | [`infra`](#infra) | 15 | 2 | 5 | 8 | control plane |
 | [`kubernetes`](#kubernetes) | 12 | 0 | 3 | 9 | control plane |
 | [`lint`](#lint) | 21 | 10 | 11 | 0 | operator surface |
-| [`mcp`](#mcp) | 14 | 2 | 5 | 7 | control plane |
+| [`mcp`](#mcp) | 15 | 2 | 6 | 7 | control plane |
 | [`metrics`](#metrics) | 10 | 5 | 5 | 0 | operator surface |
 | [`mobile`](#mobile) | 11 | 0 | 5 | 6 | control plane |
 | [`network`](#network) | 24 | 1 | 15 | 8 | control plane |
 | [`package-manager`](#package-manager) | 42 | 5 | 26 | 11 | control plane |
 | [`runtime`](#runtime) | 31 | 4 | 24 | 3 | control plane |
-| [`search`](#search) | 16 | 10 | 5 | 1 | control plane |
+| [`search`](#search) | 17 | 10 | 6 | 1 | control plane |
 | [`secrets`](#secrets) | 2 | 0 | 0 | 2 | control plane |
 | [`security`](#security) | 32 | 13 | 12 | 7 | control plane |
 | [`shell`](#shell) | 28 | 2 | 16 | 10 | control plane |
@@ -163,7 +163,7 @@ Browse by category. Multi-category tools intentionally appear in every relevant 
 <details open>
 <summary><strong>Popular categories</strong></summary>
 
-- [`agent`](#agent) — 106 tools
+- [`agent`](#agent) — 107 tools
 - [`test`](#test) — 43 tools
 - [`package-manager`](#package-manager) — 42 tools
 - [`automation`](#automation) — 33 tools
@@ -310,6 +310,8 @@ Browse by category. Multi-category tools intentionally appear in every relevant 
   `molt` · ![risk: high](https://img.shields.io/badge/risk-high-cf222e) · lang: `all` · [![GitHub Repo stars](https://img.shields.io/github/stars/solvyxtech/molt?style=social)](https://github.com/solvyxtech/molt)
 - [morph](https://morph.so/docs) — CLI for Morph Cloud isolated agent execution environments.  \
   `morph` · ![risk: medium](https://img.shields.io/badge/risk-medium-d29922) · lang: `all` · also: `environment`
+- [nexscope](https://www.nexscope.ai/blog/introducing-nexscope-cli-ecommerce-tools-and-product-reports-in-your-terminal) — Ecommerce tool discovery, bounded MCP API calls, and offline product comparison reports.  \
+  `nexscope` · ![risk: medium](https://img.shields.io/badge/risk-medium-d29922) · lang: `python` · also: `mcp`, `agent` · [![GitHub Repo stars](https://img.shields.io/github/stars/nexscope-ai/nexscope-cli?style=social)](https://github.com/nexscope-ai/nexscope-cli)
 - [ollama](https://github.com/ollama/ollama#readme) — Local LLM runner CLI supporting tool calling, custom Modelfiles, and fast inference.  \
   `ollama` · ![risk: medium](https://img.shields.io/badge/risk-medium-d29922) · lang: `all` · also: `agent` · [![GitHub Repo stars](https://img.shields.io/github/stars/ollama/ollama?style=social)](https://github.com/ollama/ollama)
 - [omni-parser](https://github.com/microsoft/OmniParser#readme) — Microsoft visual recognition CLI converting UI screenshots into structured agent action spaces.  \
@@ -1126,6 +1128,8 @@ Browse by category. Multi-category tools intentionally appear in every relevant 
   `mcpm` · ![risk: medium](https://img.shields.io/badge/risk-medium-d29922) · lang: `all` · also: `package-manager` · [![GitHub Repo stars](https://img.shields.io/github/stars/pathwaycom/mcpm?style=social)](https://github.com/pathwaycom/mcpm)
 - [mcptools](https://github.com/f/mcptools#readme) — Command-line utilities for interacting with and debugging MCP servers.  \
   `mcptools` · ![risk: high](https://img.shields.io/badge/risk-high-cf222e) · lang: `all` · also: `agent`, `debug` · [![GitHub Repo stars](https://img.shields.io/github/stars/f/mcptools?style=social)](https://github.com/f/mcptools)
+- [nexscope](https://www.nexscope.ai/blog/introducing-nexscope-cli-ecommerce-tools-and-product-reports-in-your-terminal) — Ecommerce tool discovery, bounded MCP API calls, and offline product comparison reports.  \
+  `nexscope` · ![risk: medium](https://img.shields.io/badge/risk-medium-d29922) · lang: `python` · also: `mcp`, `agent` · [![GitHub Repo stars](https://img.shields.io/github/stars/nexscope-ai/nexscope-cli?style=social)](https://github.com/nexscope-ai/nexscope-cli)
 - [smithery](https://smithery.ai/docs) — Registry and package installer CLI for discovering and running MCP servers.  \
   `smithery` · ![risk: medium](https://img.shields.io/badge/risk-medium-d29922) · lang: `all` · also: `package-manager` · [![GitHub Repo stars](https://img.shields.io/github/stars/smithery-ai/cli?style=social)](https://github.com/smithery-ai/cli)
 - [supergateway](https://github.com/supercorp-ai/supergateway#readme) — Gateway for exposing MCP stdio servers over SSE or HTTP-compatible transports.  \
@@ -1406,6 +1410,8 @@ Browse by category. Multi-category tools intentionally appear in every relevant 
   `khoj` · ![risk: low](https://img.shields.io/badge/risk-low-2ea44f) · lang: `all` · also: `search` · [![GitHub Repo stars](https://img.shields.io/github/stars/khoj-ai/khoj?style=social)](https://github.com/khoj-ai/khoj)
 - [logcli](https://grafana.com/docs/loki/latest/tools/logcli/) — Command-line interface for querying and streaming logs from Grafana Loki clusters.  \
   `logcli` · ![risk: low](https://img.shields.io/badge/risk-low-2ea44f) · lang: `all` · also: `search` · [![GitHub Repo stars](https://img.shields.io/github/stars/grafana/loki?style=social)](https://github.com/grafana/loki)
+- [nexscope](https://www.nexscope.ai/blog/introducing-nexscope-cli-ecommerce-tools-and-product-reports-in-your-terminal) — Ecommerce tool discovery, bounded MCP API calls, and offline product comparison reports.  \
+  `nexscope` · ![risk: medium](https://img.shields.io/badge/risk-medium-d29922) · lang: `python` · also: `mcp`, `agent` · [![GitHub Repo stars](https://img.shields.io/github/stars/nexscope-ai/nexscope-cli?style=social)](https://github.com/nexscope-ai/nexscope-cli)
 - [qdrant](https://qdrant.tech/documentation/) — Production-grade vector search engine CLI managing knowledge collections for agents.  \
   `qdrant` · ![risk: medium](https://img.shields.io/badge/risk-medium-d29922) · lang: `all` · also: `search` · [![GitHub Repo stars](https://img.shields.io/github/stars/qdrant/qdrant?style=social)](https://github.com/qdrant/qdrant)
 - [rg](https://github.com/BurntSushi/ripgrep/blob/master/GUIDE.md) — Fast recursive text search for codebases.  \
