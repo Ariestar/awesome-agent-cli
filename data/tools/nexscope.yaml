@@ -1,0 +1,41 @@
+name: nexscope
+binary: nexscope
+aliases: []
+category:
+- search
+- mcp
+- agent
+lang:
+- python
+summary: Ecommerce tool discovery, bounded MCP API calls, and offline product comparison reports.
+homepage: https://github.com/nexscope-ai/nexscope-cli
+docs: https://www.nexscope.ai/blog/introducing-nexscope-cli-ecommerce-tools-and-product-reports-in-your-terminal
+detect:
+  version_args:
+  - --version
+  local:
+    files: []
+    dirs: []
+    package_json:
+      package_manager_prefixes: []
+use_when:
+- Discover ecommerce data tools or inspect MCP tool schemas from the terminal
+- Generate offline product comparison reports from local data
+avoid_when:
+- No approval for paid API calls and the task needs online MCP execution
+risk:
+  level: medium
+  effects:
+  - network_access
+  - requires_auth
+  - remote_read
+  requires_auth: true
+  destructive: false
+  confirmation_required_for:
+  - --allow-paid
+  - --allow-write
+  - online MCP execute without dry-run
+guardrails:
+- Preview requests with --dry-run before --execute.
+- Do not pass --allow-paid or --allow-write without explicit user approval.
+- Confirm NEXSCOPE_API_KEY and NEXSCOPE_PROXY_BASE=https://api.nexscope.ai/ before online calls.
