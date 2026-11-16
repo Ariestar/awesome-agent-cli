@@ -1,0 +1,46 @@
+name: privy-cli
+binary: privy
+aliases: []
+category:
+- cloud
+- api
+lang:
+- all
+summary: Unofficial CLI for managing Privy accounts and apps (login methods, users, wallets, policies, webhooks) with JSON output.
+homepage: https://github.com/awesamarth/privy-cli
+docs: https://privy-cli.awesamarth.dev/
+detect:
+  version_args:
+  - --version
+  local:
+    files:
+    - privy.json
+    dirs: []
+    package_json:
+      package_manager_prefixes: []
+use_when:
+- Create or configure Privy apps, login methods, policies or webhooks without the dashboard
+- Inspect Privy users, wallets or analytics as JSON
+avoid_when:
+- Signing wallet transactions or exporting private keys (not supported)
+- The target account or app is unknown or belongs to a production project you were not asked to change
+risk:
+  level: high
+  effects:
+  - network_access
+  - requires_auth
+  - remote_read
+  - remote_write
+  - cloud_mutation
+  - secret_exposure
+  - write_files
+  requires_auth: true
+  destructive: true
+  confirmation_required_for:
+  - deleting apps, policies, users or webhooks
+  - production app changes
+  - team membership changes
+guardrails:
+- Preview changes with --dry-run or --diff before running writes with --yes.
+- Pass --app or --account explicitly; use development apps for experiments.
+- Login needs a human for the browser CAPTCHA and email code; do not try to collect the code.
